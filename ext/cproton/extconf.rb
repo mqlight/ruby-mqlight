@@ -62,6 +62,10 @@ end
 #                                                     'CRYPTO_add_lock')
 # abort 'Missing library: ssl' unless find_library('ssl', 'SSL_accept')
 
+# set the ruby version compiler flag
+runtime_version = RUBY_VERSION.gsub(/\./, '')[0, 2]
+$CFLAGS << " -DRUBY#{runtime_version}"
+
 case RUBY_PLATFORM
 when /darwin/i
   $LDFLAGS << " -Xlinker -rpath -Xlinker #{LIB_DIR}"

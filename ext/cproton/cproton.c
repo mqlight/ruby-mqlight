@@ -21562,17 +21562,17 @@ SWIGEXPORT void Init_cproton(void) {
 #ifndef __MQMBID_H
   #define __MQMBID_H
   #if defined(_AIX)
-    #pragma comment(user, "@(#) MQMBID sn=mqkoa-L141204.23 su=_KZkbgHwIEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/ext/cproton/cproton.c")
+    #pragma comment(user, "@(#) MQMBID sn=mqkoa-L141205.16 su=_PiWGMHyXEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/ext/cproton/cproton.c")
   #elif defined(hpux)
-    #pragma VERSIONID "@(#) MQMBID sn=mqkoa-L141204.23 su=_KZkbgHwIEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/ext/cproton/cproton.c"
+    #pragma VERSIONID "@(#) MQMBID sn=mqkoa-L141205.16 su=_PiWGMHyXEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/ext/cproton/cproton.c"
   #elif defined(_LINUX_2)
-    static char * __attribute__((used)) MQMBID(void) { return "@(#) MQMBID sn=mqkoa-L141204.23 su=_KZkbgHwIEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/ext/cproton/cproton.c"; }
+    static char * __attribute__((used)) MQMBID(void) { return "@(#) MQMBID sn=mqkoa-L141205.16 su=_PiWGMHyXEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/ext/cproton/cproton.c"; }
   #elif defined(WIN32) || defined(_WIN32)
     #pragma optimize("", off)
-    const static char MQMBID[]="@(#) MQMBID sn=mqkoa-L141204.23 su=_KZkbgHwIEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/ext/cproton/cproton.c";
+    const static char MQMBID[]="@(#) MQMBID sn=mqkoa-L141205.16 su=_PiWGMHyXEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/ext/cproton/cproton.c";
     #pragma optimize("", on)
   #else
-    static char * MQMBID(void) { return "@(#) MQMBID sn=mqkoa-L141204.23 su=_KZkbgHwIEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/ext/cproton/cproton.c"; }
+    static char * MQMBID(void) { return "@(#) MQMBID sn=mqkoa-L141205.16 su=_PiWGMHyXEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/ext/cproton/cproton.c"; }
   #endif
 #endif
 /* MQMBID End */

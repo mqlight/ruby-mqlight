@@ -25,20 +25,20 @@ module Mqlight
   class SecurityError < StandardError
   end
 
-  # The operation failed because the client transitioned into stopped state!
+  # The operation failed because the client transitioned into stopped state
   class StoppedError < StandardError
   end
 
-  # This be the exception thrown if an operation times out
+  # This exception is thrown if an operation times out
   class TimeoutError < StandardError
   end
 
-  # You are already subscribed to this destination
+  # Thrown if the client is already subscribed to a destination.
   class SubscribedError < StandardError
   end
 
-  # You are not subscribed to the destination - so you can't do that thing you
-  # wanted to try and do.
+  # Thrown if an operation requires the client to be subscribed to a destination
+  # but the client is not currently subscribed to the destination.
   class UnsubscribedError < StandardError
   end
 

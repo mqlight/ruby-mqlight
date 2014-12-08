@@ -43,12 +43,9 @@ module Mqlight
     attr_reader :share
 
     # Called to confirm that the code that has received this message has
-    # processed the message to its staisfaction.  When the server receives this
+    # processed the message to its satisfaction.  When the server receives this
     # confirmation it will make no further attempt to deliver this message to
     # the client and discard its copy of the message.
-    #
-    # @note TODO: need to specify how this interacts with no longer being
-    #       connected or stopping the client.
     attr_reader :confirm
 
     #

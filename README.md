@@ -64,7 +64,7 @@ If you think you've found a bug, please leave us
 
 ## Release notes
 
-### 1.0.2014120423.beta
+### 1.0.2014120516.beta
 
 * Initial beta release.
 * Support for sending and receiving 'at-most-once' messages.
