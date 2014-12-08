@@ -1,0 +1,4 @@
+--protected
+--no-private
+--exclude 'lib/qpid_proton.rb'
+--exclude 'lib/qpid_proton/*'
