@@ -1,4 +1,4 @@
-# %Z% %W% %I% %E% %U%
+# @(#) MQMBID sn=mqkoa-L141209.14 su=_mOo3sH-nEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/spec/mqlight/util_spec.rb
 #
 # <copyright
 # notice="lm-source-program"
@@ -34,26 +34,42 @@ describe Mqlight::Util do
       end.to raise_error(ArgumentError)
     end
 
-    it 'makes a http request if passed an http uri string' do
+    it 'makes an http request if passed an http uri string' do
       stub = stub_request(:get, 'http://example.com/blah')
-        .to_return(body: "{\"service\":[\"amqp:\/\/example.com:5672\","\
-                         "\"amqp:\/\/example.com:5673\"]}", status: 200)
+             .to_return(body: "{\"service\":[\"amqp:\/\/example.com:5672\","\
+                              "\"amqp:\/\/example.com:5673\"]}", status: 200)
       Mqlight::Util.get_service_urls('http://example.com/blah')
       expect(stub).to have_been_requested
     end
 
-    it 'makes a https request if passed an https uri string' do
+    it 'makes an https request if passed an https uri string' do
       stub = stub_request(:get, 'https://example.com/blah')
-        .to_return(body: "{\"service\":[\"amqp:\/\/example.com:5672\","\
-                         "\"amqp:\/\/example.com:5673\"]}", status: 200)
+             .to_return(body: "{\"service\":[\"amqp:\/\/example.com:5672\","\
+                              "\"amqp:\/\/example.com:5673\"]}", status: 200)
       Mqlight::Util.get_service_urls('https://example.com/blah')
+      expect(stub).to have_been_requested
+    end
+
+    it 'makes an http request include GET params if passed' do
+      stub = stub_request(:get, 'http://example.com/blah?serviceId=foo')
+             .to_return(body: "{\"service\":[\"amqp:\/\/example.com:5672\","\
+                              "\"amqp:\/\/example.com:5673\"]}", status: 200)
+      Mqlight::Util.get_service_urls('http://example.com/blah?serviceId=foo')
+      expect(stub).to have_been_requested
+    end
+
+    it 'makes an https request include GET params if passed' do
+      stub = stub_request(:get, 'https://example.com/blah?serviceId=foo')
+             .to_return(body: "{\"service\":[\"amqp:\/\/example.com:5672\","\
+                              "\"amqp:\/\/example.com:5673\"]}", status: 200)
+      Mqlight::Util.get_service_urls('https://example.com/blah?serviceId=foo')
       expect(stub).to have_been_requested
     end
 
     it 'fails if a http request returns a non-200 response' do
       stub = stub_request(:get, 'http://example.com/blah')
-        .to_return(body: "{\"service\":[\"amqp:\/\/example.com:5672\","\
-                         "\"amqp:\/\/example.com:5673\"]}", status: 400)
+             .to_return(body: "{\"service\":[\"amqp:\/\/example.com:5672\","\
+                              "\"amqp:\/\/example.com:5673\"]}", status: 400)
       expect do
         Mqlight::Util.get_service_urls('http://example.com/blah')
       end.to raise_error(Mqlight::NetworkError)
@@ -62,7 +78,7 @@ describe Mqlight::Util do
 
     it 'fails if a http request returns a non-json response' do
       stub = stub_request(:get, 'http://example.com/blah')
-        .to_return(body: 'not json', status: 200)
+             .to_return(body: 'not json', status: 200)
       expect do
         Mqlight::Util.get_service_urls('http://example.com/blah')
       end.to raise_error(JSON::ParserError)

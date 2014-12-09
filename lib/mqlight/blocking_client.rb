@@ -1,4 +1,4 @@
-# %Z% %W% %I% %E% %U%
+# @(#) MQMBID sn=mqkoa-L141209.14 su=_mOo3sH-nEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/lib/mqlight/blocking_client.rb
 #
 # <copyright
 # notice="lm-source-program"
@@ -545,6 +545,7 @@ module Mqlight
     #        method while a thread is blocked inside this receive method.
 
     def receive(topic_pattern, options = {})
+      fail Mqlight::StoppedError, 'Not started.' unless started?
       # Validate topic_pattern
       fail ArgumentError, 'topic_pattern must be a String.' unless
         topic_pattern.is_a? String
@@ -554,9 +555,11 @@ module Mqlight
         options.is_a?(Hash) || options.nil?
 
       timeout = options.fetch(:timeout, nil) if options.is_a? Hash
-      if timeout
-        fail ArgumentError, 'timeout must be nil or a unsigned Integer' if
-          (!timeout.is_a? Integer) || (timeout < 0)
+      unless timeout.nil?
+        fail ArgumentError, 'timeout must be nil or an unsigned Integer' if
+          !timeout.is_a? Integer
+        fail RangeError, 'timeout must be an unsigned Integer' if
+          timeout < 0
       end
 
       destination = @destinations.find do |dest|

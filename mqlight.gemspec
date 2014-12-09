@@ -1,4 +1,4 @@
-# %Z% %W% %I% %E% %U%
+# @(#) MQMBID sn=mqkoa-L141209.14 su=_mOo3sH-nEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/mqlight.gemspec
 #
 # <copyright
 # notice="lm-source-program"

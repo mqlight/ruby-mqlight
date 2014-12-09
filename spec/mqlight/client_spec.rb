@@ -1,4 +1,4 @@
-# %Z% %W% %I% %E% %U%
+# @(#) MQMBID sn=mqkoa-L141209.14 su=_mOo3sH-nEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/spec/mqlight/client_spec.rb
 #
 # <copyright
 # notice="lm-source-program"
@@ -742,6 +742,111 @@ describe Mqlight::BlockingClient do
       end
 
     end
+
+  end
+
+  describe '#receive# do'
+
+    before(:each) do
+      @client = Mqlight::BlockingClient.new(test_service_uri)
+    end
+
+    after(:each) do
+      @client.stop if @client
+    end
+
+    context 'when stopped' do
+      it 'raises a StoppedError' do
+        @client.stop
+        expect { @client.receive('topic') }.to raise_error(Mqlight::StoppedError)
+      end
+    end
+    
+    context 'when started' do
+      it 'fails if passed no arguments' do
+        expect { @client.receive }.to raise_error(ArgumentError)
+      end
+      
+      it 'fails if passed a numeric topic_pattern' do
+        expect { @client.receive(1) }.to raise_error(ArgumentError)
+      end
+
+      it 'fails if passed a boolean topic_pattern' do
+        expect { @client.receive(true) }.to raise_error(ArgumentError)
+        expect { @client.receive(false) }.to raise_error(ArgumentError)
+      end
+
+      it 'fails if passed a nil topic_pattern' do
+        expect { @client.receive(nil) }.to raise_error(ArgumentError)
+      end
+
+      it 'fails if passed an array as a topic_pattern' do
+        expect { @client.receive([]) }.to raise_error(ArgumentError)
+      end
+
+      it 'fails if passed an hash as a topic_pattern' do
+        expect { @client.receive({}) }.to raise_error(ArgumentError)
+      end
+
+      it 'completes if passed a valid topic_pattern' do
+        expect(Cproton).to receive(:pn_messenger_subscribe_ttl)
+          .with(kind_of(SWIG::TYPE_p_pn_messenger_t),
+                "#{test_service_uri}/private:topic",
+                0)
+          .and_return Qpid::Proton::Error::NONE
+        @client.subscribe('topic')
+      end
+
+      it 'fails if options is boolean' do
+        expect do
+          @client.receive('topic', true)
+        end.to raise_error(ArgumentError)
+        expect do
+          @client.receive('topic', false)
+        end.to raise_error(ArgumentError)
+      end
+
+      it 'fails if options is an array' do
+        expect do 
+          @client.receive('topic',[])
+        end.to raise_error(ArgumentError)
+      end
+
+      it 'fails if options is an string' do
+        expect do 
+          @client.receive('topic','string')
+        end.to raise_error(ArgumentError)
+      end
+
+      it 'fails if options is an integer' do
+        expect do 
+          @client.receive('topic',1)
+        end.to raise_error(ArgumentError)
+      end
+
+      it 'fails if passed a boolean timeout' do
+        expect do
+          @client.receive('topic', timeout: true)
+        end.to raise_error(ArgumentError)
+        expect do
+          @client.receive('topic', timeout: false)
+        end.to raise_error(ArgumentError)
+      end
+
+      it 'fails if passed an array as a timeout' do
+        expect { @client.receive('topic', timeout: []) }
+          .to raise_error(ArgumentError)
+      end
+
+      it 'fails if passed a hash as a timeout' do
+        expect { @client.receive('topic', timeout: {}) }
+          .to raise_error(ArgumentError)
+      end
+
+      it 'fails if passed out of range timeout' do
+        expect { @client.receive('topic', timeout:-1) }
+          .to raise_error(RangeError)
+      end
 
   end
 

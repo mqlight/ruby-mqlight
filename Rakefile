@@ -1,4 +1,3 @@
-# %Z% %W% %I% %E% %U%
 #
 # <copyright
 # notice="lm-source-program"
