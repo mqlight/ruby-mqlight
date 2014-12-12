@@ -43,8 +43,8 @@ Alternatively, add 'mqlight' as a runtime dependency in your gemspec / Gemfile.
 ## API
 
 The API has been documented using Yardoc tag formatting within the Ruby code
-and can either be viewed online at http://rubydoc.info/gems/mqlight, or locally
-by running the YARD tooling.
+and can either be viewed online from the Documentation link at
+https://rubygems.org/gems/mqlight, or locally by running the YARD tooling.
 
 ## Samples
 
