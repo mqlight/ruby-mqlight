@@ -30,7 +30,6 @@
 #include <proton/types.h>
 
 #include <stddef.h>
-#include <sys/types.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -102,6 +101,17 @@ PN_EXTERN pn_connection_t *pn_connection(void);
 PN_EXTERN void pn_connection_free(pn_connection_t *connection);
 
 /**
+ * Release a connection object.
+ *
+ * When a connection object is released, all ::pn_session_t and
+ * ::pn_link_t, objects associated with the connection are also
+ * released and all ::pn_delivery_t objects are settled.
+ *
+ * @param[in] connection the connection object to be released
+ */
+PN_EXTERN void pn_connection_release(pn_connection_t *connection);
+
+/**
  * Get additional error information associated with the connection.
  *
  * Whenever a connection operation fails (i.e. returns an error code),
@@ -138,6 +148,7 @@ PN_EXTERN pn_error_t *pn_connection_error(pn_connection_t *connection);
 PN_EXTERN void pn_connection_collect(pn_connection_t *connection, pn_collector_t *collector);
 
 /**
+ * @deprecated
  * Get the application context that is associated with a connection
  * object.
  *
@@ -150,6 +161,7 @@ PN_EXTERN void pn_connection_collect(pn_connection_t *connection, pn_collector_t
 PN_EXTERN void *pn_connection_get_context(pn_connection_t *connection);
 
 /**
+ * @deprecated
  * Set a new application context for a connection object.
  *
  * The application context for a connection object may be retrieved
@@ -159,6 +171,14 @@ PN_EXTERN void *pn_connection_get_context(pn_connection_t *connection);
  * @param[in] context the application context
  */
 PN_EXTERN void pn_connection_set_context(pn_connection_t *connection, void *context);
+
+/**
+ * Get the attachments that are associated with a connection object.
+ *
+ * @param[in] connection the connection whose attachments are to be returned.
+ * @return the attachments for the connection object
+ */
+PN_EXTERN pn_record_t *pn_connection_attachments(pn_connection_t *connection);
 
 /**
  * Get the endpoint state flags for a connection.
@@ -253,6 +273,45 @@ PN_EXTERN const char *pn_connection_get_container(pn_connection_t *connection);
  * @param[in] container the container name
  */
 PN_EXTERN void pn_connection_set_container(pn_connection_t *connection, const char *container);
+
+/**
+ * Set the authentication username for a client connection
+ *
+ * It is necessary to set the username and password before binding the connection
+ * to a trasnport and it isn't allowed to change them after the binding.
+ *
+ * If not set then no authentication will be negotiated unless the client
+ * sasl layer is explicitly created (this would be for sometting like Kerberos
+ * where the credentials are implicit in the environment, or to explicitly use
+ * the ANONYMOUS SASL mechanism)
+ *
+ * @param[in] connection the connection
+ * @param[in] user the username
+ */
+PN_EXTERN void pn_connection_set_user(pn_connection_t *connection, const char *user);
+
+/**
+ * Set the authentication password for a client connection
+ *
+ * It is necessary to set the username and password before binding the connection
+ * to a trasnport and it isn't allowed to change them after the binding.
+ *
+ * Note that the password is write only and has no accessor as the underlying
+ * implementation should be zeroing the password after use to avoid the password
+ * being present in memory longer than necessary
+ *
+ * @param[in] connection the connection
+ * @param[in] password the password corresponding to the username - this will be copied and zeroed out after use
+ */
+PN_EXTERN void pn_connection_set_password(pn_connection_t *connection, const char *password);
+
+/**
+ * Get the authentication username for a client connection
+ *
+ * @param[in] connection the connection
+ * @return the username passed into the connection
+ */
+PN_EXTERN const char *pn_connection_get_user(pn_connection_t *connection);
 
 /**
  * Get the value of the AMQP Hostname used by a connection object.

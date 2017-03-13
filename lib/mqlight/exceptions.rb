@@ -1,4 +1,4 @@
-# @(#) MQMBID sn=mqkoa-L141209.14 su=_mOo3sH-nEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/lib/mqlight/exceptions.rb
+# @(#) MQMBID sn=mqkoa-L160208.09 su=_Zdh2gM49EeWAYJom138ZUQ pn=appmsging/ruby/mqlight/lib/mqlight/exceptions.rb
 #
 # <copyright
 # notice="lm-source-program"
@@ -19,6 +19,11 @@
 module Mqlight
   # The operation failed because of a network error
   class NetworkError < StandardError
+  end
+
+  # Raised to indicate that a requested operation has been rejected because
+  # the remote end does not permit it
+  class NotPermittedError < StandardError
   end
 
   # The operation failed due to a security related problem
@@ -45,5 +50,37 @@ module Mqlight
   # The operation failed because the client doesn't yet support the options
   # that were passed to the method
   class UnsupportedError < StandardError
+  end
+
+  # The client has been disconnected as another has taken over.
+  class ReplacedError < StandardError
+  end
+
+  # Not strictly an error but indicates to the outer level to
+  # retry the command later.  
+  class RetryError < StandardError
+  end
+
+  # The operation failed due to an internal condition.
+  class InternalError < StandardError
+    attr_reader :cause
+
+    def initialize(cause)
+      if cause.is_a? String
+        super(cause)
+      else
+        super(cause.message)
+      end
+      @cause = cause
+    end
+  end
+
+  # A container for any exception
+  class ExceptionContainer
+    attr_reader :exception
+
+    def initialize(exception)
+      @exception = exception
+    end
   end
 end

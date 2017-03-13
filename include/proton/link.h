@@ -24,8 +24,11 @@
 
 #include <proton/import_export.h>
 #include <proton/type_compat.h>
+#include <proton/condition.h>
+#include <proton/terminus.h>
+#include <proton/types.h>
+#include <proton/object.h>
 #include <stddef.h>
-#include <sys/types.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -73,13 +76,15 @@ PN_EXTERN pn_link_t *pn_receiver(pn_session_t *session, const char *name);
  * Free a link object.
  *
  * When a link object is freed, all ::pn_delivery_t objects associated
- * with the session are also freed.
+ * with the session are also freed. Freeing a link will settle any
+ * unsettled deliveries on the link.
  *
  * @param[in] link a link object to free (or NULL)
  */
 PN_EXTERN void pn_link_free(pn_link_t *link);
 
 /**
+ * @deprecated
  * Get the application context that is associated with a link object.
  *
  * The application context for a link may be set using
@@ -91,6 +96,7 @@ PN_EXTERN void pn_link_free(pn_link_t *link);
 PN_EXTERN void *pn_link_get_context(pn_link_t *link);
 
 /**
+ * @deprecated
  * Set a new application context for a link object.
  *
  * The application context for a link object may be retrieved using
@@ -100,6 +106,14 @@ PN_EXTERN void *pn_link_get_context(pn_link_t *link);
  * @param[in] context the application context
  */
 PN_EXTERN void pn_link_set_context(pn_link_t *link, void *context);
+
+/**
+ * Get the attachments that are associated with a link object.
+ *
+ * @param[in] link the link whose attachments are to be returned.
+ * @return the attachments for the link object
+ */
+PN_EXTERN pn_record_t *pn_link_attachments(pn_link_t *link);
 
 /**
  * Get the name of a link.
@@ -254,6 +268,9 @@ PN_EXTERN void pn_link_close(pn_link_t *link);
  * @param[in] link a link object
  */
 PN_EXTERN void pn_link_detach(pn_link_t *link);
+
+PN_EXTERN bool pn_link_detached(pn_link_t *link);
+PN_EXTERN bool pn_link_remote_detached(pn_link_t *link);
 
 /**
  * Access the locally defined source definition for a link.

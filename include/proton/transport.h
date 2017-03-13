@@ -26,7 +26,6 @@
 #include <proton/type_compat.h>
 #include <proton/condition.h>
 #include <stddef.h>
-#include <sys/types.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -84,14 +83,32 @@ typedef void (*pn_tracer_t)(pn_transport_t *transport, const char *message);
 
 /**
  * Factory for creating a transport.
- *
  * A transport is used by a connection to interface with the network.
  * There can only be one connection associated with a transport. See
  * pn_transport_bind().
  *
+ * Initially a transport is configured to be a client transport. Use pn_transport_set_server()
+ * to configure the transport as a server transport.
+ *
+ * A client transport initiates outgoing connections.
+ *
+ * A client transport must be configured with the protocol layers to use and cannot
+ * configure itself automatically.
+ *
+ * A server transport accepts incoming connections. It can automatically
+ * configure itself to include the various protocol layers depending on
+ * the incoming protocol headers.
+ *
  * @return pointer to new transport
  */
 PN_EXTERN pn_transport_t *pn_transport(void);
+
+/**
+ * Configure a transport as a server
+ *
+ * @param[in] transport a transport object
+ */
+PN_EXTERN void pn_transport_set_server(pn_transport_t *transport);
 
 /**
  * Free a transport object.
@@ -102,6 +119,73 @@ PN_EXTERN pn_transport_t *pn_transport(void);
  * @param[in] transport a transport object or NULL
  */
 PN_EXTERN void pn_transport_free(pn_transport_t *transport);
+
+/** Retrieve the authenticated user
+ *
+ * This is usually used at the the server end to find the name of the authenticated user.
+ * On the client it will merely return whatever user was passed in to the
+ * pn_connection_set_user() API of the bound connection.
+ *
+ * The returned value is only reliable after the PN_TRANSPORT_AUTHENTICATED event has been received.
+ *
+ * @param[in] transport the transport
+ *
+ * @return
+ * If a the user is anonymous (either no SASL layer is negotiated or the SASL ANONYMOUS mechanism is used)
+ * then the user will be "anonymous"
+ * Otherwise a string containing the user is returned.
+ */
+PN_EXTERN const char *pn_transport_get_user(pn_transport_t *transport);
+
+/**
+ * Set whether a non authenticated transport connection is allowed
+ *
+ * There are several ways within the AMQP protocol suite to get unauthenticated connections:
+ * - Use no SASL layer (with either no TLS or TLS without client certificates)
+ * - Use an SASL layer but the ANONYMOUS mechanism
+ *
+ * The default if this option is not set is to allow unauthenticated connections.
+ *
+ * @param[in] transport the transport
+ * @param[in] required boolean is true when authenticated connections are required
+ */
+PN_EXTERN void pn_transport_require_auth(pn_transport_t *transport, bool required);
+
+/**
+ * Tell whether the transport connection is authenticated
+ *
+ * Note that this property may not be stable until the PN_CONNECTION_REMOTE_OPEN
+ * event is received.
+ *
+ * @param[in] transport the transport
+ * @return bool representing authentication
+ */
+PN_EXTERN bool pn_transport_is_authenticated(pn_transport_t *transport);
+
+/**
+ * Set whether a non encrypted transport connection is allowed
+ *
+ * There are several ways within the AMQP protocol suite to get encrypted connections:
+ * - Use TLS/SSL
+ * - Use an SASL with a mechanism that supports saecurity layers
+ *
+ * The default if this option is not set is to allow unencrypted connections.
+ *
+ * @param[in] transport the transport
+ * @param[in] required boolean is true when encrypted connections are required
+ */
+PN_EXTERN void pn_transport_require_encryption(pn_transport_t *transport, bool required);
+
+/**
+ * Tell whether the transport connection is encrypted
+ *
+ * Note that this property may not be stable until the PN_CONNECTION_REMOTE_OPEN
+ * event is received.
+ *
+ * @param[in] transport the transport
+ * @return bool representing encryption
+ */
+PN_EXTERN bool pn_transport_is_encrypted(pn_transport_t *transport);
 
 /**
  * Get additional information about the condition of the transport.
@@ -179,6 +263,7 @@ PN_EXTERN pn_tracer_t pn_transport_get_tracer(pn_transport_t *transport);
 PN_EXTERN void *pn_transport_get_context(pn_transport_t *transport);
 
 /**
+ * @deprecated
  * Set a new application context for a transport object.
  *
  * The application context for a transport object may be retrieved using
@@ -188,6 +273,14 @@ PN_EXTERN void *pn_transport_get_context(pn_transport_t *transport);
  * @param[in] context the application context
  */
 PN_EXTERN void pn_transport_set_context(pn_transport_t *transport, void *context);
+
+/**
+ * Get the attachments that are associated with a transport object.
+ *
+ * @param[in] transport the transport whose attachments are to be returned.
+ * @return the attachments for the transport object
+ */
+PN_EXTERN pn_record_t *pn_transport_attachments(pn_transport_t *transport);
 
 /**
  * Access the Authentication and Security context of the transport.
@@ -218,11 +311,28 @@ PN_EXTERN void pn_transport_log(pn_transport_t *transport, const char *message);
  *
  * @param[in] transport a transport object
  * @param[in] fmt the printf formatted message to be logged
+ * @param[in] ap a vector containing the format arguments
+ */
+PN_EXTERN void pn_transport_vlogf(pn_transport_t *transport, const char *fmt, va_list ap);
+
+/**
+ * Log a printf formatted message using a transport's logging
+ * mechanism.
+ *
+ * This can be useful in a debugging context as the log message will
+ * be prefixed with the transport's identifier.
+ *
+ * @param[in] transport a transport object
+ * @param[in] fmt the printf formatted message to be logged
  */
 PN_EXTERN void pn_transport_logf(pn_transport_t *transport, const char *fmt, ...);
 
 /**
  * Get the maximum allowed channel for a transport.
+ * This will be the minimum of 
+ *   1. limit imposed by this proton implementation
+ *   2. limit imposed by remote peer
+ *   3. limit imposed by this application, using pn_transport_set_channel_max()
  *
  * @param[in] transport a transport object
  * @return the maximum allowed channel
@@ -230,12 +340,23 @@ PN_EXTERN void pn_transport_logf(pn_transport_t *transport, const char *fmt, ...
 PN_EXTERN uint16_t pn_transport_get_channel_max(pn_transport_t *transport);
 
 /**
- * Set the maximum allowed channel for a transport.
+ * Set the maximum allowed channel number for a transport.
+ * Note that this is the maximum channel number allowed, giving a 
+ * valid channel number range of [0..channel_max]. Therefore the 
+ * maximum number of simultaineously active channels will be 
+ * channel_max plus 1.
+ * You can call this function more than once to raise and lower
+ * the limit your application imposes on max channels for this 
+ * transport.  However, smaller limits may be imposed by this
+ * library, or by the remote peer.
+ * After the OPEN frame has been sent to the remote peer,
+ * further calls to this function will have no effect.
  *
  * @param[in] transport a transport object
  * @param[in] channel_max the maximum allowed channel
+ * @return PN_OK, or PN_STATE_ERR if it is too late to change channel_max
  */
-PN_EXTERN void pn_transport_set_channel_max(pn_transport_t *transport, uint16_t channel_max);
+PN_EXTERN int pn_transport_set_channel_max(pn_transport_t *transport, uint16_t channel_max);
 
 /**
  * Get the maximum allowed channel of a transport's remote peer.

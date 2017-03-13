@@ -1777,77 +1777,82 @@ int SWIG_Ruby_arity( VALUE proc, int minimal )
 
 /* -------- TYPES TABLE (BEGIN) -------- */
 
-#define SWIGTYPE_p_char swig_types[0]
-#define SWIGTYPE_p_f_p_q_const__char_p_q_const__char__void swig_types[1]
-#define SWIGTYPE_p_f_p_struct_pn_transport_t_p_q_const__char__void swig_types[2]
-#define SWIGTYPE_p_f_p_void__p_void swig_types[3]
-#define SWIGTYPE_p_int swig_types[4]
-#define SWIGTYPE_p_intptr_t swig_types[5]
-#define SWIGTYPE_p_long swig_types[6]
-#define SWIGTYPE_p_long_long swig_types[7]
-#define SWIGTYPE_p_p_char swig_types[8]
-#define SWIGTYPE_p_pn_activate_criteria_t swig_types[9]
-#define SWIGTYPE_p_pn_atom_t swig_types[10]
-#define SWIGTYPE_p_pn_bytes_t swig_types[11]
-#define SWIGTYPE_p_pn_cid_t swig_types[12]
-#define SWIGTYPE_p_pn_class_t swig_types[13]
-#define SWIGTYPE_p_pn_collector_t swig_types[14]
-#define SWIGTYPE_p_pn_condition_t swig_types[15]
-#define SWIGTYPE_p_pn_connection_t swig_types[16]
-#define SWIGTYPE_p_pn_connector_t swig_types[17]
-#define SWIGTYPE_p_pn_data_t swig_types[18]
-#define SWIGTYPE_p_pn_decimal128_t swig_types[19]
-#define SWIGTYPE_p_pn_delivery_t swig_types[20]
-#define SWIGTYPE_p_pn_disposition_t swig_types[21]
-#define SWIGTYPE_p_pn_distribution_mode_t swig_types[22]
-#define SWIGTYPE_p_pn_driver_t swig_types[23]
-#define SWIGTYPE_p_pn_durability_t swig_types[24]
-#define SWIGTYPE_p_pn_error_t swig_types[25]
-#define SWIGTYPE_p_pn_event_t swig_types[26]
-#define SWIGTYPE_p_pn_event_type_t swig_types[27]
-#define SWIGTYPE_p_pn_expiry_policy_t swig_types[28]
-#define SWIGTYPE_p_pn_format_t swig_types[29]
-#define SWIGTYPE_p_pn_hash_t swig_types[30]
-#define SWIGTYPE_p_pn_io_t swig_types[31]
-#define SWIGTYPE_p_pn_iterator_t swig_types[32]
-#define SWIGTYPE_p_pn_link_t swig_types[33]
-#define SWIGTYPE_p_pn_list_t swig_types[34]
-#define SWIGTYPE_p_pn_listener_t swig_types[35]
-#define SWIGTYPE_p_pn_map_t swig_types[36]
-#define SWIGTYPE_p_pn_message_t swig_types[37]
-#define SWIGTYPE_p_pn_messenger_t swig_types[38]
-#define SWIGTYPE_p_pn_rcv_settle_mode_t swig_types[39]
-#define SWIGTYPE_p_pn_sasl_outcome_t swig_types[40]
-#define SWIGTYPE_p_pn_sasl_state_t swig_types[41]
-#define SWIGTYPE_p_pn_sasl_t swig_types[42]
-#define SWIGTYPE_p_pn_selectable_t swig_types[43]
-#define SWIGTYPE_p_pn_selector_t swig_types[44]
-#define SWIGTYPE_p_pn_session_t swig_types[45]
-#define SWIGTYPE_p_pn_snd_settle_mode_t swig_types[46]
-#define SWIGTYPE_p_pn_ssl_domain_t swig_types[47]
-#define SWIGTYPE_p_pn_ssl_mode_t swig_types[48]
-#define SWIGTYPE_p_pn_ssl_resume_status_t swig_types[49]
-#define SWIGTYPE_p_pn_ssl_t swig_types[50]
-#define SWIGTYPE_p_pn_ssl_verify_mode_t swig_types[51]
-#define SWIGTYPE_p_pn_status_t swig_types[52]
-#define SWIGTYPE_p_pn_string_t swig_types[53]
-#define SWIGTYPE_p_pn_subscription_t swig_types[54]
-#define SWIGTYPE_p_pn_terminus_t swig_types[55]
-#define SWIGTYPE_p_pn_terminus_type_t swig_types[56]
-#define SWIGTYPE_p_pn_transport_t swig_types[57]
-#define SWIGTYPE_p_pn_type_t swig_types[58]
-#define SWIGTYPE_p_pn_url_t swig_types[59]
-#define SWIGTYPE_p_pn_uuid_t swig_types[60]
-#define SWIGTYPE_p_short swig_types[61]
-#define SWIGTYPE_p_signed_char swig_types[62]
-#define SWIGTYPE_p_unsigned_char swig_types[63]
-#define SWIGTYPE_p_unsigned_int swig_types[64]
-#define SWIGTYPE_p_unsigned_long swig_types[65]
-#define SWIGTYPE_p_unsigned_long_long swig_types[66]
-#define SWIGTYPE_p_unsigned_short swig_types[67]
-#define SWIGTYPE_p_void swig_types[68]
-static swig_type_info *swig_types[70];
-static swig_module_info swig_module = {swig_types, 69, 0, 0, 0, 0};
+#define SWIGTYPE_p_Pn_rbkey_t swig_types[0]
+#define SWIGTYPE_p_Pni_rbhandler_t swig_types[1]
+#define SWIGTYPE_p_char swig_types[2]
+#define SWIGTYPE_p_f_p_q_const__char_p_q_const__char__void swig_types[3]
+#define SWIGTYPE_p_f_p_struct_pn_handler_t__void swig_types[4]
+#define SWIGTYPE_p_f_p_struct_pn_handler_t_p_struct_pn_event_t_enum_pn_event_type_t__void swig_types[5]
+#define SWIGTYPE_p_f_p_struct_pn_selectable_t__void swig_types[6]
+#define SWIGTYPE_p_f_p_struct_pn_transport_t_p_q_const__char__void swig_types[7]
+#define SWIGTYPE_p_f_p_void__p_void swig_types[8]
+#define SWIGTYPE_p_int swig_types[9]
+#define SWIGTYPE_p_intptr_t swig_types[10]
+#define SWIGTYPE_p_long swig_types[11]
+#define SWIGTYPE_p_long_long swig_types[12]
+#define SWIGTYPE_p_p_char swig_types[13]
+#define SWIGTYPE_p_pn_acceptor_t swig_types[14]
+#define SWIGTYPE_p_pn_atom_t swig_types[15]
+#define SWIGTYPE_p_pn_bytes_t swig_types[16]
+#define SWIGTYPE_p_pn_cid_t swig_types[17]
+#define SWIGTYPE_p_pn_class_t swig_types[18]
+#define SWIGTYPE_p_pn_collector_t swig_types[19]
+#define SWIGTYPE_p_pn_condition_t swig_types[20]
+#define SWIGTYPE_p_pn_connection_t swig_types[21]
+#define SWIGTYPE_p_pn_data_t swig_types[22]
+#define SWIGTYPE_p_pn_decimal128_t swig_types[23]
+#define SWIGTYPE_p_pn_delivery_t swig_types[24]
+#define SWIGTYPE_p_pn_disposition_t swig_types[25]
+#define SWIGTYPE_p_pn_distribution_mode_t swig_types[26]
+#define SWIGTYPE_p_pn_durability_t swig_types[27]
+#define SWIGTYPE_p_pn_error_t swig_types[28]
+#define SWIGTYPE_p_pn_event_t swig_types[29]
+#define SWIGTYPE_p_pn_event_type_t swig_types[30]
+#define SWIGTYPE_p_pn_expiry_policy_t swig_types[31]
+#define SWIGTYPE_p_pn_handler_t swig_types[32]
+#define SWIGTYPE_p_pn_hash_t swig_types[33]
+#define SWIGTYPE_p_pn_io_t swig_types[34]
+#define SWIGTYPE_p_pn_iterator_t swig_types[35]
+#define SWIGTYPE_p_pn_link_t swig_types[36]
+#define SWIGTYPE_p_pn_list_t swig_types[37]
+#define SWIGTYPE_p_pn_map_t swig_types[38]
+#define SWIGTYPE_p_pn_message_t swig_types[39]
+#define SWIGTYPE_p_pn_messenger_t swig_types[40]
+#define SWIGTYPE_p_pn_rcv_settle_mode_t swig_types[41]
+#define SWIGTYPE_p_pn_reactor_t swig_types[42]
+#define SWIGTYPE_p_pn_record_t swig_types[43]
+#define SWIGTYPE_p_pn_sasl_outcome_t swig_types[44]
+#define SWIGTYPE_p_pn_sasl_t swig_types[45]
+#define SWIGTYPE_p_pn_selectable_t swig_types[46]
+#define SWIGTYPE_p_pn_selector_t swig_types[47]
+#define SWIGTYPE_p_pn_session_t swig_types[48]
+#define SWIGTYPE_p_pn_snd_settle_mode_t swig_types[49]
+#define SWIGTYPE_p_pn_ssl_domain_t swig_types[50]
+#define SWIGTYPE_p_pn_ssl_mode_t swig_types[51]
+#define SWIGTYPE_p_pn_ssl_resume_status_t swig_types[52]
+#define SWIGTYPE_p_pn_ssl_t swig_types[53]
+#define SWIGTYPE_p_pn_ssl_verify_mode_t swig_types[54]
+#define SWIGTYPE_p_pn_status_t swig_types[55]
+#define SWIGTYPE_p_pn_string_t swig_types[56]
+#define SWIGTYPE_p_pn_subscription_t swig_types[57]
+#define SWIGTYPE_p_pn_task_t swig_types[58]
+#define SWIGTYPE_p_pn_terminus_t swig_types[59]
+#define SWIGTYPE_p_pn_terminus_type_t swig_types[60]
+#define SWIGTYPE_p_pn_timer_t swig_types[61]
+#define SWIGTYPE_p_pn_transport_t swig_types[62]
+#define SWIGTYPE_p_pn_type_t swig_types[63]
+#define SWIGTYPE_p_pn_url_t swig_types[64]
+#define SWIGTYPE_p_pn_uuid_t swig_types[65]
+#define SWIGTYPE_p_short swig_types[66]
+#define SWIGTYPE_p_signed_char swig_types[67]
+#define SWIGTYPE_p_unsigned_char swig_types[68]
+#define SWIGTYPE_p_unsigned_int swig_types[69]
+#define SWIGTYPE_p_unsigned_long swig_types[70]
+#define SWIGTYPE_p_unsigned_long_long swig_types[71]
+#define SWIGTYPE_p_unsigned_short swig_types[72]
+#define SWIGTYPE_p_void swig_types[73]
+static swig_type_info *swig_types[75];
+static swig_module_info swig_module = {swig_types, 74, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -1877,18 +1882,64 @@ static VALUE mCproton;
 #include <proton/engine.h>
 #include <proton/message.h>
 #include <proton/sasl.h>
-#include <proton/driver.h>
 #include <proton/messenger.h>
 #include <proton/ssl.h>
-#include <proton/driver_extras.h>
 #include <proton/types.h>
 #include <proton/url.h>
+#include <proton/reactor.h>
+#include <proton/handlers.h>
 
 
 #if !defined(RSTRING_LEN)
 #  define RSTRING_LEN(x) (RSTRING(X)->len)
 #  define RSTRING_PTR(x) (RSTRING(x)->ptr)
 #endif
+
+
+SWIGINTERN VALUE
+SWIG_ruby_failed(void)
+{
+  return Qnil;
+} 
+
+
+/*@SWIG:/var/tmp/build/tools/swig/3.0.2/share/swig/3.0.2/ruby/rubyprimtypes.swg,19,%ruby_aux_method@*/
+SWIGINTERN VALUE SWIG_AUX_NUM2ULONG(VALUE *args)
+{
+  VALUE obj = args[0];
+  VALUE type = TYPE(obj);
+  unsigned long *res = (unsigned long *)(args[1]);
+  *res = type == T_FIXNUM ? NUM2ULONG(obj) : rb_big2ulong(obj);
+  return obj;
+}
+/*@SWIG@*/
+
+SWIGINTERN int
+SWIG_AsVal_unsigned_SS_long (VALUE obj, unsigned long *val) 
+{
+  VALUE type = TYPE(obj);
+  if ((type == T_FIXNUM) || (type == T_BIGNUM)) {
+    unsigned long v;
+    VALUE a[2];
+    a[0] = obj;
+    a[1] = (VALUE)(&v);
+    if (rb_rescue(RUBY_METHOD_FUNC(SWIG_AUX_NUM2ULONG), (VALUE)a, RUBY_METHOD_FUNC(SWIG_ruby_failed), 0) != Qnil) {
+      if (val) *val = v;
+      return SWIG_OK;
+    }
+  }
+  return SWIG_TypeError;
+}
+
+
+SWIGINTERNINLINE int
+SWIG_AsVal_size_t (VALUE obj, size_t *val)
+{
+  unsigned long v;
+  int res = SWIG_AsVal_unsigned_SS_long (obj, val ? &v : 0);
+  if (SWIG_IsOK(res) && val) *val = (size_t)(v);
+  return res;
+}
 
 
 SWIGINTERN swig_type_info*
@@ -1941,49 +1992,20 @@ SWIG_AsCharPtrAndSize(VALUE obj, char** cptr, size_t* psize, int *alloc)
 
 
 
-SWIGINTERN VALUE
-SWIG_ruby_failed(void)
+SWIGINTERNINLINE VALUE 
+SWIG_FromCharPtrAndSize(const char* carray, size_t size)
 {
-  return Qnil;
-} 
-
-
-/*@SWIG:/opt/tools/swig/3.0.2/share/swig/3.0.2/ruby/rubyprimtypes.swg,19,%ruby_aux_method@*/
-SWIGINTERN VALUE SWIG_AUX_NUM2ULONG(VALUE *args)
-{
-  VALUE obj = args[0];
-  VALUE type = TYPE(obj);
-  unsigned long *res = (unsigned long *)(args[1]);
-  *res = type == T_FIXNUM ? NUM2ULONG(obj) : rb_big2ulong(obj);
-  return obj;
-}
-/*@SWIG@*/
-
-SWIGINTERN int
-SWIG_AsVal_unsigned_SS_long (VALUE obj, unsigned long *val) 
-{
-  VALUE type = TYPE(obj);
-  if ((type == T_FIXNUM) || (type == T_BIGNUM)) {
-    unsigned long v;
-    VALUE a[2];
-    a[0] = obj;
-    a[1] = (VALUE)(&v);
-    if (rb_rescue(RUBY_METHOD_FUNC(SWIG_AUX_NUM2ULONG), (VALUE)a, RUBY_METHOD_FUNC(SWIG_ruby_failed), 0) != Qnil) {
-      if (val) *val = v;
-      return SWIG_OK;
+  if (carray) {
+    if (size > LONG_MAX) {
+      swig_type_info* pchar_descriptor = SWIG_pchar_descriptor();
+      return pchar_descriptor ? 
+	SWIG_NewPointerObj((char *)(carray), pchar_descriptor, 0) : Qnil;
+    } else {
+      return rb_str_new(carray, (long)(size));
     }
+  } else {
+    return Qnil;
   }
-  return SWIG_TypeError;
-}
-
-
-SWIGINTERNINLINE int
-SWIG_AsVal_size_t (VALUE obj, size_t *val)
-{
-  unsigned long v;
-  int res = SWIG_AsVal_unsigned_SS_long (obj, val ? &v : 0);
-  if (SWIG_IsOK(res) && val) *val = (size_t)(v);
-  return res;
 }
 
 
@@ -2004,23 +2026,6 @@ SWIGINTERNINLINE VALUE
 SWIG_From_int  (int value)
 {    
   return SWIG_From_long  (value);
-}
-
-
-SWIGINTERNINLINE VALUE 
-SWIG_FromCharPtrAndSize(const char* carray, size_t size)
-{
-  if (carray) {
-    if (size > LONG_MAX) {
-      swig_type_info* pchar_descriptor = SWIG_pchar_descriptor();
-      return pchar_descriptor ? 
-	SWIG_NewPointerObj((char *)(carray), pchar_descriptor, 0) : Qnil;
-    } else {
-      return rb_str_new(carray, (long)(size));
-    }
-  } else {
-    return Qnil;
-  }
 }
 
 
@@ -2046,6 +2051,17 @@ SWIG_FromCharPtrAndSize(const char* carray, size_t size)
   }
 
 
+  int wrap_pn_transport_peek(pn_transport_t *transport, char *OUTPUT, size_t *OUTPUT_SIZE) {
+    ssize_t sz = pn_transport_peek(transport, OUTPUT, *OUTPUT_SIZE);
+    if(sz >= 0) {
+      *OUTPUT_SIZE = sz;
+    } else {
+      *OUTPUT_SIZE = 0;
+    }
+    return sz;
+  }
+
+
   pn_delivery_t *wrap_pn_delivery(pn_link_t *link, char *STRING, size_t LENGTH) {
     return pn_delivery(link, pn_dtag(STRING, LENGTH));
   }
@@ -2055,18 +2071,7 @@ SWIG_FromCharPtrAndSize(const char* carray, size_t size)
     pn_delivery_tag_t tag = pn_delivery_tag(delivery);
     *ALLOC_OUTPUT = malloc(tag.size);
     *ALLOC_SIZE = tag.size;
-    memcpy(*ALLOC_OUTPUT, tag.bytes, tag.size);
-  }
-
-
-  int wrap_pn_message_data(char *STRING, size_t LENGTH, char *OUTPUT, size_t *OUTPUT_SIZE) {
-    ssize_t sz = pn_message_data(OUTPUT, *OUTPUT_SIZE, STRING, LENGTH);
-    if (sz >= 0) {
-      *OUTPUT_SIZE = sz;
-    } else {
-      *OUTPUT_SIZE = 0;
-    }
-    return sz;
+    memcpy(*ALLOC_OUTPUT, tag.start, tag.size);
   }
 
 
@@ -2108,7 +2113,7 @@ SWIG_From_bool  (bool value)
     int rc = pn_messenger_send(messenger, *limit);
 
     result = INT2NUM(rc);
-    return result;
+    return (non_blocking_return_t )result;
     }
 
     static non_blocking_return_t pn_messenger_recv_no_gvl(void *args) {
@@ -2119,8 +2124,19 @@ SWIG_From_bool  (bool value)
     int rc = pn_messenger_recv(messenger, *limit);
 
     result = INT2NUM(rc);
-    return result;
+    return (non_blocking_return_t )result;
   }
+
+    static non_blocking_return_t pn_messenger_work_no_gvl(void *args) {
+      VALUE result = Qnil;
+      pn_messenger_t *messenger = (pn_messenger_t *)((void **)args)[0];
+      int *timeout = (int *)((void **)args)[1];
+
+      int rc = pn_messenger_work(messenger, *timeout);
+
+      result = INT2NUM(rc);
+      return (non_blocking_return_t )result;
+    }
 
 #endif
 
@@ -2182,9 +2198,39 @@ SWIG_From_bool  (bool value)
 
       return result;
   }
-  
 
-/*@SWIG:/opt/tools/swig/3.0.2/share/swig/3.0.2/ruby/rubyprimtypes.swg,19,%ruby_aux_method@*/
+  int wrap_pn_messenger_work(pn_messenger_t *messenger, int timeout) {
+    int result = 0;
+
+#if defined(RB_BLOCKING_CALL)
+    // only release the gil if we're blocking
+    if(timeout) {
+      VALUE rc;
+      void* args[2];
+
+      args[0] = messenger;
+      args[1] = &timeout;
+
+      rc = RB_BLOCKING_CALL(pn_messenger_work_no_gvl,
+                            &args, RUBY_UBF_PROCESS, NULL);
+
+      if(RTEST(rc))
+        {
+          result = FIX2INT(rc);
+        }
+    } else {
+      result = pn_messenger_work(messenger, timeout);
+    }
+#else
+    result = pn_messenger_work(messenger, timeout);
+#endif
+
+    return result;
+  }
+
+
+
+/*@SWIG:/var/tmp/build/tools/swig/3.0.2/share/swig/3.0.2/ruby/rubyprimtypes.swg,19,%ruby_aux_method@*/
 SWIGINTERN VALUE SWIG_AUX_NUM2LONG(VALUE *args)
 {
   VALUE obj = args[0];
@@ -2229,10 +2275,170 @@ SWIG_AsVal_int (VALUE obj, int *val)
 }
 
 
+
+#define CID_Pn_rbkey CID_pn_void
+
+typedef struct {
+  void *registry;
+  char *method;
+  char *key_value;
+} Pn_rbkey_t;
+
+void Pn_rbkey_initialize(Pn_rbkey_t *rbkey) {
+  assert(rbkey);
+  rbkey->registry = NULL;
+  rbkey->method = NULL;
+  rbkey->key_value = NULL;
+}
+
+void Pn_rbkey_finalize(Pn_rbkey_t *rbkey) {
+  if(rbkey && rbkey->registry && rbkey->method && rbkey->key_value) {
+    rb_funcall((VALUE )rbkey->registry, rb_intern(rbkey->method), 1, rb_str_new2(rbkey->key_value));
+  }
+  if(rbkey->key_value) {
+    free(rbkey->key_value);
+    rbkey->key_value = NULL;
+  }
+}
+
+#define Pn_rbkey_inspect NULL
+#define Pn_rbkey_compare NULL
+#define Pn_rbkey_hashcode NULL
+
+PN_CLASSDEF(Pn_rbkey)
+
+void Pn_rbkey_set_registry(Pn_rbkey_t *rbkey, void *registry) {
+  assert(rbkey);
+  rbkey->registry = registry;
+}
+
+void *Pn_rbkey_get_registry(Pn_rbkey_t *rbkey) {
+  assert(rbkey);
+  return rbkey->registry;
+}
+
+void Pn_rbkey_set_method(Pn_rbkey_t *rbkey, char *method) {
+  assert(rbkey);
+  rbkey->method = method;
+}
+
+char *Pn_rbkey_get_method(Pn_rbkey_t *rbkey) {
+  assert(rbkey);
+  return rbkey->method;
+}
+
+void Pn_rbkey_set_key_value(Pn_rbkey_t *rbkey, char *key_value) {
+  assert(rbkey);
+  rbkey->key_value = malloc(strlen(key_value) + 1);
+  strncpy(rbkey->key_value, key_value, strlen(key_value) + 1);
+}
+
+char *Pn_rbkey_get_key_value(Pn_rbkey_t *rbkey) {
+  assert(rbkey);
+  return rbkey->key_value;
+}
+
+Pn_rbkey_t *pni_void2rbkey(void *object) {
+  return (Pn_rbkey_t *)object;
+}
+
+VALUE pn_void2rb(void *object) {
+  return (VALUE )object;
+}
+
+void *pn_rb2void(VALUE object) {
+  return (void *)object;
+}
+
+VALUE pni_address_of(void *object) {
+  return ULL2NUM((unsigned long )object);
+}
+
+
+
 SWIGINTERNINLINE VALUE
 SWIG_From_unsigned_SS_long  (unsigned long value)
 {
   return ULONG2NUM(value); 
+}
+
+
+
+  VALUE pni_ruby_get_proton_module() {
+    VALUE mQpid = rb_define_module("Qpid");
+    return rb_define_module_under(mQpid, "Proton");
+  }
+
+  void pni_ruby_add_to_registry(VALUE key, VALUE value) {
+    VALUE result = rb_funcall(pni_ruby_get_proton_module(), rb_intern("add_to_registry"), 2, key, value);
+  }
+
+  VALUE pni_ruby_get_from_registry(VALUE key) {
+    rb_funcall(pni_ruby_get_proton_module(), rb_intern("get_from_registry"), 1, key);
+  }
+
+  void pni_ruby_delete_from_registry(VALUE stored_key) {
+    rb_funcall(pni_ruby_get_proton_module(), rb_intern("delete_from_registry"), 1, stored_key);
+  }
+
+  typedef struct {
+    VALUE handler_key;
+  } Pni_rbhandler_t;
+
+  static Pni_rbhandler_t *pni_rbhandler(pn_handler_t *handler) {
+    return (Pni_rbhandler_t *) pn_handler_mem(handler);
+  }
+
+  static void pni_rbdispatch(pn_handler_t *handler, pn_event_t *event, pn_event_type_t type) {
+    Pni_rbhandler_t *rbh = pni_rbhandler(handler);
+    VALUE rbhandler = pni_ruby_get_from_registry(rbh->handler_key);
+
+    rb_funcall(rbhandler, rb_intern("dispatch"), 2, SWIG_NewPointerObj(event, SWIGTYPE_p_pn_event_t, 0), INT2FIX(type));
+  }
+
+  static void pni_rbhandler_finalize(pn_handler_t *handler) {
+    Pni_rbhandler_t *rbh = pni_rbhandler(handler);
+    pni_ruby_delete_from_registry(rbh->handler_key);
+  }
+
+  pn_handler_t *pn_rbhandler(VALUE handler) {
+    pn_handler_t *chandler = pn_handler_new(pni_rbdispatch, sizeof(Pni_rbhandler_t), pni_rbhandler_finalize);
+    Pni_rbhandler_t *rhy = pni_rbhandler(chandler);
+
+    VALUE ruby_key = rb_class_new_instance(0, NULL, rb_cObject);
+    pni_ruby_add_to_registry(ruby_key, handler);
+
+    rhy->handler_key = ruby_key;
+
+    return chandler;
+  }
+
+
+
+    pn_connection_t *wrap_pn_messenger_resolve(pn_messenger_t *messenger, char *address) {
+        char *pn_name = NULL;
+        return pn_messenger_resolve(messenger, address, &pn_name);
+    }
+
+
+pn_sasl_t*wrap_pn_transport_get_sasl(pn_transport_t * transport) {
+  void *result;
+  result = (pn_sasl_t *)pn_transport_get_sasl(transport);
+  return result;
+}
+
+
+int wrap_pn_sasl_outcome(pn_transport_t * transport) {
+  int result;
+  result = (int)pn_sasl_outcome(transport);
+  return result;
+}
+
+
+SWIGINTERNINLINE VALUE
+SWIG_From_unsigned_SS_int  (unsigned int value)
+{    
+  return SWIG_From_unsigned_SS_long  (value);
 }
 
 
@@ -2270,7 +2476,7 @@ SWIG_From_size_t  (size_t value)
 #endif
 
 
-/*@SWIG:/opt/tools/swig/3.0.2/share/swig/3.0.2/ruby/rubyprimtypes.swg,19,%ruby_aux_method@*/
+/*@SWIG:/var/tmp/build/tools/swig/3.0.2/share/swig/3.0.2/ruby/rubyprimtypes.swg,19,%ruby_aux_method@*/
 SWIGINTERN VALUE SWIG_AUX_NUM2DBL(VALUE *args)
 {
   VALUE obj = args[0];
@@ -2367,7 +2573,7 @@ SWIG_AsVal_short (VALUE obj, short *val)
 }
 
 
-/*@SWIG:/opt/tools/swig/3.0.2/share/swig/3.0.2/ruby/rubyprimtypes.swg,19,%ruby_aux_method@*/
+/*@SWIG:/var/tmp/build/tools/swig/3.0.2/share/swig/3.0.2/ruby/rubyprimtypes.swg,19,%ruby_aux_method@*/
 SWIGINTERN VALUE SWIG_AUX_NUM2LL(VALUE *args)
 {
   VALUE obj = args[0];
@@ -2428,7 +2634,7 @@ SWIG_AsVal_unsigned_SS_short (VALUE obj, unsigned short *val)
 }
 
 
-/*@SWIG:/opt/tools/swig/3.0.2/share/swig/3.0.2/ruby/rubyprimtypes.swg,19,%ruby_aux_method@*/
+/*@SWIG:/var/tmp/build/tools/swig/3.0.2/share/swig/3.0.2/ruby/rubyprimtypes.swg,19,%ruby_aux_method@*/
 SWIGINTERN VALUE SWIG_AUX_NUM2ULL(VALUE *args)
 {
   VALUE obj = args[0];
@@ -2514,196 +2720,9 @@ SWIG_From_unsigned_SS_long_SS_long  (unsigned long long value)
   pn_link_t *pn_cast_pn_link(void *x) { return (pn_link_t *) x; }
   pn_delivery_t *pn_cast_pn_delivery(void *x) { return (pn_delivery_t *) x; }
   pn_transport_t *pn_cast_pn_transport(void *x) { return (pn_transport_t *) x; }
-
-SWIGINTERN VALUE
-_wrap_pn_message_load(int argc, VALUE *argv, VALUE self) {
-  pn_message_t *arg1 = (pn_message_t *) 0 ;
-  char *arg2 = (char *) 0 ;
-  size_t arg3 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  size_t size2 = 0 ;
-  int alloc2 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_message_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_message_t *","pn_message_load", 1, argv[0] )); 
-  }
-  arg1 = (pn_message_t *)(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, &size2, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char *","pn_message_load", 2, argv[1] ));
-  }  
-  arg2 = (char *)(buf2);
-  arg3 = (size_t)(size2 - 1);
-  result = (int)pn_message_load(arg1,arg2,arg3);
-  vresult = SWIG_From_int((int)(result));
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_message_load_data(int argc, VALUE *argv, VALUE self) {
-  pn_message_t *arg1 = (pn_message_t *) 0 ;
-  char *arg2 = (char *) 0 ;
-  size_t arg3 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  size_t size2 = 0 ;
-  int alloc2 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_message_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_message_t *","pn_message_load_data", 1, argv[0] )); 
-  }
-  arg1 = (pn_message_t *)(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, &size2, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char *","pn_message_load_data", 2, argv[1] ));
-  }  
-  arg2 = (char *)(buf2);
-  arg3 = (size_t)(size2 - 1);
-  result = (int)pn_message_load_data(arg1,arg2,arg3);
-  vresult = SWIG_From_int((int)(result));
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_message_load_text(int argc, VALUE *argv, VALUE self) {
-  pn_message_t *arg1 = (pn_message_t *) 0 ;
-  char *arg2 = (char *) 0 ;
-  size_t arg3 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  size_t size2 = 0 ;
-  int alloc2 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_message_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_message_t *","pn_message_load_text", 1, argv[0] )); 
-  }
-  arg1 = (pn_message_t *)(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, &size2, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char *","pn_message_load_text", 2, argv[1] ));
-  }  
-  arg2 = (char *)(buf2);
-  arg3 = (size_t)(size2 - 1);
-  result = (int)pn_message_load_text(arg1,arg2,arg3);
-  vresult = SWIG_From_int((int)(result));
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_message_load_amqp(int argc, VALUE *argv, VALUE self) {
-  pn_message_t *arg1 = (pn_message_t *) 0 ;
-  char *arg2 = (char *) 0 ;
-  size_t arg3 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  size_t size2 = 0 ;
-  int alloc2 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_message_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_message_t *","pn_message_load_amqp", 1, argv[0] )); 
-  }
-  arg1 = (pn_message_t *)(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, &size2, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char *","pn_message_load_amqp", 2, argv[1] ));
-  }  
-  arg2 = (char *)(buf2);
-  arg3 = (size_t)(size2 - 1);
-  result = (int)pn_message_load_amqp(arg1,arg2,arg3);
-  vresult = SWIG_From_int((int)(result));
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_message_load_json(int argc, VALUE *argv, VALUE self) {
-  pn_message_t *arg1 = (pn_message_t *) 0 ;
-  char *arg2 = (char *) 0 ;
-  size_t arg3 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  size_t size2 = 0 ;
-  int alloc2 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_message_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_message_t *","pn_message_load_json", 1, argv[0] )); 
-  }
-  arg1 = (pn_message_t *)(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, &size2, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char *","pn_message_load_json", 2, argv[1] ));
-  }  
-  arg2 = (char *)(buf2);
-  arg3 = (size_t)(size2 - 1);
-  result = (int)pn_message_load_json(arg1,arg2,arg3);
-  vresult = SWIG_From_int((int)(result));
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  return Qnil;
-}
-
+  pn_reactor_t *pn_cast_pn_reactor(void *x) { return (pn_reactor_t *) x; }
+  pn_task_t *pn_cast_pn_task(void *x) { return (pn_task_t *) x; }
+  pn_selectable_t *pn_cast_pn_selectable(void *x) { return (pn_selectable_t *) x; }
 
 SWIGINTERN VALUE
 _wrap_pn_message_encode(int argc, VALUE *argv, VALUE self) {
@@ -2736,211 +2755,6 @@ _wrap_pn_message_encode(int argc, VALUE *argv, VALUE self) {
   size2 = (size_t)(n2);
   arg3 = &size2;
   result = (int)pn_message_encode(arg1,arg2,arg3);
-  vresult = SWIG_From_int((int)(result));
-  vresult = SWIG_Ruby_AppendOutput(vresult, SWIG_FromCharPtrAndSize(arg2,*arg3));
-  if (buff2) free((char*)buff2);
-  return vresult;
-fail:
-  if (buff2) free((char*)buff2);
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_message_save(int argc, VALUE *argv, VALUE self) {
-  pn_message_t *arg1 = (pn_message_t *) 0 ;
-  char *arg2 = (char *) 0 ;
-  size_t *arg3 = (size_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  size_t n2 ;
-  char *buff2 = 0 ;
-  size_t size2 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_message_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_message_t *","pn_message_save", 1, argv[0] )); 
-  }
-  arg1 = (pn_message_t *)(argp1);
-  res2 = SWIG_AsVal_size_t (argv[1], &n2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "(char *OUTPUT, size_t *OUTPUT_SIZE)","pn_message_save", 2, argv[1] ));
-  }
-  buff2= (char *)malloc((n2+1)*sizeof(char));
-  arg2 = (char *)(buff2);
-  size2 = (size_t)(n2);
-  arg3 = &size2;
-  result = (int)pn_message_save(arg1,arg2,arg3);
-  vresult = SWIG_From_int((int)(result));
-  vresult = SWIG_Ruby_AppendOutput(vresult, SWIG_FromCharPtrAndSize(arg2,*arg3));
-  if (buff2) free((char*)buff2);
-  return vresult;
-fail:
-  if (buff2) free((char*)buff2);
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_message_save_data(int argc, VALUE *argv, VALUE self) {
-  pn_message_t *arg1 = (pn_message_t *) 0 ;
-  char *arg2 = (char *) 0 ;
-  size_t *arg3 = (size_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  size_t n2 ;
-  char *buff2 = 0 ;
-  size_t size2 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_message_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_message_t *","pn_message_save_data", 1, argv[0] )); 
-  }
-  arg1 = (pn_message_t *)(argp1);
-  res2 = SWIG_AsVal_size_t (argv[1], &n2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "(char *OUTPUT, size_t *OUTPUT_SIZE)","pn_message_save_data", 2, argv[1] ));
-  }
-  buff2= (char *)malloc((n2+1)*sizeof(char));
-  arg2 = (char *)(buff2);
-  size2 = (size_t)(n2);
-  arg3 = &size2;
-  result = (int)pn_message_save_data(arg1,arg2,arg3);
-  vresult = SWIG_From_int((int)(result));
-  vresult = SWIG_Ruby_AppendOutput(vresult, SWIG_FromCharPtrAndSize(arg2,*arg3));
-  if (buff2) free((char*)buff2);
-  return vresult;
-fail:
-  if (buff2) free((char*)buff2);
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_message_save_text(int argc, VALUE *argv, VALUE self) {
-  pn_message_t *arg1 = (pn_message_t *) 0 ;
-  char *arg2 = (char *) 0 ;
-  size_t *arg3 = (size_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  size_t n2 ;
-  char *buff2 = 0 ;
-  size_t size2 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_message_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_message_t *","pn_message_save_text", 1, argv[0] )); 
-  }
-  arg1 = (pn_message_t *)(argp1);
-  res2 = SWIG_AsVal_size_t (argv[1], &n2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "(char *OUTPUT, size_t *OUTPUT_SIZE)","pn_message_save_text", 2, argv[1] ));
-  }
-  buff2= (char *)malloc((n2+1)*sizeof(char));
-  arg2 = (char *)(buff2);
-  size2 = (size_t)(n2);
-  arg3 = &size2;
-  result = (int)pn_message_save_text(arg1,arg2,arg3);
-  vresult = SWIG_From_int((int)(result));
-  vresult = SWIG_Ruby_AppendOutput(vresult, SWIG_FromCharPtrAndSize(arg2,*arg3));
-  if (buff2) free((char*)buff2);
-  return vresult;
-fail:
-  if (buff2) free((char*)buff2);
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_message_save_amqp(int argc, VALUE *argv, VALUE self) {
-  pn_message_t *arg1 = (pn_message_t *) 0 ;
-  char *arg2 = (char *) 0 ;
-  size_t *arg3 = (size_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  size_t n2 ;
-  char *buff2 = 0 ;
-  size_t size2 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_message_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_message_t *","pn_message_save_amqp", 1, argv[0] )); 
-  }
-  arg1 = (pn_message_t *)(argp1);
-  res2 = SWIG_AsVal_size_t (argv[1], &n2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "(char *OUTPUT, size_t *OUTPUT_SIZE)","pn_message_save_amqp", 2, argv[1] ));
-  }
-  buff2= (char *)malloc((n2+1)*sizeof(char));
-  arg2 = (char *)(buff2);
-  size2 = (size_t)(n2);
-  arg3 = &size2;
-  result = (int)pn_message_save_amqp(arg1,arg2,arg3);
-  vresult = SWIG_From_int((int)(result));
-  vresult = SWIG_Ruby_AppendOutput(vresult, SWIG_FromCharPtrAndSize(arg2,*arg3));
-  if (buff2) free((char*)buff2);
-  return vresult;
-fail:
-  if (buff2) free((char*)buff2);
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_message_save_json(int argc, VALUE *argv, VALUE self) {
-  pn_message_t *arg1 = (pn_message_t *) 0 ;
-  char *arg2 = (char *) 0 ;
-  size_t *arg3 = (size_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  size_t n2 ;
-  char *buff2 = 0 ;
-  size_t size2 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_message_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_message_t *","pn_message_save_json", 1, argv[0] )); 
-  }
-  arg1 = (pn_message_t *)(argp1);
-  res2 = SWIG_AsVal_size_t (argv[1], &n2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "(char *OUTPUT, size_t *OUTPUT_SIZE)","pn_message_save_json", 2, argv[1] ));
-  }
-  buff2= (char *)malloc((n2+1)*sizeof(char));
-  arg2 = (char *)(buff2);
-  size2 = (size_t)(n2);
-  arg3 = &size2;
-  result = (int)pn_message_save_json(arg1,arg2,arg3);
   vresult = SWIG_From_int((int)(result));
   vresult = SWIG_Ruby_AppendOutput(vresult, SWIG_FromCharPtrAndSize(arg2,*arg3));
   if (buff2) free((char*)buff2);
@@ -3110,6 +2924,47 @@ fail:
 
 
 SWIGINTERN VALUE
+_wrap_pn_transport_peek(int argc, VALUE *argv, VALUE self) {
+  pn_transport_t *arg1 = (pn_transport_t *) 0 ;
+  char *arg2 = (char *) 0 ;
+  size_t *arg3 = (size_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  size_t n2 ;
+  char *buff2 = 0 ;
+  size_t size2 ;
+  int result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_transport_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_transport_t *","wrap_pn_transport_peek", 1, argv[0] )); 
+  }
+  arg1 = (pn_transport_t *)(argp1);
+  res2 = SWIG_AsVal_size_t (argv[1], &n2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "(char *OUTPUT, size_t *OUTPUT_SIZE)","wrap_pn_transport_peek", 2, argv[1] ));
+  }
+  buff2= (char *)malloc((n2+1)*sizeof(char));
+  arg2 = (char *)(buff2);
+  size2 = (size_t)(n2);
+  arg3 = &size2;
+  result = (int)wrap_pn_transport_peek(arg1,arg2,arg3);
+  vresult = SWIG_From_int((int)(result));
+  vresult = SWIG_Ruby_AppendOutput(vresult, SWIG_FromCharPtrAndSize(arg2,*arg3));
+  if (buff2) free((char*)buff2);
+  return vresult;
+fail:
+  if (buff2) free((char*)buff2);
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
 _wrap_pn_delivery(int argc, VALUE *argv, VALUE self) {
   pn_link_t *arg1 = (pn_link_t *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -3174,53 +3029,6 @@ _wrap_pn_delivery_tag(int argc, VALUE *argv, VALUE self) {
   }
   return vresult;
 fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_message_data(int argc, VALUE *argv, VALUE self) {
-  char *arg1 = (char *) 0 ;
-  size_t arg2 ;
-  char *arg3 = (char *) 0 ;
-  size_t *arg4 = (size_t *) 0 ;
-  int res1 ;
-  char *buf1 = 0 ;
-  size_t size1 = 0 ;
-  int alloc1 = 0 ;
-  int res3 ;
-  size_t n3 ;
-  char *buff3 = 0 ;
-  size_t size3 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_AsCharPtrAndSize(argv[0], &buf1, &size1, &alloc1);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "char *","wrap_pn_message_data", 1, argv[0] ));
-  }  
-  arg1 = (char *)(buf1);
-  arg2 = (size_t)(size1 - 1);
-  res3 = SWIG_AsVal_size_t (argv[1], &n3);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "(char *OUTPUT, size_t *OUTPUT_SIZE)","wrap_pn_message_data", 3, argv[1] ));
-  }
-  buff3= (char *)malloc((n3+1)*sizeof(char));
-  arg3 = (char *)(buff3);
-  size3 = (size_t)(n3);
-  arg4 = &size3;
-  result = (int)wrap_pn_message_data(arg1,arg2,arg3,arg4);
-  vresult = SWIG_From_int((int)(result));
-  vresult = SWIG_Ruby_AppendOutput(vresult, SWIG_FromCharPtrAndSize(arg3,*arg4));
-  if (alloc1 == SWIG_NEWOBJ) free((char*)buf1);
-  if (buff3) free((char*)buff3);
-  return vresult;
-fail:
-  if (alloc1 == SWIG_NEWOBJ) free((char*)buf1);
-  if (buff3) free((char*)buff3);
   return Qnil;
 }
 
@@ -3360,6 +3168,1067 @@ _wrap_pn_messenger_recv(int argc, VALUE *argv, VALUE self) {
   } 
   arg2 = (int)(val2);
   result = (int)wrap_pn_messenger_recv(arg1,arg2);
+  vresult = SWIG_From_int((int)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_messenger_work(int argc, VALUE *argv, VALUE self) {
+  pn_messenger_t *arg1 = (pn_messenger_t *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_messenger_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_messenger_t *","wrap_pn_messenger_work", 1, argv[0] )); 
+  }
+  arg1 = (pn_messenger_t *)(argp1);
+  ecode2 = SWIG_AsVal_int(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int","wrap_pn_messenger_work", 2, argv[1] ));
+  } 
+  arg2 = (int)(val2);
+  result = (int)wrap_pn_messenger_work(arg1,arg2);
+  vresult = SWIG_From_int((int)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+static swig_class SwigClassPn_rbkey_t;
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_t_registry_set(int argc, VALUE *argv, VALUE self) {
+  Pn_rbkey_t *arg1 = (Pn_rbkey_t *) 0 ;
+  void *arg2 = (void *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_Pn_rbkey_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "Pn_rbkey_t *","registry", 1, self )); 
+  }
+  arg1 = (Pn_rbkey_t *)(argp1);
+  res2 = SWIG_ConvertPtr(argv[0],SWIG_as_voidptrptr(&arg2), 0, SWIG_POINTER_DISOWN);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "void *","registry", 2, argv[0] )); 
+  }
+  if (arg1) (arg1)->registry = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_t_registry_get(int argc, VALUE *argv, VALUE self) {
+  Pn_rbkey_t *arg1 = (Pn_rbkey_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_Pn_rbkey_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "Pn_rbkey_t *","registry", 1, self )); 
+  }
+  arg1 = (Pn_rbkey_t *)(argp1);
+  result = (void *) ((arg1)->registry);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_t_method_set(int argc, VALUE *argv, VALUE self) {
+  Pn_rbkey_t *arg1 = (Pn_rbkey_t *) 0 ;
+  char *arg2 = (char *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_Pn_rbkey_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "Pn_rbkey_t *","method", 1, self )); 
+  }
+  arg1 = (Pn_rbkey_t *)(argp1);
+  res2 = SWIG_AsCharPtrAndSize(argv[0], &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char *","method", 2, argv[0] ));
+  }
+  arg2 = (char *)(buf2);
+  if (arg1->method) free((char*)arg1->method);
+  if (arg2) {
+    size_t size = strlen((const char *)(arg2)) + 1;
+    arg1->method = (char *)(char *)memcpy((char *)malloc((size)*sizeof(char)), (const char *)(arg2), sizeof(char)*(size));
+  } else {
+    arg1->method = 0;
+  }
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return Qnil;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_t_method_get(int argc, VALUE *argv, VALUE self) {
+  Pn_rbkey_t *arg1 = (Pn_rbkey_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  char *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_Pn_rbkey_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "Pn_rbkey_t *","method", 1, self )); 
+  }
+  arg1 = (Pn_rbkey_t *)(argp1);
+  result = (char *) ((arg1)->method);
+  vresult = SWIG_FromCharPtr((const char *)result);
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_t_key_value_set(int argc, VALUE *argv, VALUE self) {
+  Pn_rbkey_t *arg1 = (Pn_rbkey_t *) 0 ;
+  char *arg2 = (char *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_Pn_rbkey_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "Pn_rbkey_t *","key_value", 1, self )); 
+  }
+  arg1 = (Pn_rbkey_t *)(argp1);
+  res2 = SWIG_AsCharPtrAndSize(argv[0], &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char *","key_value", 2, argv[0] ));
+  }
+  arg2 = (char *)(buf2);
+  if (arg1->key_value) free((char*)arg1->key_value);
+  if (arg2) {
+    size_t size = strlen((const char *)(arg2)) + 1;
+    arg1->key_value = (char *)(char *)memcpy((char *)malloc((size)*sizeof(char)), (const char *)(arg2), sizeof(char)*(size));
+  } else {
+    arg1->key_value = 0;
+  }
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return Qnil;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_t_key_value_get(int argc, VALUE *argv, VALUE self) {
+  Pn_rbkey_t *arg1 = (Pn_rbkey_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  char *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_Pn_rbkey_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "Pn_rbkey_t *","key_value", 1, self )); 
+  }
+  arg1 = (Pn_rbkey_t *)(argp1);
+  result = (char *) ((arg1)->key_value);
+  vresult = SWIG_FromCharPtr((const char *)result);
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+#ifdef HAVE_RB_DEFINE_ALLOC_FUNC
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_t_allocate(VALUE self) {
+#else
+  SWIGINTERN VALUE
+  _wrap_Pn_rbkey_t_allocate(int argc, VALUE *argv, VALUE self) {
+#endif
+    
+    
+    VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_Pn_rbkey_t);
+#ifndef HAVE_RB_DEFINE_ALLOC_FUNC
+    rb_obj_call_init(vresult, argc, argv);
+#endif
+    return vresult;
+  }
+  
+
+SWIGINTERN VALUE
+_wrap_new_Pn_rbkey_t(int argc, VALUE *argv, VALUE self) {
+  Pn_rbkey_t *result = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  result = (Pn_rbkey_t *)calloc(1, sizeof(Pn_rbkey_t));
+  DATA_PTR(self) = result;
+  return self;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN void
+free_Pn_rbkey_t(Pn_rbkey_t *arg1) {
+    free((char *) arg1);
+}
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_initialize(int argc, VALUE *argv, VALUE self) {
+  Pn_rbkey_t *arg1 = (Pn_rbkey_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_Pn_rbkey_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "Pn_rbkey_t *","Pn_rbkey_initialize", 1, argv[0] )); 
+  }
+  arg1 = (Pn_rbkey_t *)(argp1);
+  Pn_rbkey_initialize(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_finalize(int argc, VALUE *argv, VALUE self) {
+  Pn_rbkey_t *arg1 = (Pn_rbkey_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_Pn_rbkey_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "Pn_rbkey_t *","Pn_rbkey_finalize", 1, argv[0] )); 
+  }
+  arg1 = (Pn_rbkey_t *)(argp1);
+  Pn_rbkey_finalize(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_initialize_cast(int argc, VALUE *argv, VALUE self) {
+  void *arg1 = (void *) 0 ;
+  int res1 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0],SWIG_as_voidptrptr(&arg1), 0, 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "void *","Pn_rbkey_initialize_cast", 1, argv[0] )); 
+  }
+  Pn_rbkey_initialize_cast(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_finalize_cast(int argc, VALUE *argv, VALUE self) {
+  void *arg1 = (void *) 0 ;
+  int res1 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0],SWIG_as_voidptrptr(&arg1), 0, 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "void *","Pn_rbkey_finalize_cast", 1, argv[0] )); 
+  }
+  Pn_rbkey_finalize_cast(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_hashcode_cast(int argc, VALUE *argv, VALUE self) {
+  void *arg1 = (void *) 0 ;
+  int res1 ;
+  uintptr_t result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0],SWIG_as_voidptrptr(&arg1), 0, 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "void *","Pn_rbkey_hashcode_cast", 1, argv[0] )); 
+  }
+  result = (uintptr_t)Pn_rbkey_hashcode_cast(arg1);
+  vresult = SWIG_From_unsigned_SS_long((unsigned long)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_compare_cast(int argc, VALUE *argv, VALUE self) {
+  void *arg1 = (void *) 0 ;
+  void *arg2 = (void *) 0 ;
+  int res1 ;
+  int res2 ;
+  intptr_t result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0],SWIG_as_voidptrptr(&arg1), 0, 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "void *","Pn_rbkey_compare_cast", 1, argv[0] )); 
+  }
+  res2 = SWIG_ConvertPtr(argv[1],SWIG_as_voidptrptr(&arg2), 0, 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "void *","Pn_rbkey_compare_cast", 2, argv[1] )); 
+  }
+  result = Pn_rbkey_compare_cast(arg1,arg2);
+  vresult = SWIG_NewPointerObj((intptr_t *)memcpy((intptr_t *)malloc(sizeof(intptr_t)),&result,sizeof(intptr_t)), SWIGTYPE_p_intptr_t, SWIG_POINTER_OWN |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_inspect_cast(int argc, VALUE *argv, VALUE self) {
+  void *arg1 = (void *) 0 ;
+  pn_string_t *arg2 = (pn_string_t *) 0 ;
+  int res1 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  int result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0],SWIG_as_voidptrptr(&arg1), 0, 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "void *","Pn_rbkey_inspect_cast", 1, argv[0] )); 
+  }
+  res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_pn_string_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "pn_string_t *","Pn_rbkey_inspect_cast", 2, argv[1] )); 
+  }
+  arg2 = (pn_string_t *)(argp2);
+  result = (int)Pn_rbkey_inspect_cast(arg1,arg2);
+  vresult = SWIG_From_int((int)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey__class(int argc, VALUE *argv, VALUE self) {
+  pn_class_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  result = (pn_class_t *)Pn_rbkey__class();
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_class_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_new(int argc, VALUE *argv, VALUE self) {
+  Pn_rbkey_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  result = (Pn_rbkey_t *)Pn_rbkey_new();
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Pn_rbkey_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_set_registry(int argc, VALUE *argv, VALUE self) {
+  Pn_rbkey_t *arg1 = (Pn_rbkey_t *) 0 ;
+  void *arg2 = (void *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_Pn_rbkey_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "Pn_rbkey_t *","Pn_rbkey_set_registry", 1, argv[0] )); 
+  }
+  arg1 = (Pn_rbkey_t *)(argp1);
+  res2 = SWIG_ConvertPtr(argv[1],SWIG_as_voidptrptr(&arg2), 0, 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "void *","Pn_rbkey_set_registry", 2, argv[1] )); 
+  }
+  Pn_rbkey_set_registry(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_get_registry(int argc, VALUE *argv, VALUE self) {
+  Pn_rbkey_t *arg1 = (Pn_rbkey_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_Pn_rbkey_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "Pn_rbkey_t *","Pn_rbkey_get_registry", 1, argv[0] )); 
+  }
+  arg1 = (Pn_rbkey_t *)(argp1);
+  result = (void *)Pn_rbkey_get_registry(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_set_method(int argc, VALUE *argv, VALUE self) {
+  Pn_rbkey_t *arg1 = (Pn_rbkey_t *) 0 ;
+  char *arg2 = (char *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_Pn_rbkey_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "Pn_rbkey_t *","Pn_rbkey_set_method", 1, argv[0] )); 
+  }
+  arg1 = (Pn_rbkey_t *)(argp1);
+  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char *","Pn_rbkey_set_method", 2, argv[1] ));
+  }
+  arg2 = (char *)(buf2);
+  Pn_rbkey_set_method(arg1,arg2);
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return Qnil;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_get_method(int argc, VALUE *argv, VALUE self) {
+  Pn_rbkey_t *arg1 = (Pn_rbkey_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  char *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_Pn_rbkey_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "Pn_rbkey_t *","Pn_rbkey_get_method", 1, argv[0] )); 
+  }
+  arg1 = (Pn_rbkey_t *)(argp1);
+  result = (char *)Pn_rbkey_get_method(arg1);
+  vresult = SWIG_FromCharPtr((const char *)result);
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_set_key_value(int argc, VALUE *argv, VALUE self) {
+  Pn_rbkey_t *arg1 = (Pn_rbkey_t *) 0 ;
+  char *arg2 = (char *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_Pn_rbkey_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "Pn_rbkey_t *","Pn_rbkey_set_key_value", 1, argv[0] )); 
+  }
+  arg1 = (Pn_rbkey_t *)(argp1);
+  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char *","Pn_rbkey_set_key_value", 2, argv[1] ));
+  }
+  arg2 = (char *)(buf2);
+  Pn_rbkey_set_key_value(arg1,arg2);
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return Qnil;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_Pn_rbkey_get_key_value(int argc, VALUE *argv, VALUE self) {
+  Pn_rbkey_t *arg1 = (Pn_rbkey_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  char *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_Pn_rbkey_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "Pn_rbkey_t *","Pn_rbkey_get_key_value", 1, argv[0] )); 
+  }
+  arg1 = (Pn_rbkey_t *)(argp1);
+  result = (char *)Pn_rbkey_get_key_value(arg1);
+  vresult = SWIG_FromCharPtr((const char *)result);
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pni_void2rbkey(int argc, VALUE *argv, VALUE self) {
+  void *arg1 = (void *) 0 ;
+  int res1 ;
+  Pn_rbkey_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0],SWIG_as_voidptrptr(&arg1), 0, 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "void *","pni_void2rbkey", 1, argv[0] )); 
+  }
+  result = (Pn_rbkey_t *)pni_void2rbkey(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Pn_rbkey_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_void2rb(int argc, VALUE *argv, VALUE self) {
+  void *arg1 = (void *) 0 ;
+  int res1 ;
+  VALUE result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0],SWIG_as_voidptrptr(&arg1), 0, 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "void *","pn_void2rb", 1, argv[0] )); 
+  }
+  result = (VALUE)pn_void2rb(arg1);
+  vresult = result;
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_rb2void(int argc, VALUE *argv, VALUE self) {
+  VALUE arg1 = (VALUE) 0 ;
+  void *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  arg1 = argv[0];
+  result = (void *)pn_rb2void(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pni_address_of(int argc, VALUE *argv, VALUE self) {
+  void *arg1 = (void *) 0 ;
+  int res1 ;
+  VALUE result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0],SWIG_as_voidptrptr(&arg1), 0, 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "void *","pni_address_of", 1, argv[0] )); 
+  }
+  result = (VALUE)pni_address_of(arg1);
+  vresult = result;
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_ssl_get_peer_hostname(int argc, VALUE *argv, VALUE self) {
+  pn_ssl_t *arg1 = (pn_ssl_t *) 0 ;
+  char *arg2 = (char *) 0 ;
+  size_t *arg3 = (size_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  size_t n2 ;
+  char *buff2 = 0 ;
+  size_t size2 ;
+  int result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_ssl_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_ssl_t *","pn_ssl_get_peer_hostname", 1, argv[0] )); 
+  }
+  arg1 = (pn_ssl_t *)(argp1);
+  res2 = SWIG_AsVal_size_t (argv[1], &n2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "(char *OUTPUT, size_t *OUTPUT_SIZE)","pn_ssl_get_peer_hostname", 2, argv[1] ));
+  }
+  buff2= (char *)malloc((n2+1)*sizeof(char));
+  arg2 = (char *)(buff2);
+  size2 = (size_t)(n2);
+  arg3 = &size2;
+  result = (int)pn_ssl_get_peer_hostname(arg1,arg2,arg3);
+  vresult = SWIG_From_int((int)(result));
+  vresult = SWIG_Ruby_AppendOutput(vresult, SWIG_FromCharPtrAndSize(arg2,*arg3));
+  if (buff2) free((char*)buff2);
+  return vresult;
+fail:
+  if (buff2) free((char*)buff2);
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pni_ruby_get_proton_module(int argc, VALUE *argv, VALUE self) {
+  VALUE result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  result = (VALUE)pni_ruby_get_proton_module();
+  vresult = result;
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pni_ruby_add_to_registry(int argc, VALUE *argv, VALUE self) {
+  VALUE arg1 = (VALUE) 0 ;
+  VALUE arg2 = (VALUE) 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  arg1 = argv[0];
+  arg2 = argv[1];
+  pni_ruby_add_to_registry(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pni_ruby_get_from_registry(int argc, VALUE *argv, VALUE self) {
+  VALUE arg1 = (VALUE) 0 ;
+  VALUE result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  arg1 = argv[0];
+  result = (VALUE)pni_ruby_get_from_registry(arg1);
+  vresult = result;
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pni_ruby_delete_from_registry(int argc, VALUE *argv, VALUE self) {
+  VALUE arg1 = (VALUE) 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  arg1 = argv[0];
+  pni_ruby_delete_from_registry(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+static swig_class SwigClassPni_rbhandler_t;
+
+SWIGINTERN VALUE
+_wrap_Pni_rbhandler_t_handler_key_set(int argc, VALUE *argv, VALUE self) {
+  Pni_rbhandler_t *arg1 = (Pni_rbhandler_t *) 0 ;
+  VALUE arg2 = (VALUE) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_Pni_rbhandler_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "Pni_rbhandler_t *","handler_key", 1, self )); 
+  }
+  arg1 = (Pni_rbhandler_t *)(argp1);
+  arg2 = argv[0];
+  if (arg1) (arg1)->handler_key = arg2;
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_Pni_rbhandler_t_handler_key_get(int argc, VALUE *argv, VALUE self) {
+  Pni_rbhandler_t *arg1 = (Pni_rbhandler_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  VALUE result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_Pni_rbhandler_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "Pni_rbhandler_t *","handler_key", 1, self )); 
+  }
+  arg1 = (Pni_rbhandler_t *)(argp1);
+  result = (VALUE) ((arg1)->handler_key);
+  vresult = result;
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+#ifdef HAVE_RB_DEFINE_ALLOC_FUNC
+SWIGINTERN VALUE
+_wrap_Pni_rbhandler_t_allocate(VALUE self) {
+#else
+  SWIGINTERN VALUE
+  _wrap_Pni_rbhandler_t_allocate(int argc, VALUE *argv, VALUE self) {
+#endif
+    
+    
+    VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_Pni_rbhandler_t);
+#ifndef HAVE_RB_DEFINE_ALLOC_FUNC
+    rb_obj_call_init(vresult, argc, argv);
+#endif
+    return vresult;
+  }
+  
+
+SWIGINTERN VALUE
+_wrap_new_Pni_rbhandler_t(int argc, VALUE *argv, VALUE self) {
+  Pni_rbhandler_t *result = 0 ;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  result = (Pni_rbhandler_t *)calloc(1, sizeof(Pni_rbhandler_t));
+  DATA_PTR(self) = result;
+  return self;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN void
+free_Pni_rbhandler_t(Pni_rbhandler_t *arg1) {
+    free((char *) arg1);
+}
+
+SWIGINTERN VALUE
+_wrap_pni_rbhandler(int argc, VALUE *argv, VALUE self) {
+  pn_handler_t *arg1 = (pn_handler_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  Pni_rbhandler_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_handler_t *","pni_rbhandler", 1, argv[0] )); 
+  }
+  arg1 = (pn_handler_t *)(argp1);
+  result = (Pni_rbhandler_t *)pni_rbhandler(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Pni_rbhandler_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pni_rbdispatch(int argc, VALUE *argv, VALUE self) {
+  pn_handler_t *arg1 = (pn_handler_t *) 0 ;
+  pn_event_t *arg2 = (pn_event_t *) 0 ;
+  pn_event_type_t arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  
+  if ((argc < 3) || (argc > 3)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_handler_t *","pni_rbdispatch", 1, argv[0] )); 
+  }
+  arg1 = (pn_handler_t *)(argp1);
+  res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_pn_event_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "pn_event_t *","pni_rbdispatch", 2, argv[1] )); 
+  }
+  arg2 = (pn_event_t *)(argp2);
+  ecode3 = SWIG_AsVal_int(argv[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "pn_event_type_t","pni_rbdispatch", 3, argv[2] ));
+  } 
+  arg3 = (pn_event_type_t)(val3);
+  pni_rbdispatch(arg1,arg2,arg3);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pni_rbhandler_finalize(int argc, VALUE *argv, VALUE self) {
+  pn_handler_t *arg1 = (pn_handler_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_handler_t *","pni_rbhandler_finalize", 1, argv[0] )); 
+  }
+  arg1 = (pn_handler_t *)(argp1);
+  pni_rbhandler_finalize(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_rbhandler(int argc, VALUE *argv, VALUE self) {
+  VALUE arg1 = (VALUE) 0 ;
+  pn_handler_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  arg1 = argv[0];
+  result = (pn_handler_t *)pn_rbhandler(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_messenger_resolve(int argc, VALUE *argv, VALUE self) {
+  pn_messenger_t *arg1 = (pn_messenger_t *) 0 ;
+  char *arg2 = (char *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  pn_connection_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_messenger_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_messenger_t *","wrap_pn_messenger_resolve", 1, argv[0] )); 
+  }
+  arg1 = (pn_messenger_t *)(argp1);
+  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char *","wrap_pn_messenger_resolve", 2, argv[1] ));
+  }
+  arg2 = (char *)(buf2);
+  result = (pn_connection_t *)wrap_pn_messenger_resolve(arg1,arg2);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_connection_t, 0 |  0 );
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return vresult;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_transport_get_sasl(int argc, VALUE *argv, VALUE self) {
+  pn_transport_t *arg1 = (pn_transport_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_sasl_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_transport_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_transport_t *","wrap_pn_transport_get_sasl", 1, argv[0] )); 
+  }
+  arg1 = (pn_transport_t *)(argp1);
+  result = (pn_sasl_t *)wrap_pn_transport_get_sasl(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_sasl_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_sasl_outcome(int argc, VALUE *argv, VALUE self) {
+  pn_transport_t *arg1 = (pn_transport_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_transport_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_transport_t *","wrap_pn_sasl_outcome", 1, argv[0] )); 
+  }
+  arg1 = (pn_transport_t *)(argp1);
+  result = (int)wrap_pn_sasl_outcome(arg1);
   vresult = SWIG_From_int((int)(result));
   return vresult;
 fail:
@@ -4380,6 +5249,30 @@ fail:
 
 
 SWIGINTERN VALUE
+_wrap_pn_list_pop(int argc, VALUE *argv, VALUE self) {
+  pn_list_t *arg1 = (pn_list_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_list_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_list_t *","pn_list_pop", 1, argv[0] )); 
+  }
+  arg1 = (pn_list_t *)(argp1);
+  result = (void *)pn_list_pop(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
 _wrap_pn_list_index(int argc, VALUE *argv, VALUE self) {
   pn_list_t *arg1 = (pn_list_t *) 0 ;
   void *arg2 = (void *) 0 ;
@@ -4521,6 +5414,57 @@ _wrap_pn_list_iterator(int argc, VALUE *argv, VALUE self) {
   arg2 = (pn_iterator_t *)(argp2);
   pn_list_iterator(arg1,arg2);
   return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_list_minpush(int argc, VALUE *argv, VALUE self) {
+  pn_list_t *arg1 = (pn_list_t *) 0 ;
+  void *arg2 = (void *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_list_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_list_t *","pn_list_minpush", 1, argv[0] )); 
+  }
+  arg1 = (pn_list_t *)(argp1);
+  res2 = SWIG_ConvertPtr(argv[1],SWIG_as_voidptrptr(&arg2), 0, 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "void *","pn_list_minpush", 2, argv[1] )); 
+  }
+  pn_list_minpush(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_list_minpop(int argc, VALUE *argv, VALUE self) {
+  pn_list_t *arg1 = (pn_list_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_list_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_list_t *","pn_list_minpop", 1, argv[0] )); 
+  }
+  arg1 = (pn_list_t *)(argp1);
+  result = (void *)pn_list_minpop(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
+  return vresult;
 fail:
   return Qnil;
 }
@@ -5634,6 +6578,179 @@ fail:
 
 
 SWIGINTERN VALUE
+_wrap_pn_record(int argc, VALUE *argv, VALUE self) {
+  pn_record_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  result = (pn_record_t *)pn_record();
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_record_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_record_def(int argc, VALUE *argv, VALUE self) {
+  pn_record_t *arg1 = (pn_record_t *) 0 ;
+  pn_handle_t arg2 ;
+  pn_class_t *arg3 = (pn_class_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned long val2 ;
+  int ecode2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  
+  if ((argc < 3) || (argc > 3)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_record_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_record_t *","pn_record_def", 1, argv[0] )); 
+  }
+  arg1 = (pn_record_t *)(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_long(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "pn_handle_t","pn_record_def", 2, argv[1] ));
+  } 
+  arg2 = (pn_handle_t)(val2);
+  res3 = SWIG_ConvertPtr(argv[2], &argp3,SWIGTYPE_p_pn_class_t, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "pn_class_t const *","pn_record_def", 3, argv[2] )); 
+  }
+  arg3 = (pn_class_t *)(argp3);
+  pn_record_def(arg1,arg2,(struct pn_class_t const *)arg3);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_record_has(int argc, VALUE *argv, VALUE self) {
+  pn_record_t *arg1 = (pn_record_t *) 0 ;
+  pn_handle_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned long val2 ;
+  int ecode2 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_record_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_record_t *","pn_record_has", 1, argv[0] )); 
+  }
+  arg1 = (pn_record_t *)(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_long(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "pn_handle_t","pn_record_has", 2, argv[1] ));
+  } 
+  arg2 = (pn_handle_t)(val2);
+  result = (bool)pn_record_has(arg1,arg2);
+  vresult = SWIG_From_bool((bool)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_record_get(int argc, VALUE *argv, VALUE self) {
+  pn_record_t *arg1 = (pn_record_t *) 0 ;
+  pn_handle_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned long val2 ;
+  int ecode2 = 0 ;
+  void *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_record_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_record_t *","pn_record_get", 1, argv[0] )); 
+  }
+  arg1 = (pn_record_t *)(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_long(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "pn_handle_t","pn_record_get", 2, argv[1] ));
+  } 
+  arg2 = (pn_handle_t)(val2);
+  result = (void *)pn_record_get(arg1,arg2);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_record_set(int argc, VALUE *argv, VALUE self) {
+  pn_record_t *arg1 = (pn_record_t *) 0 ;
+  pn_handle_t arg2 ;
+  void *arg3 = (void *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned long val2 ;
+  int ecode2 = 0 ;
+  int res3 ;
+  
+  if ((argc < 3) || (argc > 3)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_record_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_record_t *","pn_record_set", 1, argv[0] )); 
+  }
+  arg1 = (pn_record_t *)(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_long(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "pn_handle_t","pn_record_set", 2, argv[1] ));
+  } 
+  arg2 = (pn_handle_t)(val2);
+  res3 = SWIG_ConvertPtr(argv[2],SWIG_as_voidptrptr(&arg3), 0, 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "void *","pn_record_set", 3, argv[2] )); 
+  }
+  pn_record_set(arg1,arg2,arg3);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_record_clear(int argc, VALUE *argv, VALUE self) {
+  pn_record_t *arg1 = (pn_record_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_record_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_record_t *","pn_record_clear", 1, argv[0] )); 
+  }
+  arg1 = (pn_record_t *)(argp1);
+  pn_record_clear(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
 _wrap_pn_set_fnc_entry_tracer(int argc, VALUE *argv, VALUE self) {
   pn_fnc_tracer_t arg1 = (pn_fnc_tracer_t) 0 ;
   
@@ -6730,30 +7847,8 @@ static int check_trace(int x) {
 }
 
 
-static int check_format(int x) {
-    static  int values[] = { PN_DATA,PN_TEXT,PN_AMQP,PN_JSON };
-    static  int size = sizeof(values);
-    int     i,j;
-    for (i = 0, j = 0; i < size; i+=sizeof(int),j++) {
-        if (x == values[j]) return 1; 
-    }
-    return 0;
-}
-
-
 static int check_sasl_outcome(int x) {
-    static  int values[] = { PN_SASL_NONE,PN_SASL_OK,PN_SASL_AUTH,PN_SASL_SYS,PN_SASL_PERM,PN_SASL_TEMP,PN_SASL_SKIPPED };
-    static  int size = sizeof(values);
-    int     i,j;
-    for (i = 0, j = 0; i < size; i+=sizeof(int),j++) {
-        if (x == values[j]) return 1; 
-    }
-    return 0;
-}
-
-
-static int check_sasl_state(int x) {
-    static  int values[] = { PN_SASL_CONF,PN_SASL_IDLE,PN_SASL_STEP,PN_SASL_PASS,PN_SASL_FAIL };
+    static  int values[] = { PN_SASL_NONE,PN_SASL_OK,PN_SASL_AUTH,PN_SASL_SYS,PN_SASL_PERM,PN_SASL_TEMP };
     static  int size = sizeof(values);
     int     i,j;
     for (i = 0, j = 0; i < size; i+=sizeof(int),j++) {
@@ -7280,6 +8375,27 @@ fail:
 
 
 SWIGINTERN VALUE
+_wrap_pn_connection_release(int argc, VALUE *argv, VALUE self) {
+  pn_connection_t *arg1 = (pn_connection_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connection_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connection_t *","pn_connection_release", 1, argv[0] )); 
+  }
+  arg1 = (pn_connection_t *)(argp1);
+  pn_connection_release(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
 _wrap_pn_connection_error(int argc, VALUE *argv, VALUE self) {
   pn_connection_t *arg1 = (pn_connection_t *) 0 ;
   void *argp1 = 0 ;
@@ -7380,6 +8496,30 @@ _wrap_pn_connection_set_context(int argc, VALUE *argv, VALUE self) {
   }
   pn_connection_set_context(arg1,arg2);
   return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_connection_attachments(int argc, VALUE *argv, VALUE self) {
+  pn_connection_t *arg1 = (pn_connection_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_record_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connection_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connection_t *","pn_connection_attachments", 1, argv[0] )); 
+  }
+  arg1 = (pn_connection_t *)(argp1);
+  result = (pn_record_t *)pn_connection_attachments(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_record_t, 0 |  0 );
+  return vresult;
 fail:
   return Qnil;
 }
@@ -7582,6 +8722,94 @@ _wrap_pn_connection_set_container(int argc, VALUE *argv, VALUE self) {
   return Qnil;
 fail:
   if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_connection_set_user(int argc, VALUE *argv, VALUE self) {
+  pn_connection_t *arg1 = (pn_connection_t *) 0 ;
+  char *arg2 = (char *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connection_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connection_t *","pn_connection_set_user", 1, argv[0] )); 
+  }
+  arg1 = (pn_connection_t *)(argp1);
+  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","pn_connection_set_user", 2, argv[1] ));
+  }
+  arg2 = (char *)(buf2);
+  pn_connection_set_user(arg1,(char const *)arg2);
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return Qnil;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_connection_set_password(int argc, VALUE *argv, VALUE self) {
+  pn_connection_t *arg1 = (pn_connection_t *) 0 ;
+  char *arg2 = (char *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connection_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connection_t *","pn_connection_set_password", 1, argv[0] )); 
+  }
+  arg1 = (pn_connection_t *)(argp1);
+  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","pn_connection_set_password", 2, argv[1] ));
+  }
+  arg2 = (char *)(buf2);
+  pn_connection_set_password(arg1,(char const *)arg2);
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return Qnil;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_connection_get_user(int argc, VALUE *argv, VALUE self) {
+  pn_connection_t *arg1 = (pn_connection_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  char *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connection_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connection_t *","pn_connection_get_user", 1, argv[0] )); 
+  }
+  arg1 = (pn_connection_t *)(argp1);
+  result = (char *)pn_connection_get_user(arg1);
+  vresult = SWIG_FromCharPtr((const char *)result);
+  return vresult;
+fail:
   return Qnil;
 }
 
@@ -7885,8 +9113,6 @@ _wrap_pn_session(int argc, VALUE *argv, VALUE self) {
   SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
   
   result = (pn_session_t *)pn_session(arg1);
-  SWIG_contract_assert((result!=NULL), "Contract violation: ensure: (result!=NULL)");
-  
   vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_session_t, 0 |  0 );
   return vresult;
 fail:
@@ -7963,6 +9189,30 @@ _wrap_pn_session_set_context(int argc, VALUE *argv, VALUE self) {
   }
   pn_session_set_context(arg1,arg2);
   return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_session_attachments(int argc, VALUE *argv, VALUE self) {
+  pn_session_t *arg1 = (pn_session_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_record_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_session_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_session_t *","pn_session_attachments", 1, argv[0] )); 
+  }
+  arg1 = (pn_session_t *)(argp1);
+  result = (pn_record_t *)pn_session_attachments(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_record_t, 0 |  0 );
+  return vresult;
 fail:
   return Qnil;
 }
@@ -8189,6 +9439,59 @@ _wrap_pn_session_set_incoming_capacity(int argc, VALUE *argv, VALUE self) {
   } 
   arg2 = (size_t)(val2);
   pn_session_set_incoming_capacity(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_session_get_outgoing_window(int argc, VALUE *argv, VALUE self) {
+  pn_session_t *arg1 = (pn_session_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_session_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_session_t *","pn_session_get_outgoing_window", 1, argv[0] )); 
+  }
+  arg1 = (pn_session_t *)(argp1);
+  result = (size_t)pn_session_get_outgoing_window(arg1);
+  vresult = SWIG_From_size_t((size_t)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_session_set_outgoing_window(int argc, VALUE *argv, VALUE self) {
+  pn_session_t *arg1 = (pn_session_t *) 0 ;
+  size_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_session_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_session_t *","pn_session_set_outgoing_window", 1, argv[0] )); 
+  }
+  arg1 = (pn_session_t *)(argp1);
+  ecode2 = SWIG_AsVal_size_t(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "size_t","pn_session_set_outgoing_window", 2, argv[1] ));
+  } 
+  arg2 = (size_t)(val2);
+  pn_session_set_outgoing_window(arg1,arg2);
   return Qnil;
 fail:
   return Qnil;
@@ -8458,6 +9761,30 @@ _wrap_pn_link_set_context(int argc, VALUE *argv, VALUE self) {
   }
   pn_link_set_context(arg1,arg2);
   return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_link_attachments(int argc, VALUE *argv, VALUE self) {
+  pn_link_t *arg1 = (pn_link_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_record_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_link_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_link_t *","pn_link_attachments", 1, argv[0] )); 
+  }
+  arg1 = (pn_link_t *)(argp1);
+  result = (pn_record_t *)pn_link_attachments(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_record_t, 0 |  0 );
+  return vresult;
 fail:
   return Qnil;
 }
@@ -8799,6 +10126,54 @@ _wrap_pn_link_detach(int argc, VALUE *argv, VALUE self) {
   arg1 = (pn_link_t *)(argp1);
   pn_link_detach(arg1);
   return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_link_detached(int argc, VALUE *argv, VALUE self) {
+  pn_link_t *arg1 = (pn_link_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_link_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_link_t *","pn_link_detached", 1, argv[0] )); 
+  }
+  arg1 = (pn_link_t *)(argp1);
+  result = (bool)pn_link_detached(arg1);
+  vresult = SWIG_From_bool((bool)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_link_remote_detached(int argc, VALUE *argv, VALUE self) {
+  pn_link_t *arg1 = (pn_link_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_link_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_link_t *","pn_link_remote_detached", 1, argv[0] )); 
+  }
+  arg1 = (pn_link_t *)(argp1);
+  result = (bool)pn_link_remote_detached(arg1);
+  vresult = SWIG_From_bool((bool)(result));
+  return vresult;
 fail:
   return Qnil;
 }
@@ -10057,6 +11432,30 @@ fail:
 
 
 SWIGINTERN VALUE
+_wrap_pn_delivery_attachments(int argc, VALUE *argv, VALUE self) {
+  pn_delivery_t *arg1 = (pn_delivery_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_record_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_delivery_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_delivery_t *","pn_delivery_attachments", 1, argv[0] )); 
+  }
+  arg1 = (pn_delivery_t *)(argp1);
+  result = (pn_record_t *)pn_delivery_attachments(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_record_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
 _wrap_pn_delivery_link(int argc, VALUE *argv, VALUE self) {
   pn_delivery_t *arg1 = (pn_delivery_t *) 0 ;
   void *argp1 = 0 ;
@@ -10383,6 +11782,30 @@ _wrap_pn_delivery_clear(int argc, VALUE *argv, VALUE self) {
   
   pn_delivery_clear(arg1);
   return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_delivery_current(int argc, VALUE *argv, VALUE self) {
+  pn_delivery_t *arg1 = (pn_delivery_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_delivery_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_delivery_t *","pn_delivery_current", 1, argv[0] )); 
+  }
+  arg1 = (pn_delivery_t *)(argp1);
+  result = (bool)pn_delivery_current(arg1);
+  vresult = SWIG_From_bool((bool)(result));
+  return vresult;
 fail:
   return Qnil;
 }
@@ -10835,6 +12258,27 @@ fail:
 
 
 SWIGINTERN VALUE
+_wrap_pn_transport_set_server(int argc, VALUE *argv, VALUE self) {
+  pn_transport_t *arg1 = (pn_transport_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_transport_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_transport_t *","pn_transport_set_server", 1, argv[0] )); 
+  }
+  arg1 = (pn_transport_t *)(argp1);
+  pn_transport_set_server(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
 _wrap_pn_transport_free(int argc, VALUE *argv, VALUE self) {
   pn_transport_t *arg1 = (pn_transport_t *) 0 ;
   void *argp1 = 0 ;
@@ -10852,6 +12296,136 @@ _wrap_pn_transport_free(int argc, VALUE *argv, VALUE self) {
   
   pn_transport_free(arg1);
   return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_transport_get_user(int argc, VALUE *argv, VALUE self) {
+  pn_transport_t *arg1 = (pn_transport_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  char *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_transport_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_transport_t *","pn_transport_get_user", 1, argv[0] )); 
+  }
+  arg1 = (pn_transport_t *)(argp1);
+  result = (char *)pn_transport_get_user(arg1);
+  vresult = SWIG_FromCharPtr((const char *)result);
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_transport_require_auth(int argc, VALUE *argv, VALUE self) {
+  pn_transport_t *arg1 = (pn_transport_t *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_transport_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_transport_t *","pn_transport_require_auth", 1, argv[0] )); 
+  }
+  arg1 = (pn_transport_t *)(argp1);
+  ecode2 = SWIG_AsVal_bool(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "bool","pn_transport_require_auth", 2, argv[1] ));
+  } 
+  arg2 = (bool)(val2);
+  pn_transport_require_auth(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_transport_is_authenticated(int argc, VALUE *argv, VALUE self) {
+  pn_transport_t *arg1 = (pn_transport_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_transport_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_transport_t *","pn_transport_is_authenticated", 1, argv[0] )); 
+  }
+  arg1 = (pn_transport_t *)(argp1);
+  result = (bool)pn_transport_is_authenticated(arg1);
+  vresult = SWIG_From_bool((bool)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_transport_require_encryption(int argc, VALUE *argv, VALUE self) {
+  pn_transport_t *arg1 = (pn_transport_t *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_transport_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_transport_t *","pn_transport_require_encryption", 1, argv[0] )); 
+  }
+  arg1 = (pn_transport_t *)(argp1);
+  ecode2 = SWIG_AsVal_bool(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "bool","pn_transport_require_encryption", 2, argv[1] ));
+  } 
+  arg2 = (bool)(val2);
+  pn_transport_require_encryption(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_transport_is_encrypted(int argc, VALUE *argv, VALUE self) {
+  pn_transport_t *arg1 = (pn_transport_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_transport_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_transport_t *","pn_transport_is_encrypted", 1, argv[0] )); 
+  }
+  arg1 = (pn_transport_t *)(argp1);
+  result = (bool)pn_transport_is_encrypted(arg1);
+  vresult = SWIG_From_bool((bool)(result));
+  return vresult;
 fail:
   return Qnil;
 }
@@ -11098,11 +12672,11 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_pn_transport_get_sasl(int argc, VALUE *argv, VALUE self) {
+_wrap_pn_transport_attachments(int argc, VALUE *argv, VALUE self) {
   pn_transport_t *arg1 = (pn_transport_t *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *result = 0 ;
+  pn_record_t *result = 0 ;
   VALUE vresult = Qnil;
   
   if ((argc < 1) || (argc > 1)) {
@@ -11110,11 +12684,11 @@ _wrap_pn_transport_get_sasl(int argc, VALUE *argv, VALUE self) {
   }
   res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_transport_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_transport_t *","pn_transport_get_sasl", 1, argv[0] )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_transport_t *","pn_transport_attachments", 1, argv[0] )); 
   }
   arg1 = (pn_transport_t *)(argp1);
-  result = (void *)pn_transport_get_sasl(arg1);
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
+  result = (pn_record_t *)pn_transport_attachments(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_record_t, 0 |  0 );
   return vresult;
 fail:
   return Qnil;
@@ -11218,6 +12792,8 @@ _wrap_pn_transport_set_channel_max(int argc, VALUE *argv, VALUE self) {
   int res1 = 0 ;
   unsigned short val2 ;
   int ecode2 = 0 ;
+  int result;
+  VALUE vresult = Qnil;
   
   if ((argc < 2) || (argc > 2)) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
@@ -11232,8 +12808,9 @@ _wrap_pn_transport_set_channel_max(int argc, VALUE *argv, VALUE self) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "uint16_t","pn_transport_set_channel_max", 2, argv[1] ));
   } 
   arg2 = (uint16_t)(val2);
-  pn_transport_set_channel_max(arg1,arg2);
-  return Qnil;
+  result = (int)pn_transport_set_channel_max(arg1,arg2);
+  vresult = SWIG_From_int((int)(result));
+  return vresult;
 fail:
   return Qnil;
 }
@@ -11613,49 +13190,6 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_pn_transport_peek(int argc, VALUE *argv, VALUE self) {
-  pn_transport_t *arg1 = (pn_transport_t *) 0 ;
-  char *arg2 = (char *) 0 ;
-  size_t arg3 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  size_t val3 ;
-  int ecode3 = 0 ;
-  ssize_t result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 3) || (argc > 3)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_transport_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_transport_t *","pn_transport_peek", 1, argv[0] )); 
-  }
-  arg1 = (pn_transport_t *)(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char *","pn_transport_peek", 2, argv[1] ));
-  }
-  arg2 = (char *)(buf2);
-  ecode3 = SWIG_AsVal_size_t(argv[2], &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "size_t","pn_transport_peek", 3, argv[2] ));
-  } 
-  arg3 = (size_t)(val3);
-  result = (ssize_t)pn_transport_peek(arg1,arg2,arg3);
-  vresult = SWIG_From_int((int)(result));
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
 _wrap_pn_transport_pop(int argc, VALUE *argv, VALUE self) {
   pn_transport_t *arg1 = (pn_transport_t *) 0 ;
   size_t arg2 ;
@@ -11922,6 +13456,27 @@ fail:
 
 
 SWIGINTERN VALUE
+_wrap_pn_collector_release(int argc, VALUE *argv, VALUE self) {
+  pn_collector_t *arg1 = (pn_collector_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_collector_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_collector_t *","pn_collector_release", 1, argv[0] )); 
+  }
+  arg1 = (pn_collector_t *)(argp1);
+  pn_collector_release(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
 _wrap_pn_collector_put(int argc, VALUE *argv, VALUE self) {
   pn_collector_t *arg1 = (pn_collector_t *) 0 ;
   pn_class_t *arg2 = (pn_class_t *) 0 ;
@@ -12008,6 +13563,30 @@ _wrap_pn_collector_pop(int argc, VALUE *argv, VALUE self) {
   }
   arg1 = (pn_collector_t *)(argp1);
   result = (bool)pn_collector_pop(arg1);
+  vresult = SWIG_From_bool((bool)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_collector_more(int argc, VALUE *argv, VALUE self) {
+  pn_collector_t *arg1 = (pn_collector_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_collector_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_collector_t *","pn_collector_more", 1, argv[0] )); 
+  }
+  arg1 = (pn_collector_t *)(argp1);
+  result = (bool)pn_collector_more(arg1);
   vresult = SWIG_From_bool((bool)(result));
   return vresult;
 fail:
@@ -12201,6 +13780,30 @@ _wrap_pn_event_transport(int argc, VALUE *argv, VALUE self) {
   arg1 = (pn_event_t *)(argp1);
   result = (pn_transport_t *)pn_event_transport(arg1);
   vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_transport_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_event_attachments(int argc, VALUE *argv, VALUE self) {
+  pn_event_t *arg1 = (pn_event_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_record_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_event_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_event_t *","pn_event_attachments", 1, argv[0] )); 
+  }
+  arg1 = (pn_event_t *)(argp1);
+  result = (pn_record_t *)pn_event_attachments(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_record_t, 0 |  0 );
   return vresult;
 fail:
   return Qnil;
@@ -13762,68 +15365,6 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_pn_message_get_format(int argc, VALUE *argv, VALUE self) {
-  pn_message_t *arg1 = (pn_message_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  pn_format_t result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_message_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_message_t *","pn_message_get_format", 1, argv[0] )); 
-  }
-  arg1 = (pn_message_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  result = (pn_format_t)pn_message_get_format(arg1);
-  SWIG_contract_assert((check_format(result)), "Contract violation: ensure: (check_format(result))");
-  
-  vresult = SWIG_From_int((int)(result));
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_message_set_format(int argc, VALUE *argv, VALUE self) {
-  pn_message_t *arg1 = (pn_message_t *) 0 ;
-  pn_format_t arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_message_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_message_t *","pn_message_set_format", 1, argv[0] )); 
-  }
-  arg1 = (pn_message_t *)(argp1);
-  ecode2 = SWIG_AsVal_int(argv[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "pn_format_t","pn_message_set_format", 2, argv[1] ));
-  } 
-  arg2 = (pn_format_t)(val2);
-  SWIG_contract_assert((arg1!=NULL)&&(check_format(arg2)), "Contract violation: require: (arg1!=NULL)&&(check_format(arg2))");
-  
-  result = (int)pn_message_set_format(arg1,arg2);
-  vresult = SWIG_From_int((int)(result));
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
 _wrap_pn_message_instructions(int argc, VALUE *argv, VALUE self) {
   pn_message_t *arg1 = (pn_message_t *) 0 ;
   void *argp1 = 0 ;
@@ -13965,6 +15506,38 @@ fail:
 
 
 SWIGINTERN VALUE
+_wrap_pn_message_data(int argc, VALUE *argv, VALUE self) {
+  pn_message_t *arg1 = (pn_message_t *) 0 ;
+  pn_data_t *arg2 = (pn_data_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  int result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_message_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_message_t *","pn_message_data", 1, argv[0] )); 
+  }
+  arg1 = (pn_message_t *)(argp1);
+  res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_pn_data_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "pn_data_t *","pn_message_data", 2, argv[1] )); 
+  }
+  arg2 = (pn_data_t *)(argp2);
+  result = (int)pn_message_data(arg1,arg2);
+  vresult = SWIG_From_int((int)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
 _wrap_pn_sasl(int argc, VALUE *argv, VALUE self) {
   pn_transport_t *arg1 = (pn_transport_t *) 0 ;
   void *argp1 = 0 ;
@@ -13989,327 +15562,17 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_pn_sasl_state(int argc, VALUE *argv, VALUE self) {
-  pn_sasl_t *arg1 = (pn_sasl_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  pn_sasl_state_t result;
+_wrap_pn_sasl_extended(int argc, VALUE *argv, VALUE self) {
+  bool result;
   VALUE vresult = Qnil;
   
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_sasl_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_sasl_t *","pn_sasl_state", 1, argv[0] )); 
-  }
-  arg1 = (pn_sasl_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  result = (pn_sasl_state_t)pn_sasl_state(arg1);
-  SWIG_contract_assert((check_sasl_state(result)), "Contract violation: ensure: (check_sasl_state(result))");
-  
-  vresult = SWIG_From_int((int)(result));
+  result = (bool)pn_sasl_extended();
+  vresult = SWIG_From_bool((bool)(result));
   return vresult;
 fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_sasl_mechanisms(int argc, VALUE *argv, VALUE self) {
-  pn_sasl_t *arg1 = (pn_sasl_t *) 0 ;
-  char *arg2 = (char *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_sasl_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_sasl_t *","pn_sasl_mechanisms", 1, argv[0] )); 
-  }
-  arg1 = (pn_sasl_t *)(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","pn_sasl_mechanisms", 2, argv[1] ));
-  }
-  arg2 = (char *)(buf2);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  pn_sasl_mechanisms(arg1,(char const *)arg2);
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  return Qnil;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_sasl_remote_mechanisms(int argc, VALUE *argv, VALUE self) {
-  pn_sasl_t *arg1 = (pn_sasl_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  char *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_sasl_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_sasl_t *","pn_sasl_remote_mechanisms", 1, argv[0] )); 
-  }
-  arg1 = (pn_sasl_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  result = (char *)pn_sasl_remote_mechanisms(arg1);
-  vresult = SWIG_FromCharPtr((const char *)result);
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_sasl_client(int argc, VALUE *argv, VALUE self) {
-  pn_sasl_t *arg1 = (pn_sasl_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_sasl_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_sasl_t *","pn_sasl_client", 1, argv[0] )); 
-  }
-  arg1 = (pn_sasl_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  pn_sasl_client(arg1);
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_sasl_server(int argc, VALUE *argv, VALUE self) {
-  pn_sasl_t *arg1 = (pn_sasl_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_sasl_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_sasl_t *","pn_sasl_server", 1, argv[0] )); 
-  }
-  arg1 = (pn_sasl_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  pn_sasl_server(arg1);
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_sasl_allow_skip(int argc, VALUE *argv, VALUE self) {
-  pn_sasl_t *arg1 = (pn_sasl_t *) 0 ;
-  bool arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  bool val2 ;
-  int ecode2 = 0 ;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_sasl_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_sasl_t *","pn_sasl_allow_skip", 1, argv[0] )); 
-  }
-  arg1 = (pn_sasl_t *)(argp1);
-  ecode2 = SWIG_AsVal_bool(argv[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "bool","pn_sasl_allow_skip", 2, argv[1] ));
-  } 
-  arg2 = (bool)(val2);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  pn_sasl_allow_skip(arg1,arg2);
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_sasl_plain(int argc, VALUE *argv, VALUE self) {
-  pn_sasl_t *arg1 = (pn_sasl_t *) 0 ;
-  char *arg2 = (char *) 0 ;
-  char *arg3 = (char *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  int res3 ;
-  char *buf3 = 0 ;
-  int alloc3 = 0 ;
-  
-  if ((argc < 3) || (argc > 3)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_sasl_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_sasl_t *","pn_sasl_plain", 1, argv[0] )); 
-  }
-  arg1 = (pn_sasl_t *)(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","pn_sasl_plain", 2, argv[1] ));
-  }
-  arg2 = (char *)(buf2);
-  res3 = SWIG_AsCharPtrAndSize(argv[2], &buf3, NULL, &alloc3);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "char const *","pn_sasl_plain", 3, argv[2] ));
-  }
-  arg3 = (char *)(buf3);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  pn_sasl_plain(arg1,(char const *)arg2,(char const *)arg3);
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  if (alloc3 == SWIG_NEWOBJ) free((char*)buf3);
-  return Qnil;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  if (alloc3 == SWIG_NEWOBJ) free((char*)buf3);
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_sasl_pending(int argc, VALUE *argv, VALUE self) {
-  pn_sasl_t *arg1 = (pn_sasl_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  size_t result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_sasl_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_sasl_t *","pn_sasl_pending", 1, argv[0] )); 
-  }
-  arg1 = (pn_sasl_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  result = (size_t)pn_sasl_pending(arg1);
-  vresult = SWIG_From_size_t((size_t)(result));
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_sasl_recv(int argc, VALUE *argv, VALUE self) {
-  pn_sasl_t *arg1 = (pn_sasl_t *) 0 ;
-  char *arg2 = (char *) 0 ;
-  size_t arg3 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  size_t val3 ;
-  int ecode3 = 0 ;
-  ssize_t result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 3) || (argc > 3)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_sasl_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_sasl_t *","pn_sasl_recv", 1, argv[0] )); 
-  }
-  arg1 = (pn_sasl_t *)(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char *","pn_sasl_recv", 2, argv[1] ));
-  }
-  arg2 = (char *)(buf2);
-  ecode3 = SWIG_AsVal_size_t(argv[2], &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "size_t","pn_sasl_recv", 3, argv[2] ));
-  } 
-  arg3 = (size_t)(val3);
-  SWIG_contract_assert((arg1!=NULL)&&(arg2!=NULL)&&(arg3>0), "Contract violation: require: (arg1!=NULL)&&(arg2!=NULL)&&(arg3>0)");
-  
-  result = (ssize_t)pn_sasl_recv(arg1,arg2,arg3);
-  vresult = SWIG_From_int((int)(result));
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_sasl_send(int argc, VALUE *argv, VALUE self) {
-  pn_sasl_t *arg1 = (pn_sasl_t *) 0 ;
-  char *arg2 = (char *) 0 ;
-  size_t arg3 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  size_t val3 ;
-  int ecode3 = 0 ;
-  ssize_t result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 3) || (argc > 3)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_sasl_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_sasl_t *","pn_sasl_send", 1, argv[0] )); 
-  }
-  arg1 = (pn_sasl_t *)(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","pn_sasl_send", 2, argv[1] ));
-  }
-  arg2 = (char *)(buf2);
-  ecode3 = SWIG_AsVal_size_t(argv[2], &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "size_t","pn_sasl_send", 3, argv[2] ));
-  } 
-  arg3 = (size_t)(val3);
-  SWIG_contract_assert((arg1!=NULL)&&(arg2!=NULL)&&(arg3>0), "Contract violation: require: (arg1!=NULL)&&(arg2!=NULL)&&(arg3>0)");
-  
-  result = (ssize_t)pn_sasl_send(arg1,(char const *)arg2,arg3);
-  vresult = SWIG_From_int((int)(result));
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
   return Qnil;
 }
 
@@ -14346,852 +15609,8 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_pn_sasl_outcome(int argc, VALUE *argv, VALUE self) {
+_wrap_pn_sasl_get_user(int argc, VALUE *argv, VALUE self) {
   pn_sasl_t *arg1 = (pn_sasl_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  pn_sasl_outcome_t result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_sasl_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_sasl_t *","pn_sasl_outcome", 1, argv[0] )); 
-  }
-  arg1 = (pn_sasl_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  result = (pn_sasl_outcome_t)pn_sasl_outcome(arg1);
-  SWIG_contract_assert((check_sasl_outcome(result)), "Contract violation: ensure: (check_sasl_outcome(result))");
-  
-  vresult = SWIG_From_int((int)(result));
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_driver(int argc, VALUE *argv, VALUE self) {
-  pn_driver_t *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 0) || (argc > 0)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
-  }
-  result = (pn_driver_t *)pn_driver();
-  SWIG_contract_assert((result!=NULL), "Contract violation: ensure: (result!=NULL)");
-  
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_driver_t, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_driver_errno(int argc, VALUE *argv, VALUE self) {
-  pn_driver_t *arg1 = (pn_driver_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_driver_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_driver_t *","pn_driver_errno", 1, argv[0] )); 
-  }
-  arg1 = (pn_driver_t *)(argp1);
-  result = (int)pn_driver_errno(arg1);
-  vresult = SWIG_From_int((int)(result));
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_driver_error(int argc, VALUE *argv, VALUE self) {
-  pn_driver_t *arg1 = (pn_driver_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  pn_error_t *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_driver_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_driver_t *","pn_driver_error", 1, argv[0] )); 
-  }
-  arg1 = (pn_driver_t *)(argp1);
-  result = (pn_error_t *)pn_driver_error(arg1);
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_error_t, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_driver_trace(int argc, VALUE *argv, VALUE self) {
-  pn_driver_t *arg1 = (pn_driver_t *) 0 ;
-  pn_trace_t arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_driver_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_driver_t *","pn_driver_trace", 1, argv[0] )); 
-  }
-  arg1 = (pn_driver_t *)(argp1);
-  ecode2 = SWIG_AsVal_int(argv[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "pn_trace_t","pn_driver_trace", 2, argv[1] ));
-  } 
-  arg2 = (pn_trace_t)(val2);
-  SWIG_contract_assert((arg1!=NULL)&&(check_trace(arg2)), "Contract violation: require: (arg1!=NULL)&&(check_trace(arg2))");
-  
-  pn_driver_trace(arg1,arg2);
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_driver_wakeup(int argc, VALUE *argv, VALUE self) {
-  pn_driver_t *arg1 = (pn_driver_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_driver_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_driver_t *","pn_driver_wakeup", 1, argv[0] )); 
-  }
-  arg1 = (pn_driver_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  result = (int)pn_driver_wakeup(arg1);
-  vresult = SWIG_From_int((int)(result));
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_driver_wait(int argc, VALUE *argv, VALUE self) {
-  pn_driver_t *arg1 = (pn_driver_t *) 0 ;
-  int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_driver_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_driver_t *","pn_driver_wait", 1, argv[0] )); 
-  }
-  arg1 = (pn_driver_t *)(argp1);
-  ecode2 = SWIG_AsVal_int(argv[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int","pn_driver_wait", 2, argv[1] ));
-  } 
-  arg2 = (int)(val2);
-  SWIG_contract_assert((arg1!=NULL)&&(arg2>=-1), "Contract violation: require: (arg1!=NULL)&&(arg2>=-1)");
-  
-  result = (int)pn_driver_wait(arg1,arg2);
-  vresult = SWIG_From_int((int)(result));
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_driver_listener(int argc, VALUE *argv, VALUE self) {
-  pn_driver_t *arg1 = (pn_driver_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  pn_listener_t *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_driver_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_driver_t *","pn_driver_listener", 1, argv[0] )); 
-  }
-  arg1 = (pn_driver_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  result = (pn_listener_t *)pn_driver_listener(arg1);
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_listener_t, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_driver_connector(int argc, VALUE *argv, VALUE self) {
-  pn_driver_t *arg1 = (pn_driver_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  pn_connector_t *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_driver_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_driver_t *","pn_driver_connector", 1, argv[0] )); 
-  }
-  arg1 = (pn_driver_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  result = (pn_connector_t *)pn_driver_connector(arg1);
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_connector_t, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_driver_free(int argc, VALUE *argv, VALUE self) {
-  pn_driver_t *arg1 = (pn_driver_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_driver_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_driver_t *","pn_driver_free", 1, argv[0] )); 
-  }
-  arg1 = (pn_driver_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  pn_driver_free(arg1);
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_listener(int argc, VALUE *argv, VALUE self) {
-  pn_driver_t *arg1 = (pn_driver_t *) 0 ;
-  char *arg2 = (char *) 0 ;
-  char *arg3 = (char *) 0 ;
-  void *arg4 = (void *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  int res3 ;
-  char *buf3 = 0 ;
-  int alloc3 = 0 ;
-  int res4 ;
-  pn_listener_t *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 4) || (argc > 4)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 4)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_driver_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_driver_t *","pn_listener", 1, argv[0] )); 
-  }
-  arg1 = (pn_driver_t *)(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","pn_listener", 2, argv[1] ));
-  }
-  arg2 = (char *)(buf2);
-  res3 = SWIG_AsCharPtrAndSize(argv[2], &buf3, NULL, &alloc3);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "char const *","pn_listener", 3, argv[2] ));
-  }
-  arg3 = (char *)(buf3);
-  res4 = SWIG_ConvertPtr(argv[3],SWIG_as_voidptrptr(&arg4), 0, 0);
-  if (!SWIG_IsOK(res4)) {
-    SWIG_exception_fail(SWIG_ArgError(res4), Ruby_Format_TypeError( "", "void *","pn_listener", 4, argv[3] )); 
-  }
-  SWIG_contract_assert((arg1!=NULL)&&(arg2!=NULL)&&(arg3!=NULL), "Contract violation: require: (arg1!=NULL)&&(arg2!=NULL)&&(arg3!=NULL)");
-  
-  result = (pn_listener_t *)pn_listener(arg1,(char const *)arg2,(char const *)arg3,arg4);
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_listener_t, 0 |  0 );
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  if (alloc3 == SWIG_NEWOBJ) free((char*)buf3);
-  return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  if (alloc3 == SWIG_NEWOBJ) free((char*)buf3);
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_listener_head(int argc, VALUE *argv, VALUE self) {
-  pn_driver_t *arg1 = (pn_driver_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  pn_listener_t *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_driver_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_driver_t *","pn_listener_head", 1, argv[0] )); 
-  }
-  arg1 = (pn_driver_t *)(argp1);
-  result = (pn_listener_t *)pn_listener_head(arg1);
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_listener_t, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_listener_next(int argc, VALUE *argv, VALUE self) {
-  pn_listener_t *arg1 = (pn_listener_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  pn_listener_t *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_listener_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_listener_t *","pn_listener_next", 1, argv[0] )); 
-  }
-  arg1 = (pn_listener_t *)(argp1);
-  result = (pn_listener_t *)pn_listener_next(arg1);
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_listener_t, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_listener_trace(int argc, VALUE *argv, VALUE self) {
-  pn_listener_t *arg1 = (pn_listener_t *) 0 ;
-  pn_trace_t arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_listener_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_listener_t *","pn_listener_trace", 1, argv[0] )); 
-  }
-  arg1 = (pn_listener_t *)(argp1);
-  ecode2 = SWIG_AsVal_int(argv[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "pn_trace_t","pn_listener_trace", 2, argv[1] ));
-  } 
-  arg2 = (pn_trace_t)(val2);
-  SWIG_contract_assert((arg1!=NULL)&&(check_trace(arg2)), "Contract violation: require: (arg1!=NULL)&&(check_trace(arg2))");
-  
-  pn_listener_trace(arg1,arg2);
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_listener_accept(int argc, VALUE *argv, VALUE self) {
-  pn_listener_t *arg1 = (pn_listener_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  pn_connector_t *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_listener_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_listener_t *","pn_listener_accept", 1, argv[0] )); 
-  }
-  arg1 = (pn_listener_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  result = (pn_connector_t *)pn_listener_accept(arg1);
-  SWIG_contract_assert((result!=NULL), "Contract violation: ensure: (result!=NULL)");
-  
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_connector_t, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_listener_context(int argc, VALUE *argv, VALUE self) {
-  pn_listener_t *arg1 = (pn_listener_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_listener_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_listener_t *","pn_listener_context", 1, argv[0] )); 
-  }
-  arg1 = (pn_listener_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  result = (void *)pn_listener_context(arg1);
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_listener_set_context(int argc, VALUE *argv, VALUE self) {
-  pn_listener_t *arg1 = (pn_listener_t *) 0 ;
-  void *arg2 = (void *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_listener_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_listener_t *","pn_listener_set_context", 1, argv[0] )); 
-  }
-  arg1 = (pn_listener_t *)(argp1);
-  res2 = SWIG_ConvertPtr(argv[1],SWIG_as_voidptrptr(&arg2), 0, 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "void *","pn_listener_set_context", 2, argv[1] )); 
-  }
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  pn_listener_set_context(arg1,arg2);
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_listener_close(int argc, VALUE *argv, VALUE self) {
-  pn_listener_t *arg1 = (pn_listener_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_listener_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_listener_t *","pn_listener_close", 1, argv[0] )); 
-  }
-  arg1 = (pn_listener_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  pn_listener_close(arg1);
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_listener_free(int argc, VALUE *argv, VALUE self) {
-  pn_listener_t *arg1 = (pn_listener_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_listener_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_listener_t *","pn_listener_free", 1, argv[0] )); 
-  }
-  arg1 = (pn_listener_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  pn_listener_free(arg1);
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_connector(int argc, VALUE *argv, VALUE self) {
-  pn_driver_t *arg1 = (pn_driver_t *) 0 ;
-  char *arg2 = (char *) 0 ;
-  char *arg3 = (char *) 0 ;
-  void *arg4 = (void *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  int res3 ;
-  char *buf3 = 0 ;
-  int alloc3 = 0 ;
-  int res4 ;
-  pn_connector_t *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 4) || (argc > 4)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 4)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_driver_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_driver_t *","pn_connector", 1, argv[0] )); 
-  }
-  arg1 = (pn_driver_t *)(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","pn_connector", 2, argv[1] ));
-  }
-  arg2 = (char *)(buf2);
-  res3 = SWIG_AsCharPtrAndSize(argv[2], &buf3, NULL, &alloc3);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "char const *","pn_connector", 3, argv[2] ));
-  }
-  arg3 = (char *)(buf3);
-  res4 = SWIG_ConvertPtr(argv[3],SWIG_as_voidptrptr(&arg4), 0, 0);
-  if (!SWIG_IsOK(res4)) {
-    SWIG_exception_fail(SWIG_ArgError(res4), Ruby_Format_TypeError( "", "void *","pn_connector", 4, argv[3] )); 
-  }
-  SWIG_contract_assert((arg1!=NULL)&&(arg2!=NULL)&&(arg3!=NULL), "Contract violation: require: (arg1!=NULL)&&(arg2!=NULL)&&(arg3!=NULL)");
-  
-  result = (pn_connector_t *)pn_connector(arg1,(char const *)arg2,(char const *)arg3,arg4);
-  SWIG_contract_assert((result!=NULL), "Contract violation: ensure: (result!=NULL)");
-  
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_connector_t, 0 |  0 );
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  if (alloc3 == SWIG_NEWOBJ) free((char*)buf3);
-  return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
-  if (alloc3 == SWIG_NEWOBJ) free((char*)buf3);
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_connector_head(int argc, VALUE *argv, VALUE self) {
-  pn_driver_t *arg1 = (pn_driver_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  pn_connector_t *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_driver_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_driver_t *","pn_connector_head", 1, argv[0] )); 
-  }
-  arg1 = (pn_driver_t *)(argp1);
-  result = (pn_connector_t *)pn_connector_head(arg1);
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_connector_t, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_connector_next(int argc, VALUE *argv, VALUE self) {
-  pn_connector_t *arg1 = (pn_connector_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  pn_connector_t *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connector_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connector_t *","pn_connector_next", 1, argv[0] )); 
-  }
-  arg1 = (pn_connector_t *)(argp1);
-  result = (pn_connector_t *)pn_connector_next(arg1);
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_connector_t, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_connector_trace(int argc, VALUE *argv, VALUE self) {
-  pn_connector_t *arg1 = (pn_connector_t *) 0 ;
-  pn_trace_t arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connector_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connector_t *","pn_connector_trace", 1, argv[0] )); 
-  }
-  arg1 = (pn_connector_t *)(argp1);
-  ecode2 = SWIG_AsVal_int(argv[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "pn_trace_t","pn_connector_trace", 2, argv[1] ));
-  } 
-  arg2 = (pn_trace_t)(val2);
-  SWIG_contract_assert((arg1!=NULL)&&(check_trace(arg2)), "Contract violation: require: (arg1!=NULL)&&(check_trace(arg2))");
-  
-  pn_connector_trace(arg1,arg2);
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_connector_process(int argc, VALUE *argv, VALUE self) {
-  pn_connector_t *arg1 = (pn_connector_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connector_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connector_t *","pn_connector_process", 1, argv[0] )); 
-  }
-  arg1 = (pn_connector_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  pn_connector_process(arg1);
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_connector_listener(int argc, VALUE *argv, VALUE self) {
-  pn_connector_t *arg1 = (pn_connector_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  pn_listener_t *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connector_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connector_t *","pn_connector_listener", 1, argv[0] )); 
-  }
-  arg1 = (pn_connector_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  result = (pn_listener_t *)pn_connector_listener(arg1);
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_listener_t, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_connector_sasl(int argc, VALUE *argv, VALUE self) {
-  pn_connector_t *arg1 = (pn_connector_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  pn_sasl_t *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connector_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connector_t *","pn_connector_sasl", 1, argv[0] )); 
-  }
-  arg1 = (pn_connector_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  result = (pn_sasl_t *)pn_connector_sasl(arg1);
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_sasl_t, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_connector_connection(int argc, VALUE *argv, VALUE self) {
-  pn_connector_t *arg1 = (pn_connector_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  pn_connection_t *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connector_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connector_t *","pn_connector_connection", 1, argv[0] )); 
-  }
-  arg1 = (pn_connector_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  result = (pn_connection_t *)pn_connector_connection(arg1);
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_connection_t, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_connector_set_connection(int argc, VALUE *argv, VALUE self) {
-  pn_connector_t *arg1 = (pn_connector_t *) 0 ;
-  pn_connection_t *arg2 = (pn_connection_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connector_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connector_t *","pn_connector_set_connection", 1, argv[0] )); 
-  }
-  arg1 = (pn_connector_t *)(argp1);
-  res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_pn_connection_t, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "pn_connection_t *","pn_connector_set_connection", 2, argv[1] )); 
-  }
-  arg2 = (pn_connection_t *)(argp2);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  pn_connector_set_connection(arg1,arg2);
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_connector_context(int argc, VALUE *argv, VALUE self) {
-  pn_connector_t *arg1 = (pn_connector_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connector_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connector_t *","pn_connector_context", 1, argv[0] )); 
-  }
-  arg1 = (pn_connector_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  result = (void *)pn_connector_context(arg1);
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_connector_set_context(int argc, VALUE *argv, VALUE self) {
-  pn_connector_t *arg1 = (pn_connector_t *) 0 ;
-  void *arg2 = (void *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connector_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connector_t *","pn_connector_set_context", 1, argv[0] )); 
-  }
-  arg1 = (pn_connector_t *)(argp1);
-  res2 = SWIG_ConvertPtr(argv[1],SWIG_as_voidptrptr(&arg2), 0, 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "void *","pn_connector_set_context", 2, argv[1] )); 
-  }
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  pn_connector_set_context(arg1,arg2);
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_connector_name(int argc, VALUE *argv, VALUE self) {
-  pn_connector_t *arg1 = (pn_connector_t *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   char *result = 0 ;
@@ -15200,12 +15619,12 @@ _wrap_pn_connector_name(int argc, VALUE *argv, VALUE self) {
   if ((argc < 1) || (argc > 1)) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connector_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_sasl_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connector_t const *","pn_connector_name", 1, argv[0] )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_sasl_t *","pn_sasl_get_user", 1, argv[0] )); 
   }
-  arg1 = (pn_connector_t *)(argp1);
-  result = (char *)pn_connector_name((struct pn_connector_t const *)arg1);
+  arg1 = (pn_sasl_t *)(argp1);
+  result = (char *)pn_sasl_get_user(arg1);
   vresult = SWIG_FromCharPtr((const char *)result);
   return vresult;
 fail:
@@ -15214,23 +15633,23 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_pn_connector_transport(int argc, VALUE *argv, VALUE self) {
-  pn_connector_t *arg1 = (pn_connector_t *) 0 ;
+_wrap_pn_sasl_get_mech(int argc, VALUE *argv, VALUE self) {
+  pn_sasl_t *arg1 = (pn_sasl_t *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  pn_transport_t *result = 0 ;
+  char *result = 0 ;
   VALUE vresult = Qnil;
   
   if ((argc < 1) || (argc > 1)) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connector_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_sasl_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connector_t *","pn_connector_transport", 1, argv[0] )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_sasl_t *","pn_sasl_get_mech", 1, argv[0] )); 
   }
-  arg1 = (pn_connector_t *)(argp1);
-  result = (pn_transport_t *)pn_connector_transport(arg1);
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_transport_t, 0 |  0 );
+  arg1 = (pn_sasl_t *)(argp1);
+  result = (char *)pn_sasl_get_mech(arg1);
+  vresult = SWIG_FromCharPtr((const char *)result);
   return vresult;
 fail:
   return Qnil;
@@ -15238,22 +15657,62 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_pn_connector_close(int argc, VALUE *argv, VALUE self) {
-  pn_connector_t *arg1 = (pn_connector_t *) 0 ;
+_wrap_pn_sasl_allowed_mechs(int argc, VALUE *argv, VALUE self) {
+  pn_sasl_t *arg1 = (pn_sasl_t *) 0 ;
+  char *arg2 = (char *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
   
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connector_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_sasl_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connector_t *","pn_connector_close", 1, argv[0] )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_sasl_t *","pn_sasl_allowed_mechs", 1, argv[0] )); 
   }
-  arg1 = (pn_connector_t *)(argp1);
+  arg1 = (pn_sasl_t *)(argp1);
+  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","pn_sasl_allowed_mechs", 2, argv[1] ));
+  }
+  arg2 = (char *)(buf2);
   SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
   
-  pn_connector_close(arg1);
+  pn_sasl_allowed_mechs(arg1,(char const *)arg2);
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return Qnil;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_sasl_set_allow_insecure_mechs(int argc, VALUE *argv, VALUE self) {
+  pn_sasl_t *arg1 = (pn_sasl_t *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_sasl_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_sasl_t *","pn_sasl_set_allow_insecure_mechs", 1, argv[0] )); 
+  }
+  arg1 = (pn_sasl_t *)(argp1);
+  ecode2 = SWIG_AsVal_bool(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "bool","pn_sasl_set_allow_insecure_mechs", 2, argv[1] ));
+  } 
+  arg2 = (bool)(val2);
+  pn_sasl_set_allow_insecure_mechs(arg1,arg2);
   return Qnil;
 fail:
   return Qnil;
@@ -15261,8 +15720,8 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_pn_connector_closed(int argc, VALUE *argv, VALUE self) {
-  pn_connector_t *arg1 = (pn_connector_t *) 0 ;
+_wrap_pn_sasl_get_allow_insecure_mechs(int argc, VALUE *argv, VALUE self) {
+  pn_sasl_t *arg1 = (pn_sasl_t *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   bool result;
@@ -15271,14 +15730,12 @@ _wrap_pn_connector_closed(int argc, VALUE *argv, VALUE self) {
   if ((argc < 1) || (argc > 1)) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connector_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_sasl_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connector_t *","pn_connector_closed", 1, argv[0] )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_sasl_t *","pn_sasl_get_allow_insecure_mechs", 1, argv[0] )); 
   }
-  arg1 = (pn_connector_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  result = (bool)pn_connector_closed(arg1);
+  arg1 = (pn_sasl_t *)(argp1);
+  result = (bool)pn_sasl_get_allow_insecure_mechs(arg1);
   vresult = SWIG_From_bool((bool)(result));
   return vresult;
 fail:
@@ -15287,209 +15744,65 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_pn_connector_free(int argc, VALUE *argv, VALUE self) {
-  pn_connector_t *arg1 = (pn_connector_t *) 0 ;
+_wrap_pn_sasl_config_name(int argc, VALUE *argv, VALUE self) {
+  pn_sasl_t *arg1 = (pn_sasl_t *) 0 ;
+  char *arg2 = (char *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connector_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connector_t *","pn_connector_free", 1, argv[0] )); 
-  }
-  arg1 = (pn_connector_t *)(argp1);
-  SWIG_contract_assert((arg1!=NULL), "Contract violation: require: (arg1!=NULL)");
-  
-  pn_connector_free(arg1);
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_connector_activate(int argc, VALUE *argv, VALUE self) {
-  pn_connector_t *arg1 = (pn_connector_t *) 0 ;
-  pn_activate_criteria_t arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
   
   if ((argc < 2) || (argc > 2)) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connector_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_sasl_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connector_t *","pn_connector_activate", 1, argv[0] )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_sasl_t *","pn_sasl_config_name", 1, argv[0] )); 
   }
-  arg1 = (pn_connector_t *)(argp1);
-  ecode2 = SWIG_AsVal_int(argv[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "pn_activate_criteria_t","pn_connector_activate", 2, argv[1] ));
-  } 
-  arg2 = (pn_activate_criteria_t)(val2);
-  pn_connector_activate(arg1,arg2);
+  arg1 = (pn_sasl_t *)(argp1);
+  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","pn_sasl_config_name", 2, argv[1] ));
+  }
+  arg2 = (char *)(buf2);
+  pn_sasl_config_name(arg1,(char const *)arg2);
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
   return Qnil;
 fail:
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
   return Qnil;
 }
 
 
 SWIGINTERN VALUE
-_wrap_pn_connector_activated(int argc, VALUE *argv, VALUE self) {
-  pn_connector_t *arg1 = (pn_connector_t *) 0 ;
-  pn_activate_criteria_t arg2 ;
+_wrap_pn_sasl_config_path(int argc, VALUE *argv, VALUE self) {
+  pn_sasl_t *arg1 = (pn_sasl_t *) 0 ;
+  char *arg2 = (char *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  bool result;
-  VALUE vresult = Qnil;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
   
   if ((argc < 2) || (argc > 2)) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
   }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connector_t, 0 |  0 );
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_sasl_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connector_t *","pn_connector_activated", 1, argv[0] )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_sasl_t *","pn_sasl_config_path", 1, argv[0] )); 
   }
-  arg1 = (pn_connector_t *)(argp1);
-  ecode2 = SWIG_AsVal_int(argv[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "pn_activate_criteria_t","pn_connector_activated", 2, argv[1] ));
-  } 
-  arg2 = (pn_activate_criteria_t)(val2);
-  result = (bool)pn_connector_activated(arg1,arg2);
-  vresult = SWIG_From_bool((bool)(result));
-  return vresult;
-fail:
+  arg1 = (pn_sasl_t *)(argp1);
+  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","pn_sasl_config_path", 2, argv[1] ));
+  }
+  arg2 = (char *)(buf2);
+  pn_sasl_config_path(arg1,(char const *)arg2);
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
   return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_listener_fd(int argc, VALUE *argv, VALUE self) {
-  pn_driver_t *arg1 = (pn_driver_t *) 0 ;
-  pn_socket_t arg2 ;
-  void *arg3 = (void *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  int res3 ;
-  pn_listener_t *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 3) || (argc > 3)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_driver_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_driver_t *","pn_listener_fd", 1, argv[0] )); 
-  }
-  arg1 = (pn_driver_t *)(argp1);
-  ecode2 = SWIG_AsVal_int(argv[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "pn_socket_t","pn_listener_fd", 2, argv[1] ));
-  } 
-  arg2 = (pn_socket_t)(val2);
-  res3 = SWIG_ConvertPtr(argv[2],SWIG_as_voidptrptr(&arg3), 0, 0);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "void *","pn_listener_fd", 3, argv[2] )); 
-  }
-  result = (pn_listener_t *)pn_listener_fd(arg1,arg2,arg3);
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_listener_t, 0 |  0 );
-  return vresult;
 fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_listener_get_fd(int argc, VALUE *argv, VALUE self) {
-  pn_listener_t *arg1 = (pn_listener_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  pn_socket_t result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_listener_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_listener_t *","pn_listener_get_fd", 1, argv[0] )); 
-  }
-  arg1 = (pn_listener_t *)(argp1);
-  result = (pn_socket_t)pn_listener_get_fd(arg1);
-  vresult = SWIG_From_int((int)(result));
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_connector_fd(int argc, VALUE *argv, VALUE self) {
-  pn_driver_t *arg1 = (pn_driver_t *) 0 ;
-  pn_socket_t arg2 ;
-  void *arg3 = (void *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  int res3 ;
-  pn_connector_t *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 3) || (argc > 3)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_driver_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_driver_t *","pn_connector_fd", 1, argv[0] )); 
-  }
-  arg1 = (pn_driver_t *)(argp1);
-  ecode2 = SWIG_AsVal_int(argv[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "pn_socket_t","pn_connector_fd", 2, argv[1] ));
-  } 
-  arg2 = (pn_socket_t)(val2);
-  res3 = SWIG_ConvertPtr(argv[2],SWIG_as_voidptrptr(&arg3), 0, 0);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "void *","pn_connector_fd", 3, argv[2] )); 
-  }
-  result = (pn_connector_t *)pn_connector_fd(arg1,arg2,arg3);
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_connector_t, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_connector_get_fd(int argc, VALUE *argv, VALUE self) {
-  pn_connector_t *arg1 = (pn_connector_t *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  pn_socket_t result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connector_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connector_t *","pn_connector_get_fd", 1, argv[0] )); 
-  }
-  arg1 = (pn_connector_t *)(argp1);
-  result = (pn_socket_t)pn_connector_get_fd(arg1);
-  vresult = SWIG_From_int((int)(result));
-  return vresult;
-fail:
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
   return Qnil;
 }
 
@@ -16303,6 +16616,57 @@ fail:
 
 
 SWIGINTERN VALUE
+_wrap_pn_messenger_get_stated_link(int argc, VALUE *argv, VALUE self) {
+  pn_messenger_t *arg1 = (pn_messenger_t *) 0 ;
+  char *arg2 = (char *) 0 ;
+  bool arg3 ;
+  pn_state_t arg4 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  bool val3 ;
+  int ecode3 = 0 ;
+  int val4 ;
+  int ecode4 = 0 ;
+  pn_link_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 4) || (argc > 4)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 4)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_messenger_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_messenger_t *","pn_messenger_get_stated_link", 1, argv[0] )); 
+  }
+  arg1 = (pn_messenger_t *)(argp1);
+  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","pn_messenger_get_stated_link", 2, argv[1] ));
+  }
+  arg2 = (char *)(buf2);
+  ecode3 = SWIG_AsVal_bool(argv[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "bool","pn_messenger_get_stated_link", 3, argv[2] ));
+  } 
+  arg3 = (bool)(val3);
+  ecode4 = SWIG_AsVal_int(argv[3], &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), Ruby_Format_TypeError( "", "pn_state_t","pn_messenger_get_stated_link", 4, argv[3] ));
+  } 
+  arg4 = (pn_state_t)(val4);
+  result = (pn_link_t *)pn_messenger_get_stated_link(arg1,(char const *)arg2,arg3,arg4);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_link_t, 0 |  0 );
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return vresult;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
 _wrap_pn_messenger_get_link(int argc, VALUE *argv, VALUE self) {
   pn_messenger_t *arg1 = (pn_messenger_t *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -16608,38 +16972,6 @@ _wrap_pn_messenger_outgoing_tracker(int argc, VALUE *argv, VALUE self) {
   arg1 = (pn_messenger_t *)(argp1);
   result = (pn_tracker_t)pn_messenger_outgoing_tracker(arg1);
   vresult = SWIG_From_long_SS_long((long long)(result));
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_pn_messenger_work(int argc, VALUE *argv, VALUE self) {
-  pn_messenger_t *arg1 = (pn_messenger_t *) 0 ;
-  int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_messenger_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_messenger_t *","pn_messenger_work", 1, argv[0] )); 
-  }
-  arg1 = (pn_messenger_t *)(argp1);
-  ecode2 = SWIG_AsVal_int(argv[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int","pn_messenger_work", 2, argv[1] ));
-  } 
-  arg2 = (int)(val2);
-  result = (int)pn_messenger_work(arg1,arg2);
-  vresult = SWIG_From_int((int)(result));
   return vresult;
 fail:
   return Qnil;
@@ -17335,6 +17667,187 @@ fail:
 
 
 SWIGINTERN VALUE
+_wrap_pn_messenger_set_external_socket(int argc, VALUE *argv, VALUE self) {
+  pn_messenger_t *arg1 = (pn_messenger_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_messenger_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_messenger_t *","pn_messenger_set_external_socket", 1, argv[0] )); 
+  }
+  arg1 = (pn_messenger_t *)(argp1);
+  result = (int)pn_messenger_set_external_socket(arg1);
+  vresult = SWIG_From_int((int)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_connection_push(int argc, VALUE *argv, VALUE self) {
+  pn_connection_t *arg1 = (pn_connection_t *) 0 ;
+  char *arg2 = (char *) 0 ;
+  size_t arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  size_t val3 ;
+  int ecode3 = 0 ;
+  int result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 3) || (argc > 3)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connection_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connection_t *","pn_connection_push", 1, argv[0] )); 
+  }
+  arg1 = (pn_connection_t *)(argp1);
+  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char *","pn_connection_push", 2, argv[1] ));
+  }
+  arg2 = (char *)(buf2);
+  ecode3 = SWIG_AsVal_size_t(argv[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "size_t","pn_connection_push", 3, argv[2] ));
+  } 
+  arg3 = (size_t)(val3);
+  result = (int)pn_connection_push(arg1,arg2,arg3);
+  vresult = SWIG_From_int((int)(result));
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return vresult;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_connection_pop(int argc, VALUE *argv, VALUE self) {
+  pn_connection_t *arg1 = (pn_connection_t *) 0 ;
+  size_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_connection_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_connection_t *","pn_connection_pop", 1, argv[0] )); 
+  }
+  arg1 = (pn_connection_t *)(argp1);
+  ecode2 = SWIG_AsVal_size_t(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "size_t","pn_connection_pop", 2, argv[1] ));
+  } 
+  arg2 = (size_t)(val2);
+  result = (bool)pn_connection_pop(arg1,arg2);
+  vresult = SWIG_From_bool((bool)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_connection_was_closed(int argc, VALUE *argv, VALUE self) {
+  pn_messenger_t *arg1 = (pn_messenger_t *) 0 ;
+  pn_connection_t *arg2 = (pn_connection_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_messenger_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_messenger_t *","pn_connection_was_closed", 1, argv[0] )); 
+  }
+  arg1 = (pn_messenger_t *)(argp1);
+  res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_pn_connection_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "pn_connection_t *","pn_connection_was_closed", 2, argv[1] )); 
+  }
+  arg2 = (pn_connection_t *)(argp2);
+  pn_connection_was_closed(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_messenger_started(int argc, VALUE *argv, VALUE self) {
+  pn_messenger_t *arg1 = (pn_messenger_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_messenger_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_messenger_t *","pn_messenger_started", 1, argv[0] )); 
+  }
+  arg1 = (pn_messenger_t *)(argp1);
+  result = (bool)pn_messenger_started(arg1);
+  vresult = SWIG_From_bool((bool)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_messenger_reclaim_link(int argc, VALUE *argv, VALUE self) {
+  pn_messenger_t *arg1 = (pn_messenger_t *) 0 ;
+  pn_link_t *arg2 = (pn_link_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_messenger_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_messenger_t *","pn_messenger_reclaim_link", 1, argv[0] )); 
+  }
+  arg1 = (pn_messenger_t *)(argp1);
+  res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_pn_link_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "pn_link_t *","pn_messenger_reclaim_link", 2, argv[1] )); 
+  }
+  arg2 = (pn_link_t *)(argp2);
+  pn_messenger_reclaim_link(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
 _wrap_pn_io(int argc, VALUE *argv, VALUE self) {
   pn_io_t *result = 0 ;
   VALUE vresult = Qnil;
@@ -17925,7 +18438,215 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_pn_selectable_fd(int argc, VALUE *argv, VALUE self) {
+_wrap_pn_selectable(int argc, VALUE *argv, VALUE self) {
+  pn_selectable_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  result = (pn_selectable_t *)pn_selectable();
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_selectable_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_selectable_on_readable(int argc, VALUE *argv, VALUE self) {
+  pn_selectable_t *arg1 = (pn_selectable_t *) 0 ;
+  void (*arg2)(pn_selectable_t *) = (void (*)(pn_selectable_t *)) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_selectable_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_on_readable", 1, argv[0] )); 
+  }
+  arg1 = (pn_selectable_t *)(argp1);
+  {
+    int res = SWIG_ConvertFunctionPtr(argv[1], (void**)(&arg2), SWIGTYPE_p_f_p_struct_pn_selectable_t__void);
+    if (!SWIG_IsOK(res)) {
+      SWIG_exception_fail(SWIG_ArgError(res), Ruby_Format_TypeError( "", "void (*)(pn_selectable_t *)","pn_selectable_on_readable", 2, argv[1] )); 
+    }
+  }
+  pn_selectable_on_readable(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_selectable_on_writable(int argc, VALUE *argv, VALUE self) {
+  pn_selectable_t *arg1 = (pn_selectable_t *) 0 ;
+  void (*arg2)(pn_selectable_t *) = (void (*)(pn_selectable_t *)) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_selectable_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_on_writable", 1, argv[0] )); 
+  }
+  arg1 = (pn_selectable_t *)(argp1);
+  {
+    int res = SWIG_ConvertFunctionPtr(argv[1], (void**)(&arg2), SWIGTYPE_p_f_p_struct_pn_selectable_t__void);
+    if (!SWIG_IsOK(res)) {
+      SWIG_exception_fail(SWIG_ArgError(res), Ruby_Format_TypeError( "", "void (*)(pn_selectable_t *)","pn_selectable_on_writable", 2, argv[1] )); 
+    }
+  }
+  pn_selectable_on_writable(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_selectable_on_expired(int argc, VALUE *argv, VALUE self) {
+  pn_selectable_t *arg1 = (pn_selectable_t *) 0 ;
+  void (*arg2)(pn_selectable_t *) = (void (*)(pn_selectable_t *)) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_selectable_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_on_expired", 1, argv[0] )); 
+  }
+  arg1 = (pn_selectable_t *)(argp1);
+  {
+    int res = SWIG_ConvertFunctionPtr(argv[1], (void**)(&arg2), SWIGTYPE_p_f_p_struct_pn_selectable_t__void);
+    if (!SWIG_IsOK(res)) {
+      SWIG_exception_fail(SWIG_ArgError(res), Ruby_Format_TypeError( "", "void (*)(pn_selectable_t *)","pn_selectable_on_expired", 2, argv[1] )); 
+    }
+  }
+  pn_selectable_on_expired(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_selectable_on_error(int argc, VALUE *argv, VALUE self) {
+  pn_selectable_t *arg1 = (pn_selectable_t *) 0 ;
+  void (*arg2)(pn_selectable_t *) = (void (*)(pn_selectable_t *)) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_selectable_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_on_error", 1, argv[0] )); 
+  }
+  arg1 = (pn_selectable_t *)(argp1);
+  {
+    int res = SWIG_ConvertFunctionPtr(argv[1], (void**)(&arg2), SWIGTYPE_p_f_p_struct_pn_selectable_t__void);
+    if (!SWIG_IsOK(res)) {
+      SWIG_exception_fail(SWIG_ArgError(res), Ruby_Format_TypeError( "", "void (*)(pn_selectable_t *)","pn_selectable_on_error", 2, argv[1] )); 
+    }
+  }
+  pn_selectable_on_error(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_selectable_on_release(int argc, VALUE *argv, VALUE self) {
+  pn_selectable_t *arg1 = (pn_selectable_t *) 0 ;
+  void (*arg2)(pn_selectable_t *) = (void (*)(pn_selectable_t *)) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_selectable_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_on_release", 1, argv[0] )); 
+  }
+  arg1 = (pn_selectable_t *)(argp1);
+  {
+    int res = SWIG_ConvertFunctionPtr(argv[1], (void**)(&arg2), SWIGTYPE_p_f_p_struct_pn_selectable_t__void);
+    if (!SWIG_IsOK(res)) {
+      SWIG_exception_fail(SWIG_ArgError(res), Ruby_Format_TypeError( "", "void (*)(pn_selectable_t *)","pn_selectable_on_release", 2, argv[1] )); 
+    }
+  }
+  pn_selectable_on_release(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_selectable_on_finalize(int argc, VALUE *argv, VALUE self) {
+  pn_selectable_t *arg1 = (pn_selectable_t *) 0 ;
+  void (*arg2)(pn_selectable_t *) = (void (*)(pn_selectable_t *)) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_selectable_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_on_finalize", 1, argv[0] )); 
+  }
+  arg1 = (pn_selectable_t *)(argp1);
+  {
+    int res = SWIG_ConvertFunctionPtr(argv[1], (void**)(&arg2), SWIGTYPE_p_f_p_struct_pn_selectable_t__void);
+    if (!SWIG_IsOK(res)) {
+      SWIG_exception_fail(SWIG_ArgError(res), Ruby_Format_TypeError( "", "void (*)(pn_selectable_t *)","pn_selectable_on_finalize", 2, argv[1] )); 
+    }
+  }
+  pn_selectable_on_finalize(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_selectable_attachments(int argc, VALUE *argv, VALUE self) {
+  pn_selectable_t *arg1 = (pn_selectable_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_record_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_selectable_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_attachments", 1, argv[0] )); 
+  }
+  arg1 = (pn_selectable_t *)(argp1);
+  result = (pn_record_t *)pn_selectable_attachments(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_record_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_selectable_get_fd(int argc, VALUE *argv, VALUE self) {
   pn_selectable_t *arg1 = (pn_selectable_t *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -17937,10 +18658,10 @@ _wrap_pn_selectable_fd(int argc, VALUE *argv, VALUE self) {
   }
   res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_selectable_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_fd", 1, argv[0] )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_get_fd", 1, argv[0] )); 
   }
   arg1 = (pn_selectable_t *)(argp1);
-  result = (pn_socket_t)pn_selectable_fd(arg1);
+  result = (pn_socket_t)pn_selectable_get_fd(arg1);
   vresult = SWIG_From_int((int)(result));
   return vresult;
 fail:
@@ -17949,11 +18670,40 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_pn_selectable_capacity(int argc, VALUE *argv, VALUE self) {
+_wrap_pn_selectable_set_fd(int argc, VALUE *argv, VALUE self) {
+  pn_selectable_t *arg1 = (pn_selectable_t *) 0 ;
+  pn_socket_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_selectable_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_set_fd", 1, argv[0] )); 
+  }
+  arg1 = (pn_selectable_t *)(argp1);
+  ecode2 = SWIG_AsVal_int(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "pn_socket_t","pn_selectable_set_fd", 2, argv[1] ));
+  } 
+  arg2 = (pn_socket_t)(val2);
+  pn_selectable_set_fd(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_selectable_is_reading(int argc, VALUE *argv, VALUE self) {
   pn_selectable_t *arg1 = (pn_selectable_t *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  ssize_t result;
+  bool result;
   VALUE vresult = Qnil;
   
   if ((argc < 1) || (argc > 1)) {
@@ -17961,11 +18711,11 @@ _wrap_pn_selectable_capacity(int argc, VALUE *argv, VALUE self) {
   }
   res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_selectable_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_capacity", 1, argv[0] )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_is_reading", 1, argv[0] )); 
   }
   arg1 = (pn_selectable_t *)(argp1);
-  result = (ssize_t)pn_selectable_capacity(arg1);
-  vresult = SWIG_From_int((int)(result));
+  result = (bool)pn_selectable_is_reading(arg1);
+  vresult = SWIG_From_bool((bool)(result));
   return vresult;
 fail:
   return Qnil;
@@ -17973,11 +18723,40 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_pn_selectable_pending(int argc, VALUE *argv, VALUE self) {
+_wrap_pn_selectable_set_reading(int argc, VALUE *argv, VALUE self) {
+  pn_selectable_t *arg1 = (pn_selectable_t *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_selectable_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_set_reading", 1, argv[0] )); 
+  }
+  arg1 = (pn_selectable_t *)(argp1);
+  ecode2 = SWIG_AsVal_bool(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "bool","pn_selectable_set_reading", 2, argv[1] ));
+  } 
+  arg2 = (bool)(val2);
+  pn_selectable_set_reading(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_selectable_is_writing(int argc, VALUE *argv, VALUE self) {
   pn_selectable_t *arg1 = (pn_selectable_t *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  ssize_t result;
+  bool result;
   VALUE vresult = Qnil;
   
   if ((argc < 1) || (argc > 1)) {
@@ -17985,11 +18764,11 @@ _wrap_pn_selectable_pending(int argc, VALUE *argv, VALUE self) {
   }
   res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_selectable_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_pending", 1, argv[0] )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_is_writing", 1, argv[0] )); 
   }
   arg1 = (pn_selectable_t *)(argp1);
-  result = (ssize_t)pn_selectable_pending(arg1);
-  vresult = SWIG_From_int((int)(result));
+  result = (bool)pn_selectable_is_writing(arg1);
+  vresult = SWIG_From_bool((bool)(result));
   return vresult;
 fail:
   return Qnil;
@@ -17997,7 +18776,36 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_pn_selectable_deadline(int argc, VALUE *argv, VALUE self) {
+_wrap_pn_selectable_set_writing(int argc, VALUE *argv, VALUE self) {
+  pn_selectable_t *arg1 = (pn_selectable_t *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_selectable_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_set_writing", 1, argv[0] )); 
+  }
+  arg1 = (pn_selectable_t *)(argp1);
+  ecode2 = SWIG_AsVal_bool(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "bool","pn_selectable_set_writing", 2, argv[1] ));
+  } 
+  arg2 = (bool)(val2);
+  pn_selectable_set_writing(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_selectable_get_deadline(int argc, VALUE *argv, VALUE self) {
   pn_selectable_t *arg1 = (pn_selectable_t *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -18009,12 +18817,41 @@ _wrap_pn_selectable_deadline(int argc, VALUE *argv, VALUE self) {
   }
   res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_selectable_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_deadline", 1, argv[0] )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_get_deadline", 1, argv[0] )); 
   }
   arg1 = (pn_selectable_t *)(argp1);
-  result = (pn_timestamp_t)pn_selectable_deadline(arg1);
+  result = (pn_timestamp_t)pn_selectable_get_deadline(arg1);
   vresult = SWIG_From_long_SS_long((long long)(result));
   return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_selectable_set_deadline(int argc, VALUE *argv, VALUE self) {
+  pn_selectable_t *arg1 = (pn_selectable_t *) 0 ;
+  pn_timestamp_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  long long val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_selectable_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_set_deadline", 1, argv[0] )); 
+  }
+  arg1 = (pn_selectable_t *)(argp1);
+  ecode2 = SWIG_AsVal_long_SS_long(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "pn_timestamp_t","pn_selectable_set_deadline", 2, argv[1] ));
+  } 
+  arg2 = (pn_timestamp_t)(val2);
+  pn_selectable_set_deadline(arg1,arg2);
+  return Qnil;
 fail:
   return Qnil;
 }
@@ -18056,6 +18893,27 @@ _wrap_pn_selectable_writable(int argc, VALUE *argv, VALUE self) {
   }
   arg1 = (pn_selectable_t *)(argp1);
   pn_selectable_writable(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_selectable_error(int argc, VALUE *argv, VALUE self) {
+  pn_selectable_t *arg1 = (pn_selectable_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_selectable_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_error", 1, argv[0] )); 
+  }
+  arg1 = (pn_selectable_t *)(argp1);
+  pn_selectable_error(arg1);
   return Qnil;
 fail:
   return Qnil;
@@ -18161,6 +19019,48 @@ fail:
 
 
 SWIGINTERN VALUE
+_wrap_pn_selectable_terminate(int argc, VALUE *argv, VALUE self) {
+  pn_selectable_t *arg1 = (pn_selectable_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_selectable_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_terminate", 1, argv[0] )); 
+  }
+  arg1 = (pn_selectable_t *)(argp1);
+  pn_selectable_terminate(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_selectable_release(int argc, VALUE *argv, VALUE self) {
+  pn_selectable_t *arg1 = (pn_selectable_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_selectable_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_release", 1, argv[0] )); 
+  }
+  arg1 = (pn_selectable_t *)(argp1);
+  pn_selectable_release(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
 _wrap_pn_selectable_free(int argc, VALUE *argv, VALUE self) {
   pn_selectable_t *arg1 = (pn_selectable_t *) 0 ;
   void *argp1 = 0 ;
@@ -18176,6 +19076,51 @@ _wrap_pn_selectable_free(int argc, VALUE *argv, VALUE self) {
   arg1 = (pn_selectable_t *)(argp1);
   pn_selectable_free(arg1);
   return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_selectable_collect(int argc, VALUE *argv, VALUE self) {
+  pn_selectable_t *arg1 = (pn_selectable_t *) 0 ;
+  pn_collector_t *arg2 = (pn_collector_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_selectable_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_selectable_collect", 1, argv[0] )); 
+  }
+  arg1 = (pn_selectable_t *)(argp1);
+  res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_pn_collector_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "pn_collector_t *","pn_selectable_collect", 2, argv[1] )); 
+  }
+  arg2 = (pn_collector_t *)(argp2);
+  pn_selectable_collect(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_ssl_present(int argc, VALUE *argv, VALUE self) {
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  result = (bool)pn_ssl_present();
+  vresult = SWIG_From_bool((bool)(result));
+  return vresult;
 fail:
   return Qnil;
 }
@@ -18453,6 +19398,30 @@ fail:
 
 
 SWIGINTERN VALUE
+_wrap_pn_ssl_get_ssf(int argc, VALUE *argv, VALUE self) {
+  pn_ssl_t *arg1 = (pn_ssl_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_ssl_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_ssl_t *","pn_ssl_get_ssf", 1, argv[0] )); 
+  }
+  arg1 = (pn_ssl_t *)(argp1);
+  result = (int)pn_ssl_get_ssf(arg1);
+  vresult = SWIG_From_int((int)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
 _wrap_pn_ssl_resume_status(int argc, VALUE *argv, VALUE self) {
   pn_ssl_t *arg1 = (pn_ssl_t *) 0 ;
   void *argp1 = 0 ;
@@ -18512,44 +19481,25 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_pn_ssl_get_peer_hostname(int argc, VALUE *argv, VALUE self) {
+_wrap_pn_ssl_get_remote_subject(int argc, VALUE *argv, VALUE self) {
   pn_ssl_t *arg1 = (pn_ssl_t *) 0 ;
-  char *arg2 = (char *) 0 ;
-  size_t *arg3 = (size_t *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  int result;
+  char *result = 0 ;
   VALUE vresult = Qnil;
   
-  if ((argc < 3) || (argc > 3)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
   }
   res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_ssl_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_ssl_t *","pn_ssl_get_peer_hostname", 1, argv[0] )); 
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_ssl_t *","pn_ssl_get_remote_subject", 1, argv[0] )); 
   }
   arg1 = (pn_ssl_t *)(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char *","pn_ssl_get_peer_hostname", 2, argv[1] ));
-  }
-  arg2 = (char *)(buf2);
-  res3 = SWIG_ConvertPtr(argv[2], &argp3,SWIGTYPE_p_unsigned_int, 0 |  0 );
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "size_t *","pn_ssl_get_peer_hostname", 3, argv[2] )); 
-  }
-  arg3 = (size_t *)(argp3);
-  result = (int)pn_ssl_get_peer_hostname(arg1,arg2,arg3);
-  vresult = SWIG_From_int((int)(result));
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  result = (char *)pn_ssl_get_remote_subject(arg1);
+  vresult = SWIG_FromCharPtr((const char *)result);
   return vresult;
 fail:
-  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
   return Qnil;
 }
 
@@ -19070,6 +20020,30 @@ _wrap_pn_data_encode(int argc, VALUE *argv, VALUE self) {
   return vresult;
 fail:
   if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_data_encoded_size(int argc, VALUE *argv, VALUE self) {
+  pn_data_t *arg1 = (pn_data_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  ssize_t result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_data_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_data_t *","pn_data_encoded_size", 1, argv[0] )); 
+  }
+  arg1 = (pn_data_t *)(argp1);
+  result = (ssize_t)pn_data_encoded_size(arg1);
+  vresult = SWIG_From_int((int)(result));
+  return vresult;
+fail:
   return Qnil;
 }
 
@@ -19715,7 +20689,7 @@ _wrap_pn_data_put_decimal64(int argc, VALUE *argv, VALUE self) {
   }
   arg1 = (pn_data_t *)(argp1);
   {
-    arg2 = NUM2ULONG(argv[1]);
+    arg2 = NUM2ULL(argv[1]);
   }
   result = (int)pn_data_put_decimal64(arg1,arg2);
   vresult = SWIG_From_int((int)(result));
@@ -20938,6 +21912,72 @@ fail:
 
 
 SWIGINTERN VALUE
+_wrap_pn_cast_pn_reactor(int argc, VALUE *argv, VALUE self) {
+  void *arg1 = (void *) 0 ;
+  int res1 ;
+  pn_reactor_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0],SWIG_as_voidptrptr(&arg1), 0, 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "void *","pn_cast_pn_reactor", 1, argv[0] )); 
+  }
+  result = (pn_reactor_t *)pn_cast_pn_reactor(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_cast_pn_task(int argc, VALUE *argv, VALUE self) {
+  void *arg1 = (void *) 0 ;
+  int res1 ;
+  pn_task_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0],SWIG_as_voidptrptr(&arg1), 0, 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "void *","pn_cast_pn_task", 1, argv[0] )); 
+  }
+  result = (pn_task_t *)pn_cast_pn_task(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_task_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_cast_pn_selectable(int argc, VALUE *argv, VALUE self) {
+  void *arg1 = (void *) 0 ;
+  int res1 ;
+  pn_selectable_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0],SWIG_as_voidptrptr(&arg1), 0, 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "void *","pn_cast_pn_selectable", 1, argv[0] )); 
+  }
+  result = (pn_selectable_t *)pn_cast_pn_selectable(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_selectable_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
 _wrap_pn_url(int argc, VALUE *argv, VALUE self) {
   pn_url_t *result = 0 ;
   VALUE vresult = Qnil;
@@ -21382,11 +22422,1297 @@ fail:
 }
 
 
+SWIGINTERN VALUE
+_wrap_pn_handler(int argc, VALUE *argv, VALUE self) {
+  void (*arg1)(pn_handler_t *,pn_event_t *,pn_event_type_t) = (void (*)(pn_handler_t *,pn_event_t *,pn_event_type_t)) 0 ;
+  pn_handler_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  {
+    int res = SWIG_ConvertFunctionPtr(argv[0], (void**)(&arg1), SWIGTYPE_p_f_p_struct_pn_handler_t_p_struct_pn_event_t_enum_pn_event_type_t__void);
+    if (!SWIG_IsOK(res)) {
+      SWIG_exception_fail(SWIG_ArgError(res), Ruby_Format_TypeError( "", "void (*)(pn_handler_t *,pn_event_t *,pn_event_type_t)","pn_handler", 1, argv[0] )); 
+    }
+  }
+  result = (pn_handler_t *)pn_handler(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_handler_new(int argc, VALUE *argv, VALUE self) {
+  void (*arg1)(pn_handler_t *,pn_event_t *,pn_event_type_t) = (void (*)(pn_handler_t *,pn_event_t *,pn_event_type_t)) 0 ;
+  size_t arg2 ;
+  void (*arg3)(pn_handler_t *) = (void (*)(pn_handler_t *)) 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  pn_handler_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 3) || (argc > 3)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
+  }
+  {
+    int res = SWIG_ConvertFunctionPtr(argv[0], (void**)(&arg1), SWIGTYPE_p_f_p_struct_pn_handler_t_p_struct_pn_event_t_enum_pn_event_type_t__void);
+    if (!SWIG_IsOK(res)) {
+      SWIG_exception_fail(SWIG_ArgError(res), Ruby_Format_TypeError( "", "void (*)(pn_handler_t *,pn_event_t *,pn_event_type_t)","pn_handler_new", 1, argv[0] )); 
+    }
+  }
+  ecode2 = SWIG_AsVal_size_t(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "size_t","pn_handler_new", 2, argv[1] ));
+  } 
+  arg2 = (size_t)(val2);
+  {
+    int res = SWIG_ConvertFunctionPtr(argv[2], (void**)(&arg3), SWIGTYPE_p_f_p_struct_pn_handler_t__void);
+    if (!SWIG_IsOK(res)) {
+      SWIG_exception_fail(SWIG_ArgError(res), Ruby_Format_TypeError( "", "void (*)(pn_handler_t *)","pn_handler_new", 3, argv[2] )); 
+    }
+  }
+  result = (pn_handler_t *)pn_handler_new(arg1,arg2,arg3);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_handler_free(int argc, VALUE *argv, VALUE self) {
+  pn_handler_t *arg1 = (pn_handler_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_handler_t *","pn_handler_free", 1, argv[0] )); 
+  }
+  arg1 = (pn_handler_t *)(argp1);
+  pn_handler_free(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_handler_mem(int argc, VALUE *argv, VALUE self) {
+  pn_handler_t *arg1 = (pn_handler_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_handler_t *","pn_handler_mem", 1, argv[0] )); 
+  }
+  arg1 = (pn_handler_t *)(argp1);
+  result = (void *)pn_handler_mem(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_handler_add(int argc, VALUE *argv, VALUE self) {
+  pn_handler_t *arg1 = (pn_handler_t *) 0 ;
+  pn_handler_t *arg2 = (pn_handler_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_handler_t *","pn_handler_add", 1, argv[0] )); 
+  }
+  arg1 = (pn_handler_t *)(argp1);
+  res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "pn_handler_t *","pn_handler_add", 2, argv[1] )); 
+  }
+  arg2 = (pn_handler_t *)(argp2);
+  pn_handler_add(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_handler_clear(int argc, VALUE *argv, VALUE self) {
+  pn_handler_t *arg1 = (pn_handler_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_handler_t *","pn_handler_clear", 1, argv[0] )); 
+  }
+  arg1 = (pn_handler_t *)(argp1);
+  pn_handler_clear(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_handler_dispatch(int argc, VALUE *argv, VALUE self) {
+  pn_handler_t *arg1 = (pn_handler_t *) 0 ;
+  pn_event_t *arg2 = (pn_event_t *) 0 ;
+  pn_event_type_t arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  
+  if ((argc < 3) || (argc > 3)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_handler_t *","pn_handler_dispatch", 1, argv[0] )); 
+  }
+  arg1 = (pn_handler_t *)(argp1);
+  res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_pn_event_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "pn_event_t *","pn_handler_dispatch", 2, argv[1] )); 
+  }
+  arg2 = (pn_event_t *)(argp2);
+  ecode3 = SWIG_AsVal_int(argv[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "pn_event_type_t","pn_handler_dispatch", 3, argv[2] ));
+  } 
+  arg3 = (pn_event_type_t)(val3);
+  pn_handler_dispatch(arg1,arg2,arg3);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  result = (pn_reactor_t *)pn_reactor();
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_attachments(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_record_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_attachments", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  result = (pn_record_t *)pn_reactor_attachments(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_record_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_get_timeout(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_millis_t result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_get_timeout", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  result = (pn_millis_t)pn_reactor_get_timeout(arg1);
+  vresult = SWIG_From_unsigned_SS_long((unsigned long)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_set_timeout(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  pn_millis_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned long val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_set_timeout", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_long(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "pn_millis_t","pn_reactor_set_timeout", 2, argv[1] ));
+  } 
+  arg2 = (pn_millis_t)(val2);
+  pn_reactor_set_timeout(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_mark(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_timestamp_t result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_mark", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  result = (pn_timestamp_t)pn_reactor_mark(arg1);
+  vresult = SWIG_From_long_SS_long((long long)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_now(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_timestamp_t result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_now", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  result = (pn_timestamp_t)pn_reactor_now(arg1);
+  vresult = SWIG_From_long_SS_long((long long)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_yield(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_yield", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  pn_reactor_yield(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_free(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_free", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  pn_reactor_free(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_collector(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_collector_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_collector", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  result = (pn_collector_t *)pn_reactor_collector(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_collector_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_get_global_handler(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_handler_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_get_global_handler", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  result = (pn_handler_t *)pn_reactor_get_global_handler(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_set_global_handler(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  pn_handler_t *arg2 = (pn_handler_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_set_global_handler", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "pn_handler_t *","pn_reactor_set_global_handler", 2, argv[1] )); 
+  }
+  arg2 = (pn_handler_t *)(argp2);
+  pn_reactor_set_global_handler(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_get_handler(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_handler_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_get_handler", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  result = (pn_handler_t *)pn_reactor_get_handler(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_set_handler(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  pn_handler_t *arg2 = (pn_handler_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_set_handler", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "pn_handler_t *","pn_reactor_set_handler", 2, argv[1] )); 
+  }
+  arg2 = (pn_handler_t *)(argp2);
+  pn_reactor_set_handler(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_io(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_io_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_io", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  result = (pn_io_t *)pn_reactor_io(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_io_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_children(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_list_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_children", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  result = (pn_list_t *)pn_reactor_children(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_list_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_selectable(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_selectable_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_selectable", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  result = (pn_selectable_t *)pn_reactor_selectable(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_selectable_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_update(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  pn_selectable_t *arg2 = (pn_selectable_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_update", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_pn_selectable_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "pn_selectable_t *","pn_reactor_update", 2, argv[1] )); 
+  }
+  arg2 = (pn_selectable_t *)(argp2);
+  pn_reactor_update(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_acceptor(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  char *arg2 = (char *) 0 ;
+  char *arg3 = (char *) 0 ;
+  pn_handler_t *arg4 = (pn_handler_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  int res3 ;
+  char *buf3 = 0 ;
+  int alloc3 = 0 ;
+  void *argp4 = 0 ;
+  int res4 = 0 ;
+  pn_acceptor_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 4) || (argc > 4)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 4)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_acceptor", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","pn_reactor_acceptor", 2, argv[1] ));
+  }
+  arg2 = (char *)(buf2);
+  res3 = SWIG_AsCharPtrAndSize(argv[2], &buf3, NULL, &alloc3);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "char const *","pn_reactor_acceptor", 3, argv[2] ));
+  }
+  arg3 = (char *)(buf3);
+  res4 = SWIG_ConvertPtr(argv[3], &argp4,SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), Ruby_Format_TypeError( "", "pn_handler_t *","pn_reactor_acceptor", 4, argv[3] )); 
+  }
+  arg4 = (pn_handler_t *)(argp4);
+  result = (pn_acceptor_t *)pn_reactor_acceptor(arg1,(char const *)arg2,(char const *)arg3,arg4);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_acceptor_t, 0 |  0 );
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  if (alloc3 == SWIG_NEWOBJ) free((char*)buf3);
+  return vresult;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
+  if (alloc3 == SWIG_NEWOBJ) free((char*)buf3);
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_connection(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  pn_handler_t *arg2 = (pn_handler_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  pn_connection_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_connection", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "pn_handler_t *","pn_reactor_connection", 2, argv[1] )); 
+  }
+  arg2 = (pn_handler_t *)(argp2);
+  result = (pn_connection_t *)pn_reactor_connection(arg1,arg2);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_connection_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_wakeup(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_wakeup", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  result = (int)pn_reactor_wakeup(arg1);
+  vresult = SWIG_From_int((int)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_start(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_start", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  pn_reactor_start(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_quiesced(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_quiesced", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  result = (bool)pn_reactor_quiesced(arg1);
+  vresult = SWIG_From_bool((bool)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_process(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_process", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  result = (bool)pn_reactor_process(arg1);
+  vresult = SWIG_From_bool((bool)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_stop(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_stop", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  pn_reactor_stop(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_run(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_run", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  pn_reactor_run(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_reactor_schedule(int argc, VALUE *argv, VALUE self) {
+  pn_reactor_t *arg1 = (pn_reactor_t *) 0 ;
+  int arg2 ;
+  pn_handler_t *arg3 = (pn_handler_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  pn_task_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 3) || (argc > 3)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_reactor_t *","pn_reactor_schedule", 1, argv[0] )); 
+  }
+  arg1 = (pn_reactor_t *)(argp1);
+  ecode2 = SWIG_AsVal_int(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int","pn_reactor_schedule", 2, argv[1] ));
+  } 
+  arg2 = (int)(val2);
+  res3 = SWIG_ConvertPtr(argv[2], &argp3,SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "pn_handler_t *","pn_reactor_schedule", 3, argv[2] )); 
+  }
+  arg3 = (pn_handler_t *)(argp3);
+  result = (pn_task_t *)pn_reactor_schedule(arg1,arg2,arg3);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_task_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_acceptor_set_ssl_domain(int argc, VALUE *argv, VALUE self) {
+  pn_acceptor_t *arg1 = (pn_acceptor_t *) 0 ;
+  pn_ssl_domain_t *arg2 = (pn_ssl_domain_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_acceptor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_acceptor_t *","pn_acceptor_set_ssl_domain", 1, argv[0] )); 
+  }
+  arg1 = (pn_acceptor_t *)(argp1);
+  res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_pn_ssl_domain_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "pn_ssl_domain_t *","pn_acceptor_set_ssl_domain", 2, argv[1] )); 
+  }
+  arg2 = (pn_ssl_domain_t *)(argp2);
+  pn_acceptor_set_ssl_domain(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_acceptor_close(int argc, VALUE *argv, VALUE self) {
+  pn_acceptor_t *arg1 = (pn_acceptor_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_acceptor_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_acceptor_t *","pn_acceptor_close", 1, argv[0] )); 
+  }
+  arg1 = (pn_acceptor_t *)(argp1);
+  pn_acceptor_close(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_timer(int argc, VALUE *argv, VALUE self) {
+  pn_collector_t *arg1 = (pn_collector_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_timer_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_collector_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_collector_t *","pn_timer", 1, argv[0] )); 
+  }
+  arg1 = (pn_collector_t *)(argp1);
+  result = (pn_timer_t *)pn_timer(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_timer_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_timer_deadline(int argc, VALUE *argv, VALUE self) {
+  pn_timer_t *arg1 = (pn_timer_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_timestamp_t result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_timer_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_timer_t *","pn_timer_deadline", 1, argv[0] )); 
+  }
+  arg1 = (pn_timer_t *)(argp1);
+  result = (pn_timestamp_t)pn_timer_deadline(arg1);
+  vresult = SWIG_From_long_SS_long((long long)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_timer_tick(int argc, VALUE *argv, VALUE self) {
+  pn_timer_t *arg1 = (pn_timer_t *) 0 ;
+  pn_timestamp_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  long long val2 ;
+  int ecode2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_timer_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_timer_t *","pn_timer_tick", 1, argv[0] )); 
+  }
+  arg1 = (pn_timer_t *)(argp1);
+  ecode2 = SWIG_AsVal_long_SS_long(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "pn_timestamp_t","pn_timer_tick", 2, argv[1] ));
+  } 
+  arg2 = (pn_timestamp_t)(val2);
+  pn_timer_tick(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_timer_schedule(int argc, VALUE *argv, VALUE self) {
+  pn_timer_t *arg1 = (pn_timer_t *) 0 ;
+  pn_timestamp_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  long long val2 ;
+  int ecode2 = 0 ;
+  pn_task_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_timer_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_timer_t *","pn_timer_schedule", 1, argv[0] )); 
+  }
+  arg1 = (pn_timer_t *)(argp1);
+  ecode2 = SWIG_AsVal_long_SS_long(argv[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "pn_timestamp_t","pn_timer_schedule", 2, argv[1] ));
+  } 
+  arg2 = (pn_timestamp_t)(val2);
+  result = (pn_task_t *)pn_timer_schedule(arg1,arg2);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_task_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_timer_tasks(int argc, VALUE *argv, VALUE self) {
+  pn_timer_t *arg1 = (pn_timer_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int result;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_timer_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_timer_t *","pn_timer_tasks", 1, argv[0] )); 
+  }
+  arg1 = (pn_timer_t *)(argp1);
+  result = (int)pn_timer_tasks(arg1);
+  vresult = SWIG_From_int((int)(result));
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_task_attachments(int argc, VALUE *argv, VALUE self) {
+  pn_task_t *arg1 = (pn_task_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_record_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_task_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_task_t *","pn_task_attachments", 1, argv[0] )); 
+  }
+  arg1 = (pn_task_t *)(argp1);
+  result = (pn_record_t *)pn_task_attachments(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_record_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_task_cancel(int argc, VALUE *argv, VALUE self) {
+  pn_task_t *arg1 = (pn_task_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_task_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_task_t *","pn_task_cancel", 1, argv[0] )); 
+  }
+  arg1 = (pn_task_t *)(argp1);
+  pn_task_cancel(arg1);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_class_reactor(int argc, VALUE *argv, VALUE self) {
+  pn_class_t *arg1 = (pn_class_t *) 0 ;
+  void *arg2 = (void *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  pn_reactor_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_class_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_class_t const *","pn_class_reactor", 1, argv[0] )); 
+  }
+  arg1 = (pn_class_t *)(argp1);
+  res2 = SWIG_ConvertPtr(argv[1],SWIG_as_voidptrptr(&arg2), 0, 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "void *","pn_class_reactor", 2, argv[1] )); 
+  }
+  result = (pn_reactor_t *)pn_class_reactor((struct pn_class_t const *)arg1,arg2);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_object_reactor(int argc, VALUE *argv, VALUE self) {
+  void *arg1 = (void *) 0 ;
+  int res1 ;
+  pn_reactor_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0],SWIG_as_voidptrptr(&arg1), 0, 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "void *","pn_object_reactor", 1, argv[0] )); 
+  }
+  result = (pn_reactor_t *)pn_object_reactor(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_event_reactor(int argc, VALUE *argv, VALUE self) {
+  pn_event_t *arg1 = (pn_event_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_reactor_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_event_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_event_t *","pn_event_reactor", 1, argv[0] )); 
+  }
+  arg1 = (pn_event_t *)(argp1);
+  result = (pn_reactor_t *)pn_event_reactor(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_reactor_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_record_get_handler(int argc, VALUE *argv, VALUE self) {
+  pn_record_t *arg1 = (pn_record_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  pn_handler_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_record_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_record_t *","pn_record_get_handler", 1, argv[0] )); 
+  }
+  arg1 = (pn_record_t *)(argp1);
+  result = (pn_handler_t *)pn_record_get_handler(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_record_set_handler(int argc, VALUE *argv, VALUE self) {
+  pn_record_t *arg1 = (pn_record_t *) 0 ;
+  pn_handler_t *arg2 = (pn_handler_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  
+  if ((argc < 2) || (argc > 2)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+  }
+  res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_pn_record_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "pn_record_t *","pn_record_set_handler", 1, argv[0] )); 
+  }
+  arg1 = (pn_record_t *)(argp1);
+  res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "pn_handler_t *","pn_record_set_handler", 2, argv[1] )); 
+  }
+  arg2 = (pn_handler_t *)(argp2);
+  pn_record_set_handler(arg1,arg2);
+  return Qnil;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_handshaker(int argc, VALUE *argv, VALUE self) {
+  pn_handshaker_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  result = (pn_handshaker_t *)pn_handshaker();
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_iohandler(int argc, VALUE *argv, VALUE self) {
+  pn_iohandler_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 0) || (argc > 0)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+  }
+  result = (pn_iohandler_t *)pn_iohandler();
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
+SWIGINTERN VALUE
+_wrap_pn_flowcontroller(int argc, VALUE *argv, VALUE self) {
+  int arg1 ;
+  int val1 ;
+  int ecode1 = 0 ;
+  pn_flowcontroller_t *result = 0 ;
+  VALUE vresult = Qnil;
+  
+  if ((argc < 1) || (argc > 1)) {
+    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
+  }
+  ecode1 = SWIG_AsVal_int(argv[0], &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), Ruby_Format_TypeError( "", "int","pn_flowcontroller", 1, argv[0] ));
+  } 
+  arg1 = (int)(val1);
+  result = (pn_flowcontroller_t *)pn_flowcontroller(arg1);
+  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_pn_handler_t, 0 |  0 );
+  return vresult;
+fail:
+  return Qnil;
+}
+
+
 
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
+static swig_type_info _swigt__p_Pn_rbkey_t = {"_p_Pn_rbkey_t", "Pn_rbkey_t *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_Pni_rbhandler_t = {"_p_Pni_rbhandler_t", "Pni_rbhandler_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_f_p_q_const__char_p_q_const__char__void = {"_p_f_p_q_const__char_p_q_const__char__void", "void (*)(char const *,char const *)|pn_fnc_tracer_t", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_struct_pn_handler_t__void = {"_p_f_p_struct_pn_handler_t__void", "void (*)(struct pn_handler_t *)|void (*)(pn_handler_t *)", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_struct_pn_handler_t_p_struct_pn_event_t_enum_pn_event_type_t__void = {"_p_f_p_struct_pn_handler_t_p_struct_pn_event_t_enum_pn_event_type_t__void", "void (*)(struct pn_handler_t *,struct pn_event_t *,enum pn_event_type_t)|void (*)(pn_handler_t *,pn_event_t *,pn_event_type_t)", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_struct_pn_selectable_t__void = {"_p_f_p_struct_pn_selectable_t__void", "void (*)(struct pn_selectable_t *)|void (*)(pn_selectable_t *)", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_f_p_struct_pn_transport_t_p_q_const__char__void = {"_p_f_p_struct_pn_transport_t_p_q_const__char__void", "void (*)(struct pn_transport_t *,char const *)|pn_tracer_t", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_f_p_void__p_void = {"_p_f_p_void__p_void", "void *(*)(void *)|pn_iterator_next_t", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_int = {"_p_int", "int *|ssize_t *|pn_state_t *|pn_trace_t *|pn_socket_t *", 0, 0, (void*)0, 0};
@@ -21394,7 +23720,7 @@ static swig_type_info _swigt__p_intptr_t = {"_p_intptr_t", "intptr_t *|pn_shandl
 static swig_type_info _swigt__p_long = {"_p_long", "int32_t *|long *|pn_sequence_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_long_long = {"_p_long_long", "int64_t *|long long *|pn_tracker_t *|pn_timestamp_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_p_char = {"_p_p_char", "char **", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_pn_activate_criteria_t = {"_p_pn_activate_criteria_t", "enum pn_activate_criteria_t *|pn_activate_criteria_t *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_pn_acceptor_t = {"_p_pn_acceptor_t", "struct pn_acceptor_t *|pn_acceptor_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_atom_t = {"_p_pn_atom_t", "pn_atom_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_bytes_t = {"_p_pn_bytes_t", "pn_bytes_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_cid_t = {"_p_pn_cid_t", "pn_cid_t *", 0, 0, (void*)0, 0};
@@ -21402,31 +23728,29 @@ static swig_type_info _swigt__p_pn_class_t = {"_p_pn_class_t", "struct pn_class_
 static swig_type_info _swigt__p_pn_collector_t = {"_p_pn_collector_t", "struct pn_collector_t *|pn_collector_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_condition_t = {"_p_pn_condition_t", "struct pn_condition_t *|pn_condition_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_connection_t = {"_p_pn_connection_t", "struct pn_connection_t *|pn_connection_t *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_pn_connector_t = {"_p_pn_connector_t", "struct pn_connector_t *|pn_connector_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_data_t = {"_p_pn_data_t", "struct pn_data_t *|pn_data_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_decimal128_t = {"_p_pn_decimal128_t", "pn_decimal128_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_delivery_t = {"_p_pn_delivery_t", "struct pn_delivery_t *|pn_delivery_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_disposition_t = {"_p_pn_disposition_t", "struct pn_disposition_t *|pn_disposition_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_distribution_mode_t = {"_p_pn_distribution_mode_t", "enum pn_distribution_mode_t *|pn_distribution_mode_t *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_pn_driver_t = {"_p_pn_driver_t", "struct pn_driver_t *|pn_driver_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_durability_t = {"_p_pn_durability_t", "enum pn_durability_t *|pn_durability_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_error_t = {"_p_pn_error_t", "struct pn_error_t *|pn_error_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_event_t = {"_p_pn_event_t", "struct pn_event_t *|pn_event_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_event_type_t = {"_p_pn_event_type_t", "enum pn_event_type_t *|pn_event_type_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_expiry_policy_t = {"_p_pn_expiry_policy_t", "enum pn_expiry_policy_t *|pn_expiry_policy_t *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_pn_format_t = {"_p_pn_format_t", "enum pn_format_t *|pn_format_t *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_pn_handler_t = {"_p_pn_handler_t", "pn_handshaker_t *|struct pn_handler_t *|pn_flowcontroller_t *|pn_handler_t *|pn_iohandler_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_hash_t = {"_p_pn_hash_t", "struct pn_hash_t *|pn_hash_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_io_t = {"_p_pn_io_t", "struct pn_io_t *|pn_io_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_iterator_t = {"_p_pn_iterator_t", "pn_selectables_t *|struct pn_iterator_t *|pn_iterator_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_link_t = {"_p_pn_link_t", "struct pn_link_t *|pn_link_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_list_t = {"_p_pn_list_t", "struct pn_list_t *|pn_list_t *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_pn_listener_t = {"_p_pn_listener_t", "struct pn_listener_t *|pn_listener_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_map_t = {"_p_pn_map_t", "struct pn_map_t *|pn_map_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_message_t = {"_p_pn_message_t", "struct pn_message_t *|pn_message_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_messenger_t = {"_p_pn_messenger_t", "struct pn_messenger_t *|pn_messenger_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_rcv_settle_mode_t = {"_p_pn_rcv_settle_mode_t", "enum pn_rcv_settle_mode_t *|pn_rcv_settle_mode_t *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_pn_reactor_t = {"_p_pn_reactor_t", "struct pn_reactor_t *|pn_reactor_t *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_pn_record_t = {"_p_pn_record_t", "struct pn_record_t *|pn_record_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_sasl_outcome_t = {"_p_pn_sasl_outcome_t", "enum pn_sasl_outcome_t *|pn_sasl_outcome_t *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_pn_sasl_state_t = {"_p_pn_sasl_state_t", "enum pn_sasl_state_t *|pn_sasl_state_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_sasl_t = {"_p_pn_sasl_t", "struct pn_sasl_t *|pn_sasl_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_selectable_t = {"_p_pn_selectable_t", "struct pn_selectable_t *|pn_selectable_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_selector_t = {"_p_pn_selector_t", "struct pn_selector_t *|pn_selector_t *", 0, 0, (void*)0, 0};
@@ -21440,8 +23764,10 @@ static swig_type_info _swigt__p_pn_ssl_verify_mode_t = {"_p_pn_ssl_verify_mode_t
 static swig_type_info _swigt__p_pn_status_t = {"_p_pn_status_t", "enum pn_status_t *|pn_status_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_string_t = {"_p_pn_string_t", "struct pn_string_t *|pn_string_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_subscription_t = {"_p_pn_subscription_t", "struct pn_subscription_t *|pn_subscription_t *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_pn_task_t = {"_p_pn_task_t", "struct pn_task_t *|pn_task_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_terminus_t = {"_p_pn_terminus_t", "struct pn_terminus_t *|pn_terminus_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_terminus_type_t = {"_p_pn_terminus_type_t", "enum pn_terminus_type_t *|pn_terminus_type_t *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_pn_timer_t = {"_p_pn_timer_t", "struct pn_timer_t *|pn_timer_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_transport_t = {"_p_pn_transport_t", "struct pn_transport_t *|pn_transport_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_type_t = {"_p_pn_type_t", "enum pn_type_t *|pn_type_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pn_url_t = {"_p_pn_url_t", "struct pn_url_t *|pn_url_t *", 0, 0, (void*)0, 0};
@@ -21456,8 +23782,13 @@ static swig_type_info _swigt__p_unsigned_short = {"_p_unsigned_short", "unsigned
 static swig_type_info _swigt__p_void = {"_p_void", "void *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
+  &_swigt__p_Pn_rbkey_t,
+  &_swigt__p_Pni_rbhandler_t,
   &_swigt__p_char,
   &_swigt__p_f_p_q_const__char_p_q_const__char__void,
+  &_swigt__p_f_p_struct_pn_handler_t__void,
+  &_swigt__p_f_p_struct_pn_handler_t_p_struct_pn_event_t_enum_pn_event_type_t__void,
+  &_swigt__p_f_p_struct_pn_selectable_t__void,
   &_swigt__p_f_p_struct_pn_transport_t_p_q_const__char__void,
   &_swigt__p_f_p_void__p_void,
   &_swigt__p_int,
@@ -21465,7 +23796,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_long,
   &_swigt__p_long_long,
   &_swigt__p_p_char,
-  &_swigt__p_pn_activate_criteria_t,
+  &_swigt__p_pn_acceptor_t,
   &_swigt__p_pn_atom_t,
   &_swigt__p_pn_bytes_t,
   &_swigt__p_pn_cid_t,
@@ -21473,31 +23804,29 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_pn_collector_t,
   &_swigt__p_pn_condition_t,
   &_swigt__p_pn_connection_t,
-  &_swigt__p_pn_connector_t,
   &_swigt__p_pn_data_t,
   &_swigt__p_pn_decimal128_t,
   &_swigt__p_pn_delivery_t,
   &_swigt__p_pn_disposition_t,
   &_swigt__p_pn_distribution_mode_t,
-  &_swigt__p_pn_driver_t,
   &_swigt__p_pn_durability_t,
   &_swigt__p_pn_error_t,
   &_swigt__p_pn_event_t,
   &_swigt__p_pn_event_type_t,
   &_swigt__p_pn_expiry_policy_t,
-  &_swigt__p_pn_format_t,
+  &_swigt__p_pn_handler_t,
   &_swigt__p_pn_hash_t,
   &_swigt__p_pn_io_t,
   &_swigt__p_pn_iterator_t,
   &_swigt__p_pn_link_t,
   &_swigt__p_pn_list_t,
-  &_swigt__p_pn_listener_t,
   &_swigt__p_pn_map_t,
   &_swigt__p_pn_message_t,
   &_swigt__p_pn_messenger_t,
   &_swigt__p_pn_rcv_settle_mode_t,
+  &_swigt__p_pn_reactor_t,
+  &_swigt__p_pn_record_t,
   &_swigt__p_pn_sasl_outcome_t,
-  &_swigt__p_pn_sasl_state_t,
   &_swigt__p_pn_sasl_t,
   &_swigt__p_pn_selectable_t,
   &_swigt__p_pn_selector_t,
@@ -21511,8 +23840,10 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_pn_status_t,
   &_swigt__p_pn_string_t,
   &_swigt__p_pn_subscription_t,
+  &_swigt__p_pn_task_t,
   &_swigt__p_pn_terminus_t,
   &_swigt__p_pn_terminus_type_t,
+  &_swigt__p_pn_timer_t,
   &_swigt__p_pn_transport_t,
   &_swigt__p_pn_type_t,
   &_swigt__p_pn_url_t,
@@ -21527,8 +23858,13 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_void,
 };
 
+static swig_cast_info _swigc__p_Pn_rbkey_t[] = {  {&_swigt__p_Pn_rbkey_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Pni_rbhandler_t[] = {  {&_swigt__p_Pni_rbhandler_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_f_p_q_const__char_p_q_const__char__void[] = {  {&_swigt__p_f_p_q_const__char_p_q_const__char__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_struct_pn_handler_t__void[] = {  {&_swigt__p_f_p_struct_pn_handler_t__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_struct_pn_handler_t_p_struct_pn_event_t_enum_pn_event_type_t__void[] = {  {&_swigt__p_f_p_struct_pn_handler_t_p_struct_pn_event_t_enum_pn_event_type_t__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_struct_pn_selectable_t__void[] = {  {&_swigt__p_f_p_struct_pn_selectable_t__void, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_f_p_struct_pn_transport_t_p_q_const__char__void[] = {  {&_swigt__p_f_p_struct_pn_transport_t_p_q_const__char__void, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_f_p_void__p_void[] = {  {&_swigt__p_f_p_void__p_void, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_int[] = {  {&_swigt__p_int, 0, 0, 0},{0, 0, 0, 0}};
@@ -21536,7 +23872,7 @@ static swig_cast_info _swigc__p_intptr_t[] = {  {&_swigt__p_intptr_t, 0, 0, 0},{
 static swig_cast_info _swigc__p_long[] = {  {&_swigt__p_long, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_long_long[] = {  {&_swigt__p_long_long, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_p_char[] = {  {&_swigt__p_p_char, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_pn_activate_criteria_t[] = {  {&_swigt__p_pn_activate_criteria_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_pn_acceptor_t[] = {  {&_swigt__p_pn_acceptor_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_atom_t[] = {  {&_swigt__p_pn_atom_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_bytes_t[] = {  {&_swigt__p_pn_bytes_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_cid_t[] = {  {&_swigt__p_pn_cid_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -21544,31 +23880,29 @@ static swig_cast_info _swigc__p_pn_class_t[] = {  {&_swigt__p_pn_class_t, 0, 0, 
 static swig_cast_info _swigc__p_pn_collector_t[] = {  {&_swigt__p_pn_collector_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_condition_t[] = {  {&_swigt__p_pn_condition_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_connection_t[] = {  {&_swigt__p_pn_connection_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_pn_connector_t[] = {  {&_swigt__p_pn_connector_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_data_t[] = {  {&_swigt__p_pn_data_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_decimal128_t[] = {  {&_swigt__p_pn_decimal128_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_delivery_t[] = {  {&_swigt__p_pn_delivery_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_disposition_t[] = {  {&_swigt__p_pn_disposition_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_distribution_mode_t[] = {  {&_swigt__p_pn_distribution_mode_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_pn_driver_t[] = {  {&_swigt__p_pn_driver_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_durability_t[] = {  {&_swigt__p_pn_durability_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_error_t[] = {  {&_swigt__p_pn_error_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_event_t[] = {  {&_swigt__p_pn_event_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_event_type_t[] = {  {&_swigt__p_pn_event_type_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_expiry_policy_t[] = {  {&_swigt__p_pn_expiry_policy_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_pn_format_t[] = {  {&_swigt__p_pn_format_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_pn_handler_t[] = {  {&_swigt__p_pn_handler_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_hash_t[] = {  {&_swigt__p_pn_hash_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_io_t[] = {  {&_swigt__p_pn_io_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_iterator_t[] = {  {&_swigt__p_pn_iterator_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_link_t[] = {  {&_swigt__p_pn_link_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_list_t[] = {  {&_swigt__p_pn_list_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_pn_listener_t[] = {  {&_swigt__p_pn_listener_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_map_t[] = {  {&_swigt__p_pn_map_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_message_t[] = {  {&_swigt__p_pn_message_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_messenger_t[] = {  {&_swigt__p_pn_messenger_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_rcv_settle_mode_t[] = {  {&_swigt__p_pn_rcv_settle_mode_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_pn_reactor_t[] = {  {&_swigt__p_pn_reactor_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_pn_record_t[] = {  {&_swigt__p_pn_record_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_sasl_outcome_t[] = {  {&_swigt__p_pn_sasl_outcome_t, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_pn_sasl_state_t[] = {  {&_swigt__p_pn_sasl_state_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_sasl_t[] = {  {&_swigt__p_pn_sasl_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_selectable_t[] = {  {&_swigt__p_pn_selectable_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_selector_t[] = {  {&_swigt__p_pn_selector_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -21582,8 +23916,10 @@ static swig_cast_info _swigc__p_pn_ssl_verify_mode_t[] = {  {&_swigt__p_pn_ssl_v
 static swig_cast_info _swigc__p_pn_status_t[] = {  {&_swigt__p_pn_status_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_string_t[] = {  {&_swigt__p_pn_string_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_subscription_t[] = {  {&_swigt__p_pn_subscription_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_pn_task_t[] = {  {&_swigt__p_pn_task_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_terminus_t[] = {  {&_swigt__p_pn_terminus_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_terminus_type_t[] = {  {&_swigt__p_pn_terminus_type_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_pn_timer_t[] = {  {&_swigt__p_pn_timer_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_transport_t[] = {  {&_swigt__p_pn_transport_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_type_t[] = {  {&_swigt__p_pn_type_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pn_url_t[] = {  {&_swigt__p_pn_url_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -21598,8 +23934,13 @@ static swig_cast_info _swigc__p_unsigned_short[] = {  {&_swigt__p_unsigned_short
 static swig_cast_info _swigc__p_void[] = {  {&_swigt__p_void, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
+  _swigc__p_Pn_rbkey_t,
+  _swigc__p_Pni_rbhandler_t,
   _swigc__p_char,
   _swigc__p_f_p_q_const__char_p_q_const__char__void,
+  _swigc__p_f_p_struct_pn_handler_t__void,
+  _swigc__p_f_p_struct_pn_handler_t_p_struct_pn_event_t_enum_pn_event_type_t__void,
+  _swigc__p_f_p_struct_pn_selectable_t__void,
   _swigc__p_f_p_struct_pn_transport_t_p_q_const__char__void,
   _swigc__p_f_p_void__p_void,
   _swigc__p_int,
@@ -21607,7 +23948,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_long,
   _swigc__p_long_long,
   _swigc__p_p_char,
-  _swigc__p_pn_activate_criteria_t,
+  _swigc__p_pn_acceptor_t,
   _swigc__p_pn_atom_t,
   _swigc__p_pn_bytes_t,
   _swigc__p_pn_cid_t,
@@ -21615,31 +23956,29 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_pn_collector_t,
   _swigc__p_pn_condition_t,
   _swigc__p_pn_connection_t,
-  _swigc__p_pn_connector_t,
   _swigc__p_pn_data_t,
   _swigc__p_pn_decimal128_t,
   _swigc__p_pn_delivery_t,
   _swigc__p_pn_disposition_t,
   _swigc__p_pn_distribution_mode_t,
-  _swigc__p_pn_driver_t,
   _swigc__p_pn_durability_t,
   _swigc__p_pn_error_t,
   _swigc__p_pn_event_t,
   _swigc__p_pn_event_type_t,
   _swigc__p_pn_expiry_policy_t,
-  _swigc__p_pn_format_t,
+  _swigc__p_pn_handler_t,
   _swigc__p_pn_hash_t,
   _swigc__p_pn_io_t,
   _swigc__p_pn_iterator_t,
   _swigc__p_pn_link_t,
   _swigc__p_pn_list_t,
-  _swigc__p_pn_listener_t,
   _swigc__p_pn_map_t,
   _swigc__p_pn_message_t,
   _swigc__p_pn_messenger_t,
   _swigc__p_pn_rcv_settle_mode_t,
+  _swigc__p_pn_reactor_t,
+  _swigc__p_pn_record_t,
   _swigc__p_pn_sasl_outcome_t,
-  _swigc__p_pn_sasl_state_t,
   _swigc__p_pn_sasl_t,
   _swigc__p_pn_selectable_t,
   _swigc__p_pn_selector_t,
@@ -21653,8 +23992,10 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_pn_status_t,
   _swigc__p_pn_string_t,
   _swigc__p_pn_subscription_t,
+  _swigc__p_pn_task_t,
   _swigc__p_pn_terminus_t,
   _swigc__p_pn_terminus_type_t,
+  _swigc__p_pn_timer_t,
   _swigc__p_pn_transport_t,
   _swigc__p_pn_type_t,
   _swigc__p_pn_url_t,
@@ -21925,32 +24266,80 @@ SWIGEXPORT void Init_cproton(void) {
   }
   
   SWIG_RubyInitializeTrackings();
-  rb_define_module_function(mCproton, "pn_message_load", _wrap_pn_message_load, -1);
-  rb_define_module_function(mCproton, "pn_message_load_data", _wrap_pn_message_load_data, -1);
-  rb_define_module_function(mCproton, "pn_message_load_text", _wrap_pn_message_load_text, -1);
-  rb_define_module_function(mCproton, "pn_message_load_amqp", _wrap_pn_message_load_amqp, -1);
-  rb_define_module_function(mCproton, "pn_message_load_json", _wrap_pn_message_load_json, -1);
   rb_define_module_function(mCproton, "pn_message_encode", _wrap_pn_message_encode, -1);
-  rb_define_module_function(mCproton, "pn_message_save", _wrap_pn_message_save, -1);
-  rb_define_module_function(mCproton, "pn_message_save_data", _wrap_pn_message_save_data, -1);
-  rb_define_module_function(mCproton, "pn_message_save_text", _wrap_pn_message_save_text, -1);
-  rb_define_module_function(mCproton, "pn_message_save_amqp", _wrap_pn_message_save_amqp, -1);
-  rb_define_module_function(mCproton, "pn_message_save_json", _wrap_pn_message_save_json, -1);
   rb_define_module_function(mCproton, "pn_link_send", _wrap_pn_link_send, -1);
   rb_define_module_function(mCproton, "pn_link_recv", _wrap_pn_link_recv, -1);
   rb_define_module_function(mCproton, "pn_transport_input", _wrap_pn_transport_input, -1);
   rb_define_module_function(mCproton, "pn_transport_output", _wrap_pn_transport_output, -1);
+  rb_define_module_function(mCproton, "pn_transport_peek", _wrap_pn_transport_peek, -1);
   rb_define_module_function(mCproton, "pn_delivery", _wrap_pn_delivery, -1);
   rb_define_module_function(mCproton, "pn_delivery_tag", _wrap_pn_delivery_tag, -1);
-  rb_define_module_function(mCproton, "pn_message_data", _wrap_pn_message_data, -1);
   rb_define_module_function(mCproton, "pn_ssl_get_cipher_name", _wrap_pn_ssl_get_cipher_name, -1);
   rb_define_module_function(mCproton, "pn_ssl_get_protocol_name", _wrap_pn_ssl_get_protocol_name, -1);
   rb_define_module_function(mCproton, "pn_messenger_send", _wrap_pn_messenger_send, -1);
   rb_define_module_function(mCproton, "pn_messenger_recv", _wrap_pn_messenger_recv, -1);
+  rb_define_module_function(mCproton, "pn_messenger_work", _wrap_pn_messenger_work, -1);
+  
+  SwigClassPn_rbkey_t.klass = rb_define_class_under(mCproton, "Pn_rbkey_t", rb_cObject);
+  SWIG_TypeClientData(SWIGTYPE_p_Pn_rbkey_t, (void *) &SwigClassPn_rbkey_t);
+  rb_define_alloc_func(SwigClassPn_rbkey_t.klass, _wrap_Pn_rbkey_t_allocate);
+  rb_define_method(SwigClassPn_rbkey_t.klass, "initialize", _wrap_new_Pn_rbkey_t, -1);
+  rb_define_method(SwigClassPn_rbkey_t.klass, "registry=", _wrap_Pn_rbkey_t_registry_set, -1);
+  rb_define_method(SwigClassPn_rbkey_t.klass, "registry", _wrap_Pn_rbkey_t_registry_get, -1);
+  rb_define_method(SwigClassPn_rbkey_t.klass, "method=", _wrap_Pn_rbkey_t_method_set, -1);
+  rb_define_method(SwigClassPn_rbkey_t.klass, "method", _wrap_Pn_rbkey_t_method_get, -1);
+  rb_define_method(SwigClassPn_rbkey_t.klass, "key_value=", _wrap_Pn_rbkey_t_key_value_set, -1);
+  rb_define_method(SwigClassPn_rbkey_t.klass, "key_value", _wrap_Pn_rbkey_t_key_value_get, -1);
+  SwigClassPn_rbkey_t.mark = 0;
+  SwigClassPn_rbkey_t.destroy = (void (*)(void *)) free_Pn_rbkey_t;
+  SwigClassPn_rbkey_t.trackObjects = 0;
+  rb_define_module_function(mCproton, "Pn_rbkey_initialize", _wrap_Pn_rbkey_initialize, -1);
+  rb_define_module_function(mCproton, "Pn_rbkey_finalize", _wrap_Pn_rbkey_finalize, -1);
+  rb_define_module_function(mCproton, "Pn_rbkey_initialize_cast", _wrap_Pn_rbkey_initialize_cast, -1);
+  rb_define_module_function(mCproton, "Pn_rbkey_finalize_cast", _wrap_Pn_rbkey_finalize_cast, -1);
+  rb_define_module_function(mCproton, "Pn_rbkey_hashcode_cast", _wrap_Pn_rbkey_hashcode_cast, -1);
+  rb_define_module_function(mCproton, "Pn_rbkey_compare_cast", _wrap_Pn_rbkey_compare_cast, -1);
+  rb_define_module_function(mCproton, "Pn_rbkey_inspect_cast", _wrap_Pn_rbkey_inspect_cast, -1);
+  rb_define_module_function(mCproton, "Pn_rbkey__class", _wrap_Pn_rbkey__class, -1);
+  rb_define_module_function(mCproton, "Pn_rbkey_new", _wrap_Pn_rbkey_new, -1);
+  rb_define_module_function(mCproton, "Pn_rbkey_set_registry", _wrap_Pn_rbkey_set_registry, -1);
+  rb_define_module_function(mCproton, "Pn_rbkey_get_registry", _wrap_Pn_rbkey_get_registry, -1);
+  rb_define_module_function(mCproton, "Pn_rbkey_set_method", _wrap_Pn_rbkey_set_method, -1);
+  rb_define_module_function(mCproton, "Pn_rbkey_get_method", _wrap_Pn_rbkey_get_method, -1);
+  rb_define_module_function(mCproton, "Pn_rbkey_set_key_value", _wrap_Pn_rbkey_set_key_value, -1);
+  rb_define_module_function(mCproton, "Pn_rbkey_get_key_value", _wrap_Pn_rbkey_get_key_value, -1);
+  rb_define_module_function(mCproton, "pni_void2rbkey", _wrap_pni_void2rbkey, -1);
+  rb_define_module_function(mCproton, "pn_void2rb", _wrap_pn_void2rb, -1);
+  rb_define_module_function(mCproton, "pn_rb2void", _wrap_pn_rb2void, -1);
+  rb_define_module_function(mCproton, "pni_address_of", _wrap_pni_address_of, -1);
+  rb_define_module_function(mCproton, "pn_ssl_get_peer_hostname", _wrap_pn_ssl_get_peer_hostname, -1);
+  rb_define_module_function(mCproton, "pni_ruby_get_proton_module", _wrap_pni_ruby_get_proton_module, -1);
+  rb_define_module_function(mCproton, "pni_ruby_add_to_registry", _wrap_pni_ruby_add_to_registry, -1);
+  rb_define_module_function(mCproton, "pni_ruby_get_from_registry", _wrap_pni_ruby_get_from_registry, -1);
+  rb_define_module_function(mCproton, "pni_ruby_delete_from_registry", _wrap_pni_ruby_delete_from_registry, -1);
+  
+  SwigClassPni_rbhandler_t.klass = rb_define_class_under(mCproton, "Pni_rbhandler_t", rb_cObject);
+  SWIG_TypeClientData(SWIGTYPE_p_Pni_rbhandler_t, (void *) &SwigClassPni_rbhandler_t);
+  rb_define_alloc_func(SwigClassPni_rbhandler_t.klass, _wrap_Pni_rbhandler_t_allocate);
+  rb_define_method(SwigClassPni_rbhandler_t.klass, "initialize", _wrap_new_Pni_rbhandler_t, -1);
+  rb_define_method(SwigClassPni_rbhandler_t.klass, "handler_key=", _wrap_Pni_rbhandler_t_handler_key_set, -1);
+  rb_define_method(SwigClassPni_rbhandler_t.klass, "handler_key", _wrap_Pni_rbhandler_t_handler_key_get, -1);
+  SwigClassPni_rbhandler_t.mark = 0;
+  SwigClassPni_rbhandler_t.destroy = (void (*)(void *)) free_Pni_rbhandler_t;
+  SwigClassPni_rbhandler_t.trackObjects = 0;
+  rb_define_module_function(mCproton, "pni_rbhandler", _wrap_pni_rbhandler, -1);
+  rb_define_module_function(mCproton, "pni_rbdispatch", _wrap_pni_rbdispatch, -1);
+  rb_define_module_function(mCproton, "pni_rbhandler_finalize", _wrap_pni_rbhandler_finalize, -1);
+  rb_define_module_function(mCproton, "pn_rbhandler", _wrap_pn_rbhandler, -1);
+  rb_define_module_function(mCproton, "pn_messenger_resolve", _wrap_pn_messenger_resolve, -1);
+  rb_define_module_function(mCproton, "pn_transport_get_sasl", _wrap_pn_transport_get_sasl, -1);
+  rb_define_module_function(mCproton, "pn_sasl_outcome", _wrap_pn_sasl_outcome, -1);
   rb_define_const(mCproton, "PROTON_IMPORT_EXPORT_H", SWIG_From_int((int)(1)));
   rb_define_const(mCproton, "PN_VERSION_MAJOR", SWIG_From_int((int)(0)));
-  rb_define_const(mCproton, "PN_VERSION_MINOR", SWIG_From_int((int)(8)));
+  rb_define_const(mCproton, "PN_VERSION_MINOR", SWIG_From_int((int)(10)));
+  rb_define_const(mCproton, "PN_VERSION_POINT", SWIG_From_int((int)(0)));
   rb_define_const(mCproton, "PROTON_TYPES_H", SWIG_From_int((int)(1)));
+  rb_define_const(mCproton, "PN_MILLIS_MAX", SWIG_From_unsigned_SS_int((unsigned int)((~0U))));
   rb_define_module_function(mCproton, "pn_bytes", _wrap_pn_bytes, -1);
   rb_define_const(mCproton, "PROTON_OBJECT_H", SWIG_From_int((int)(1)));
   rb_define_singleton_method(mCproton, "PN_OBJECT", _wrap_PN_OBJECT_get, 0);
@@ -21992,11 +24381,14 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_list_get", _wrap_pn_list_get, -1);
   rb_define_module_function(mCproton, "pn_list_set", _wrap_pn_list_set, -1);
   rb_define_module_function(mCproton, "pn_list_add", _wrap_pn_list_add, -1);
+  rb_define_module_function(mCproton, "pn_list_pop", _wrap_pn_list_pop, -1);
   rb_define_module_function(mCproton, "pn_list_index", _wrap_pn_list_index, -1);
   rb_define_module_function(mCproton, "pn_list_remove", _wrap_pn_list_remove, -1);
   rb_define_module_function(mCproton, "pn_list_del", _wrap_pn_list_del, -1);
   rb_define_module_function(mCproton, "pn_list_clear", _wrap_pn_list_clear, -1);
   rb_define_module_function(mCproton, "pn_list_iterator", _wrap_pn_list_iterator, -1);
+  rb_define_module_function(mCproton, "pn_list_minpush", _wrap_pn_list_minpush, -1);
+  rb_define_module_function(mCproton, "pn_list_minpop", _wrap_pn_list_minpop, -1);
   rb_define_const(mCproton, "PN_REFCOUNT_KEY", SWIG_From_int((int)((0x2))));
   rb_define_const(mCproton, "PN_REFCOUNT_VALUE", SWIG_From_int((int)((0x4))));
   rb_define_module_function(mCproton, "pn_map", _wrap_pn_map, -1);
@@ -22035,6 +24427,12 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_iterator", _wrap_pn_iterator, -1);
   rb_define_module_function(mCproton, "pn_iterator_start", _wrap_pn_iterator_start, -1);
   rb_define_module_function(mCproton, "pn_iterator_next", _wrap_pn_iterator_next, -1);
+  rb_define_module_function(mCproton, "pn_record", _wrap_pn_record, -1);
+  rb_define_module_function(mCproton, "pn_record_def", _wrap_pn_record_def, -1);
+  rb_define_module_function(mCproton, "pn_record_has", _wrap_pn_record_has, -1);
+  rb_define_module_function(mCproton, "pn_record_get", _wrap_pn_record_get, -1);
+  rb_define_module_function(mCproton, "pn_record_set", _wrap_pn_record_set, -1);
+  rb_define_module_function(mCproton, "pn_record_clear", _wrap_pn_record_clear, -1);
   rb_define_module_function(mCproton, "pn_set_fnc_entry_tracer", _wrap_pn_set_fnc_entry_tracer, -1);
   rb_define_module_function(mCproton, "pn_set_fnc_data_tracer", _wrap_pn_set_fnc_data_tracer, -1);
   rb_define_module_function(mCproton, "pn_set_fnc_exit_tracer", _wrap_pn_set_fnc_exit_tracer, -1);
@@ -22069,6 +24467,7 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_fnc_exit_uint64_t", _wrap_pn_fnc_exit_uint64_t, -1);
   rb_define_module_function(mCproton, "pn_fnc_exit_void", _wrap_pn_fnc_exit_void, -1);
   rb_define_const(mCproton, "PROTON_ERROR_H", SWIG_From_int((int)(1)));
+  rb_define_const(mCproton, "PN_OK", SWIG_From_int((int)((0))));
   rb_define_const(mCproton, "PN_EOS", SWIG_From_int((int)((-1))));
   rb_define_const(mCproton, "PN_ERR", SWIG_From_int((int)((-2))));
   rb_define_const(mCproton, "PN_OVERFLOW", SWIG_From_int((int)((-3))));
@@ -22078,6 +24477,7 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_const(mCproton, "PN_TIMEOUT", SWIG_From_int((int)((-7))));
   rb_define_const(mCproton, "PN_INTR", SWIG_From_int((int)((-8))));
   rb_define_const(mCproton, "PN_INPROGRESS", SWIG_From_int((int)((-9))));
+  rb_define_const(mCproton, "PN_OUT_OF_MEMORY", SWIG_From_int((int)((-10))));
   rb_define_module_function(mCproton, "pn_code", _wrap_pn_code, -1);
   rb_define_module_function(mCproton, "pn_error", _wrap_pn_error, -1);
   rb_define_module_function(mCproton, "pn_error_free", _wrap_pn_error_free, -1);
@@ -22108,10 +24508,12 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_const(mCproton, "PN_REMOTE_MASK", SWIG_From_int((int)(((8)|(16)|(32)))));
   rb_define_module_function(mCproton, "pn_connection", _wrap_pn_connection, -1);
   rb_define_module_function(mCproton, "pn_connection_free", _wrap_pn_connection_free, -1);
+  rb_define_module_function(mCproton, "pn_connection_release", _wrap_pn_connection_release, -1);
   rb_define_module_function(mCproton, "pn_connection_error", _wrap_pn_connection_error, -1);
   rb_define_module_function(mCproton, "pn_connection_collect", _wrap_pn_connection_collect, -1);
   rb_define_module_function(mCproton, "pn_connection_get_context", _wrap_pn_connection_get_context, -1);
   rb_define_module_function(mCproton, "pn_connection_set_context", _wrap_pn_connection_set_context, -1);
+  rb_define_module_function(mCproton, "pn_connection_attachments", _wrap_pn_connection_attachments, -1);
   rb_define_module_function(mCproton, "pn_connection_state", _wrap_pn_connection_state, -1);
   rb_define_module_function(mCproton, "pn_connection_open", _wrap_pn_connection_open, -1);
   rb_define_module_function(mCproton, "pn_connection_close", _wrap_pn_connection_close, -1);
@@ -22120,6 +24522,9 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_connection_remote_condition", _wrap_pn_connection_remote_condition, -1);
   rb_define_module_function(mCproton, "pn_connection_get_container", _wrap_pn_connection_get_container, -1);
   rb_define_module_function(mCproton, "pn_connection_set_container", _wrap_pn_connection_set_container, -1);
+  rb_define_module_function(mCproton, "pn_connection_set_user", _wrap_pn_connection_set_user, -1);
+  rb_define_module_function(mCproton, "pn_connection_set_password", _wrap_pn_connection_set_password, -1);
+  rb_define_module_function(mCproton, "pn_connection_get_user", _wrap_pn_connection_get_user, -1);
   rb_define_module_function(mCproton, "pn_connection_get_hostname", _wrap_pn_connection_get_hostname, -1);
   rb_define_module_function(mCproton, "pn_connection_set_hostname", _wrap_pn_connection_set_hostname, -1);
   rb_define_module_function(mCproton, "pn_connection_remote_container", _wrap_pn_connection_remote_container, -1);
@@ -22136,6 +24541,7 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_session_free", _wrap_pn_session_free, -1);
   rb_define_module_function(mCproton, "pn_session_get_context", _wrap_pn_session_get_context, -1);
   rb_define_module_function(mCproton, "pn_session_set_context", _wrap_pn_session_set_context, -1);
+  rb_define_module_function(mCproton, "pn_session_attachments", _wrap_pn_session_attachments, -1);
   rb_define_module_function(mCproton, "pn_session_state", _wrap_pn_session_state, -1);
   rb_define_module_function(mCproton, "pn_session_error", _wrap_pn_session_error, -1);
   rb_define_module_function(mCproton, "pn_session_condition", _wrap_pn_session_condition, -1);
@@ -22145,6 +24551,8 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_session_close", _wrap_pn_session_close, -1);
   rb_define_module_function(mCproton, "pn_session_get_incoming_capacity", _wrap_pn_session_get_incoming_capacity, -1);
   rb_define_module_function(mCproton, "pn_session_set_incoming_capacity", _wrap_pn_session_set_incoming_capacity, -1);
+  rb_define_module_function(mCproton, "pn_session_get_outgoing_window", _wrap_pn_session_get_outgoing_window, -1);
+  rb_define_module_function(mCproton, "pn_session_set_outgoing_window", _wrap_pn_session_set_outgoing_window, -1);
   rb_define_module_function(mCproton, "pn_session_outgoing_bytes", _wrap_pn_session_outgoing_bytes, -1);
   rb_define_module_function(mCproton, "pn_session_incoming_bytes", _wrap_pn_session_incoming_bytes, -1);
   rb_define_module_function(mCproton, "pn_session_head", _wrap_pn_session_head, -1);
@@ -22155,6 +24563,7 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_link_free", _wrap_pn_link_free, -1);
   rb_define_module_function(mCproton, "pn_link_get_context", _wrap_pn_link_get_context, -1);
   rb_define_module_function(mCproton, "pn_link_set_context", _wrap_pn_link_set_context, -1);
+  rb_define_module_function(mCproton, "pn_link_attachments", _wrap_pn_link_attachments, -1);
   rb_define_module_function(mCproton, "pn_link_name", _wrap_pn_link_name, -1);
   rb_define_module_function(mCproton, "pn_link_is_sender", _wrap_pn_link_is_sender, -1);
   rb_define_module_function(mCproton, "pn_link_is_receiver", _wrap_pn_link_is_receiver, -1);
@@ -22168,6 +24577,8 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_link_open", _wrap_pn_link_open, -1);
   rb_define_module_function(mCproton, "pn_link_close", _wrap_pn_link_close, -1);
   rb_define_module_function(mCproton, "pn_link_detach", _wrap_pn_link_detach, -1);
+  rb_define_module_function(mCproton, "pn_link_detached", _wrap_pn_link_detached, -1);
+  rb_define_module_function(mCproton, "pn_link_remote_detached", _wrap_pn_link_remote_detached, -1);
   rb_define_module_function(mCproton, "pn_link_source", _wrap_pn_link_source, -1);
   rb_define_module_function(mCproton, "pn_link_target", _wrap_pn_link_target, -1);
   rb_define_module_function(mCproton, "pn_link_remote_source", _wrap_pn_link_remote_source, -1);
@@ -22236,6 +24647,7 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_const(mCproton, "PROTON_DELIVERY_H", SWIG_From_int((int)(1)));
   rb_define_module_function(mCproton, "pn_delivery_get_context", _wrap_pn_delivery_get_context, -1);
   rb_define_module_function(mCproton, "pn_delivery_set_context", _wrap_pn_delivery_set_context, -1);
+  rb_define_module_function(mCproton, "pn_delivery_attachments", _wrap_pn_delivery_attachments, -1);
   rb_define_module_function(mCproton, "pn_delivery_link", _wrap_pn_delivery_link, -1);
   rb_define_module_function(mCproton, "pn_delivery_local", _wrap_pn_delivery_local, -1);
   rb_define_module_function(mCproton, "pn_delivery_local_state", _wrap_pn_delivery_local_state, -1);
@@ -22249,6 +24661,7 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_delivery_updated", _wrap_pn_delivery_updated, -1);
   rb_define_module_function(mCproton, "pn_delivery_update", _wrap_pn_delivery_update, -1);
   rb_define_module_function(mCproton, "pn_delivery_clear", _wrap_pn_delivery_clear, -1);
+  rb_define_module_function(mCproton, "pn_delivery_current", _wrap_pn_delivery_current, -1);
   rb_define_module_function(mCproton, "pn_delivery_settle", _wrap_pn_delivery_settle, -1);
   rb_define_module_function(mCproton, "pn_delivery_dump", _wrap_pn_delivery_dump, -1);
   rb_define_module_function(mCproton, "pn_delivery_buffered", _wrap_pn_delivery_buffered, -1);
@@ -22278,7 +24691,13 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_const(mCproton, "PN_TRACE_FRM", SWIG_From_int((int)((2))));
   rb_define_const(mCproton, "PN_TRACE_DRV", SWIG_From_int((int)((4))));
   rb_define_module_function(mCproton, "pn_transport", _wrap_pn_transport, -1);
+  rb_define_module_function(mCproton, "pn_transport_set_server", _wrap_pn_transport_set_server, -1);
   rb_define_module_function(mCproton, "pn_transport_free", _wrap_pn_transport_free, -1);
+  rb_define_module_function(mCproton, "pn_transport_get_user", _wrap_pn_transport_get_user, -1);
+  rb_define_module_function(mCproton, "pn_transport_require_auth", _wrap_pn_transport_require_auth, -1);
+  rb_define_module_function(mCproton, "pn_transport_is_authenticated", _wrap_pn_transport_is_authenticated, -1);
+  rb_define_module_function(mCproton, "pn_transport_require_encryption", _wrap_pn_transport_require_encryption, -1);
+  rb_define_module_function(mCproton, "pn_transport_is_encrypted", _wrap_pn_transport_is_encrypted, -1);
   rb_define_module_function(mCproton, "pn_transport_condition", _wrap_pn_transport_condition, -1);
   rb_define_module_function(mCproton, "pn_transport_error", _wrap_pn_transport_error, -1);
   rb_define_module_function(mCproton, "pn_transport_bind", _wrap_pn_transport_bind, -1);
@@ -22288,7 +24707,7 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_transport_get_tracer", _wrap_pn_transport_get_tracer, -1);
   rb_define_module_function(mCproton, "pn_transport_get_context", _wrap_pn_transport_get_context, -1);
   rb_define_module_function(mCproton, "pn_transport_set_context", _wrap_pn_transport_set_context, -1);
-  rb_define_module_function(mCproton, "pn_transport_get_sasl", _wrap_pn_transport_get_sasl, -1);
+  rb_define_module_function(mCproton, "pn_transport_attachments", _wrap_pn_transport_attachments, -1);
   rb_define_module_function(mCproton, "pn_transport_log", _wrap_pn_transport_log, -1);
   rb_define_module_function(mCproton, "pn_transport_logf", _wrap_pn_transport_logf, -1);
   rb_define_module_function(mCproton, "pn_transport_get_channel_max", _wrap_pn_transport_get_channel_max, -1);
@@ -22307,7 +24726,6 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_transport_close_tail", _wrap_pn_transport_close_tail, -1);
   rb_define_module_function(mCproton, "pn_transport_pending", _wrap_pn_transport_pending, -1);
   rb_define_module_function(mCproton, "pn_transport_head", _wrap_pn_transport_head, -1);
-  rb_define_module_function(mCproton, "pn_transport_peek", _wrap_pn_transport_peek, -1);
   rb_define_module_function(mCproton, "pn_transport_pop", _wrap_pn_transport_pop, -1);
   rb_define_module_function(mCproton, "pn_transport_close_head", _wrap_pn_transport_close_head, -1);
   rb_define_module_function(mCproton, "pn_transport_quiesced", _wrap_pn_transport_quiesced, -1);
@@ -22318,6 +24736,10 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_transport_connection", _wrap_pn_transport_connection, -1);
   rb_define_const(mCproton, "PROTON_EVENT_H", SWIG_From_int((int)(1)));
   rb_define_const(mCproton, "PN_EVENT_NONE", SWIG_From_int((int)(PN_EVENT_NONE)));
+  rb_define_const(mCproton, "PN_REACTOR_INIT", SWIG_From_int((int)(PN_REACTOR_INIT)));
+  rb_define_const(mCproton, "PN_REACTOR_QUIESCED", SWIG_From_int((int)(PN_REACTOR_QUIESCED)));
+  rb_define_const(mCproton, "PN_REACTOR_FINAL", SWIG_From_int((int)(PN_REACTOR_FINAL)));
+  rb_define_const(mCproton, "PN_TIMER_TASK", SWIG_From_int((int)(PN_TIMER_TASK)));
   rb_define_const(mCproton, "PN_CONNECTION_INIT", SWIG_From_int((int)(PN_CONNECTION_INIT)));
   rb_define_const(mCproton, "PN_CONNECTION_BOUND", SWIG_From_int((int)(PN_CONNECTION_BOUND)));
   rb_define_const(mCproton, "PN_CONNECTION_UNBOUND", SWIG_From_int((int)(PN_CONNECTION_UNBOUND)));
@@ -22343,16 +24765,26 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_const(mCproton, "PN_LINK_FINAL", SWIG_From_int((int)(PN_LINK_FINAL)));
   rb_define_const(mCproton, "PN_DELIVERY", SWIG_From_int((int)(PN_DELIVERY)));
   rb_define_const(mCproton, "PN_TRANSPORT", SWIG_From_int((int)(PN_TRANSPORT)));
+  rb_define_const(mCproton, "PN_TRANSPORT_AUTHENTICATED", SWIG_From_int((int)(PN_TRANSPORT_AUTHENTICATED)));
   rb_define_const(mCproton, "PN_TRANSPORT_ERROR", SWIG_From_int((int)(PN_TRANSPORT_ERROR)));
   rb_define_const(mCproton, "PN_TRANSPORT_HEAD_CLOSED", SWIG_From_int((int)(PN_TRANSPORT_HEAD_CLOSED)));
   rb_define_const(mCproton, "PN_TRANSPORT_TAIL_CLOSED", SWIG_From_int((int)(PN_TRANSPORT_TAIL_CLOSED)));
   rb_define_const(mCproton, "PN_TRANSPORT_CLOSED", SWIG_From_int((int)(PN_TRANSPORT_CLOSED)));
+  rb_define_const(mCproton, "PN_SELECTABLE_INIT", SWIG_From_int((int)(PN_SELECTABLE_INIT)));
+  rb_define_const(mCproton, "PN_SELECTABLE_UPDATED", SWIG_From_int((int)(PN_SELECTABLE_UPDATED)));
+  rb_define_const(mCproton, "PN_SELECTABLE_READABLE", SWIG_From_int((int)(PN_SELECTABLE_READABLE)));
+  rb_define_const(mCproton, "PN_SELECTABLE_WRITABLE", SWIG_From_int((int)(PN_SELECTABLE_WRITABLE)));
+  rb_define_const(mCproton, "PN_SELECTABLE_ERROR", SWIG_From_int((int)(PN_SELECTABLE_ERROR)));
+  rb_define_const(mCproton, "PN_SELECTABLE_EXPIRED", SWIG_From_int((int)(PN_SELECTABLE_EXPIRED)));
+  rb_define_const(mCproton, "PN_SELECTABLE_FINAL", SWIG_From_int((int)(PN_SELECTABLE_FINAL)));
   rb_define_module_function(mCproton, "pn_event_type_name", _wrap_pn_event_type_name, -1);
   rb_define_module_function(mCproton, "pn_collector", _wrap_pn_collector, -1);
   rb_define_module_function(mCproton, "pn_collector_free", _wrap_pn_collector_free, -1);
+  rb_define_module_function(mCproton, "pn_collector_release", _wrap_pn_collector_release, -1);
   rb_define_module_function(mCproton, "pn_collector_put", _wrap_pn_collector_put, -1);
   rb_define_module_function(mCproton, "pn_collector_peek", _wrap_pn_collector_peek, -1);
   rb_define_module_function(mCproton, "pn_collector_pop", _wrap_pn_collector_pop, -1);
+  rb_define_module_function(mCproton, "pn_collector_more", _wrap_pn_collector_more, -1);
   rb_define_module_function(mCproton, "pn_event_type", _wrap_pn_event_type, -1);
   rb_define_module_function(mCproton, "pn_event_class", _wrap_pn_event_class, -1);
   rb_define_module_function(mCproton, "pn_event_context", _wrap_pn_event_context, -1);
@@ -22361,11 +24793,8 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_event_link", _wrap_pn_event_link, -1);
   rb_define_module_function(mCproton, "pn_event_delivery", _wrap_pn_event_delivery, -1);
   rb_define_module_function(mCproton, "pn_event_transport", _wrap_pn_event_transport, -1);
+  rb_define_module_function(mCproton, "pn_event_attachments", _wrap_pn_event_attachments, -1);
   rb_define_const(mCproton, "PROTON_MESSAGE_H", SWIG_From_int((int)(1)));
-  rb_define_const(mCproton, "PN_DATA", SWIG_From_int((int)(PN_DATA)));
-  rb_define_const(mCproton, "PN_TEXT", SWIG_From_int((int)(PN_TEXT)));
-  rb_define_const(mCproton, "PN_AMQP", SWIG_From_int((int)(PN_AMQP)));
-  rb_define_const(mCproton, "PN_JSON", SWIG_From_int((int)(PN_JSON)));
   rb_define_const(mCproton, "PN_DEFAULT_PRIORITY", SWIG_From_int((int)((4))));
   rb_define_module_function(mCproton, "pn_message", _wrap_pn_message, -1);
   rb_define_module_function(mCproton, "pn_message_copy", _wrap_pn_message_copy, -1);
@@ -22413,13 +24842,12 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_message_set_group_sequence", _wrap_pn_message_set_group_sequence, -1);
   rb_define_module_function(mCproton, "pn_message_get_reply_to_group_id", _wrap_pn_message_get_reply_to_group_id, -1);
   rb_define_module_function(mCproton, "pn_message_set_reply_to_group_id", _wrap_pn_message_set_reply_to_group_id, -1);
-  rb_define_module_function(mCproton, "pn_message_get_format", _wrap_pn_message_get_format, -1);
-  rb_define_module_function(mCproton, "pn_message_set_format", _wrap_pn_message_set_format, -1);
   rb_define_module_function(mCproton, "pn_message_instructions", _wrap_pn_message_instructions, -1);
   rb_define_module_function(mCproton, "pn_message_annotations", _wrap_pn_message_annotations, -1);
   rb_define_module_function(mCproton, "pn_message_properties", _wrap_pn_message_properties, -1);
   rb_define_module_function(mCproton, "pn_message_body", _wrap_pn_message_body, -1);
   rb_define_module_function(mCproton, "pn_message_decode", _wrap_pn_message_decode, -1);
+  rb_define_module_function(mCproton, "pn_message_data", _wrap_pn_message_data, -1);
   rb_define_const(mCproton, "PROTON_SASL_H", SWIG_From_int((int)(1)));
   rb_define_const(mCproton, "PN_SASL_NONE", SWIG_From_int((int)(PN_SASL_NONE)));
   rb_define_const(mCproton, "PN_SASL_OK", SWIG_From_int((int)(PN_SASL_OK)));
@@ -22427,69 +24855,16 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_const(mCproton, "PN_SASL_SYS", SWIG_From_int((int)(PN_SASL_SYS)));
   rb_define_const(mCproton, "PN_SASL_PERM", SWIG_From_int((int)(PN_SASL_PERM)));
   rb_define_const(mCproton, "PN_SASL_TEMP", SWIG_From_int((int)(PN_SASL_TEMP)));
-  rb_define_const(mCproton, "PN_SASL_SKIPPED", SWIG_From_int((int)(PN_SASL_SKIPPED)));
-  rb_define_const(mCproton, "PN_SASL_CONF", SWIG_From_int((int)(PN_SASL_CONF)));
-  rb_define_const(mCproton, "PN_SASL_IDLE", SWIG_From_int((int)(PN_SASL_IDLE)));
-  rb_define_const(mCproton, "PN_SASL_STEP", SWIG_From_int((int)(PN_SASL_STEP)));
-  rb_define_const(mCproton, "PN_SASL_PASS", SWIG_From_int((int)(PN_SASL_PASS)));
-  rb_define_const(mCproton, "PN_SASL_FAIL", SWIG_From_int((int)(PN_SASL_FAIL)));
   rb_define_module_function(mCproton, "pn_sasl", _wrap_pn_sasl, -1);
-  rb_define_module_function(mCproton, "pn_sasl_state", _wrap_pn_sasl_state, -1);
-  rb_define_module_function(mCproton, "pn_sasl_mechanisms", _wrap_pn_sasl_mechanisms, -1);
-  rb_define_module_function(mCproton, "pn_sasl_remote_mechanisms", _wrap_pn_sasl_remote_mechanisms, -1);
-  rb_define_module_function(mCproton, "pn_sasl_client", _wrap_pn_sasl_client, -1);
-  rb_define_module_function(mCproton, "pn_sasl_server", _wrap_pn_sasl_server, -1);
-  rb_define_module_function(mCproton, "pn_sasl_allow_skip", _wrap_pn_sasl_allow_skip, -1);
-  rb_define_module_function(mCproton, "pn_sasl_plain", _wrap_pn_sasl_plain, -1);
-  rb_define_module_function(mCproton, "pn_sasl_pending", _wrap_pn_sasl_pending, -1);
-  rb_define_module_function(mCproton, "pn_sasl_recv", _wrap_pn_sasl_recv, -1);
-  rb_define_module_function(mCproton, "pn_sasl_send", _wrap_pn_sasl_send, -1);
+  rb_define_module_function(mCproton, "pn_sasl_extended", _wrap_pn_sasl_extended, -1);
   rb_define_module_function(mCproton, "pn_sasl_done", _wrap_pn_sasl_done, -1);
-  rb_define_module_function(mCproton, "pn_sasl_outcome", _wrap_pn_sasl_outcome, -1);
-  rb_define_const(mCproton, "PROTON_DRIVER_H", SWIG_From_int((int)(1)));
-  rb_define_const(mCproton, "PN_CONNECTOR_WRITABLE", SWIG_From_int((int)(PN_CONNECTOR_WRITABLE)));
-  rb_define_const(mCproton, "PN_CONNECTOR_READABLE", SWIG_From_int((int)(PN_CONNECTOR_READABLE)));
-  rb_define_module_function(mCproton, "pn_driver", _wrap_pn_driver, -1);
-  rb_define_module_function(mCproton, "pn_driver_errno", _wrap_pn_driver_errno, -1);
-  rb_define_module_function(mCproton, "pn_driver_error", _wrap_pn_driver_error, -1);
-  rb_define_module_function(mCproton, "pn_driver_trace", _wrap_pn_driver_trace, -1);
-  rb_define_module_function(mCproton, "pn_driver_wakeup", _wrap_pn_driver_wakeup, -1);
-  rb_define_module_function(mCproton, "pn_driver_wait", _wrap_pn_driver_wait, -1);
-  rb_define_module_function(mCproton, "pn_driver_listener", _wrap_pn_driver_listener, -1);
-  rb_define_module_function(mCproton, "pn_driver_connector", _wrap_pn_driver_connector, -1);
-  rb_define_module_function(mCproton, "pn_driver_free", _wrap_pn_driver_free, -1);
-  rb_define_module_function(mCproton, "pn_listener", _wrap_pn_listener, -1);
-  rb_define_module_function(mCproton, "pn_listener_head", _wrap_pn_listener_head, -1);
-  rb_define_module_function(mCproton, "pn_listener_next", _wrap_pn_listener_next, -1);
-  rb_define_module_function(mCproton, "pn_listener_trace", _wrap_pn_listener_trace, -1);
-  rb_define_module_function(mCproton, "pn_listener_accept", _wrap_pn_listener_accept, -1);
-  rb_define_module_function(mCproton, "pn_listener_context", _wrap_pn_listener_context, -1);
-  rb_define_module_function(mCproton, "pn_listener_set_context", _wrap_pn_listener_set_context, -1);
-  rb_define_module_function(mCproton, "pn_listener_close", _wrap_pn_listener_close, -1);
-  rb_define_module_function(mCproton, "pn_listener_free", _wrap_pn_listener_free, -1);
-  rb_define_module_function(mCproton, "pn_connector", _wrap_pn_connector, -1);
-  rb_define_module_function(mCproton, "pn_connector_head", _wrap_pn_connector_head, -1);
-  rb_define_module_function(mCproton, "pn_connector_next", _wrap_pn_connector_next, -1);
-  rb_define_module_function(mCproton, "pn_connector_trace", _wrap_pn_connector_trace, -1);
-  rb_define_module_function(mCproton, "pn_connector_process", _wrap_pn_connector_process, -1);
-  rb_define_module_function(mCproton, "pn_connector_listener", _wrap_pn_connector_listener, -1);
-  rb_define_module_function(mCproton, "pn_connector_sasl", _wrap_pn_connector_sasl, -1);
-  rb_define_module_function(mCproton, "pn_connector_connection", _wrap_pn_connector_connection, -1);
-  rb_define_module_function(mCproton, "pn_connector_set_connection", _wrap_pn_connector_set_connection, -1);
-  rb_define_module_function(mCproton, "pn_connector_context", _wrap_pn_connector_context, -1);
-  rb_define_module_function(mCproton, "pn_connector_set_context", _wrap_pn_connector_set_context, -1);
-  rb_define_module_function(mCproton, "pn_connector_name", _wrap_pn_connector_name, -1);
-  rb_define_module_function(mCproton, "pn_connector_transport", _wrap_pn_connector_transport, -1);
-  rb_define_module_function(mCproton, "pn_connector_close", _wrap_pn_connector_close, -1);
-  rb_define_module_function(mCproton, "pn_connector_closed", _wrap_pn_connector_closed, -1);
-  rb_define_module_function(mCproton, "pn_connector_free", _wrap_pn_connector_free, -1);
-  rb_define_module_function(mCproton, "pn_connector_activate", _wrap_pn_connector_activate, -1);
-  rb_define_module_function(mCproton, "pn_connector_activated", _wrap_pn_connector_activated, -1);
-  rb_define_const(mCproton, "PROTON_DRIVER_H_EXTRAS", SWIG_From_int((int)(1)));
-  rb_define_module_function(mCproton, "pn_listener_fd", _wrap_pn_listener_fd, -1);
-  rb_define_module_function(mCproton, "pn_listener_get_fd", _wrap_pn_listener_get_fd, -1);
-  rb_define_module_function(mCproton, "pn_connector_fd", _wrap_pn_connector_fd, -1);
-  rb_define_module_function(mCproton, "pn_connector_get_fd", _wrap_pn_connector_get_fd, -1);
+  rb_define_module_function(mCproton, "pn_sasl_get_user", _wrap_pn_sasl_get_user, -1);
+  rb_define_module_function(mCproton, "pn_sasl_get_mech", _wrap_pn_sasl_get_mech, -1);
+  rb_define_module_function(mCproton, "pn_sasl_allowed_mechs", _wrap_pn_sasl_allowed_mechs, -1);
+  rb_define_module_function(mCproton, "pn_sasl_set_allow_insecure_mechs", _wrap_pn_sasl_set_allow_insecure_mechs, -1);
+  rb_define_module_function(mCproton, "pn_sasl_get_allow_insecure_mechs", _wrap_pn_sasl_get_allow_insecure_mechs, -1);
+  rb_define_module_function(mCproton, "pn_sasl_config_name", _wrap_pn_sasl_config_name, -1);
+  rb_define_module_function(mCproton, "pn_sasl_config_path", _wrap_pn_sasl_config_path, -1);
   rb_define_const(mCproton, "PROTON_MESSENGER_H", SWIG_From_int((int)(1)));
   rb_define_const(mCproton, "PN_STATUS_UNKNOWN", SWIG_From_int((int)(PN_STATUS_UNKNOWN)));
   rb_define_const(mCproton, "PN_STATUS_PENDING", SWIG_From_int((int)(PN_STATUS_PENDING)));
@@ -22527,6 +24902,7 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_messenger_stopped", _wrap_pn_messenger_stopped, -1);
   rb_define_module_function(mCproton, "pn_messenger_subscribe", _wrap_pn_messenger_subscribe, -1);
   rb_define_module_function(mCproton, "pn_messenger_subscribe_ttl", _wrap_pn_messenger_subscribe_ttl, -1);
+  rb_define_module_function(mCproton, "pn_messenger_get_stated_link", _wrap_pn_messenger_get_stated_link, -1);
   rb_define_module_function(mCproton, "pn_messenger_get_link", _wrap_pn_messenger_get_link, -1);
   rb_define_module_function(mCproton, "pn_subscription_get_context", _wrap_pn_subscription_get_context, -1);
   rb_define_module_function(mCproton, "pn_subscription_set_context", _wrap_pn_subscription_set_context, -1);
@@ -22537,7 +24913,6 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_messenger_buffered", _wrap_pn_messenger_buffered, -1);
   rb_define_module_function(mCproton, "pn_messenger_settle", _wrap_pn_messenger_settle, -1);
   rb_define_module_function(mCproton, "pn_messenger_outgoing_tracker", _wrap_pn_messenger_outgoing_tracker, -1);
-  rb_define_module_function(mCproton, "pn_messenger_work", _wrap_pn_messenger_work, -1);
   rb_define_module_function(mCproton, "pn_messenger_interrupt", _wrap_pn_messenger_interrupt, -1);
   rb_define_module_function(mCproton, "pn_messenger_receiving", _wrap_pn_messenger_receiving, -1);
   rb_define_module_function(mCproton, "pn_messenger_get", _wrap_pn_messenger_get, -1);
@@ -22554,6 +24929,8 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_messenger_selectable", _wrap_pn_messenger_selectable, -1);
   rb_define_module_function(mCproton, "pn_messenger_deadline", _wrap_pn_messenger_deadline, -1);
   rb_define_const(mCproton, "PN_FLAGS_CHECK_ROUTES", SWIG_From_int((int)((0x1))));
+  rb_define_const(mCproton, "PN_FLAGS_ALLOW_INSECURE_MECHS", SWIG_From_int((int)((0x2))));
+  rb_define_const(mCproton, "PN_FLAGS_EXTERNAL_SOCKET", SWIG_From_int((int)((0x4))));
   rb_define_module_function(mCproton, "pn_messenger_set_flags", _wrap_pn_messenger_set_flags, -1);
   rb_define_module_function(mCproton, "pn_messenger_get_flags", _wrap_pn_messenger_get_flags, -1);
   rb_define_module_function(mCproton, "pn_messenger_set_snd_settle_mode", _wrap_pn_messenger_set_snd_settle_mode, -1);
@@ -22562,6 +24939,12 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_messenger_get_remote_idle_timeout", _wrap_pn_messenger_get_remote_idle_timeout, -1);
   rb_define_module_function(mCproton, "pn_messenger_set_ssl_peer_authentication_mode", _wrap_pn_messenger_set_ssl_peer_authentication_mode, -1);
   rb_define_module_function(mCproton, "pn_messenger_pending_outbound", _wrap_pn_messenger_pending_outbound, -1);
+  rb_define_module_function(mCproton, "pn_messenger_set_external_socket", _wrap_pn_messenger_set_external_socket, -1);
+  rb_define_module_function(mCproton, "pn_connection_push", _wrap_pn_connection_push, -1);
+  rb_define_module_function(mCproton, "pn_connection_pop", _wrap_pn_connection_pop, -1);
+  rb_define_module_function(mCproton, "pn_connection_was_closed", _wrap_pn_connection_was_closed, -1);
+  rb_define_module_function(mCproton, "pn_messenger_started", _wrap_pn_messenger_started, -1);
+  rb_define_module_function(mCproton, "pn_messenger_reclaim_link", _wrap_pn_messenger_reclaim_link, -1);
   rb_define_const(mCproton, "PROTON_IO_H", SWIG_From_int((int)(1)));
   rb_define_const(mCproton, "PN_INVALID_SOCKET", SWIG_From_int((int)((-1))));
   rb_define_module_function(mCproton, "pn_io", _wrap_pn_io, -1);
@@ -22583,23 +24966,40 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_selectables", _wrap_pn_selectables, -1);
   rb_define_module_function(mCproton, "pn_selectables_next", _wrap_pn_selectables_next, -1);
   rb_define_module_function(mCproton, "pn_selectables_free", _wrap_pn_selectables_free, -1);
-  rb_define_module_function(mCproton, "pn_selectable_fd", _wrap_pn_selectable_fd, -1);
-  rb_define_module_function(mCproton, "pn_selectable_capacity", _wrap_pn_selectable_capacity, -1);
-  rb_define_module_function(mCproton, "pn_selectable_pending", _wrap_pn_selectable_pending, -1);
-  rb_define_module_function(mCproton, "pn_selectable_deadline", _wrap_pn_selectable_deadline, -1);
+  rb_define_module_function(mCproton, "pn_selectable", _wrap_pn_selectable, -1);
+  rb_define_module_function(mCproton, "pn_selectable_on_readable", _wrap_pn_selectable_on_readable, -1);
+  rb_define_module_function(mCproton, "pn_selectable_on_writable", _wrap_pn_selectable_on_writable, -1);
+  rb_define_module_function(mCproton, "pn_selectable_on_expired", _wrap_pn_selectable_on_expired, -1);
+  rb_define_module_function(mCproton, "pn_selectable_on_error", _wrap_pn_selectable_on_error, -1);
+  rb_define_module_function(mCproton, "pn_selectable_on_release", _wrap_pn_selectable_on_release, -1);
+  rb_define_module_function(mCproton, "pn_selectable_on_finalize", _wrap_pn_selectable_on_finalize, -1);
+  rb_define_module_function(mCproton, "pn_selectable_attachments", _wrap_pn_selectable_attachments, -1);
+  rb_define_module_function(mCproton, "pn_selectable_get_fd", _wrap_pn_selectable_get_fd, -1);
+  rb_define_module_function(mCproton, "pn_selectable_set_fd", _wrap_pn_selectable_set_fd, -1);
+  rb_define_module_function(mCproton, "pn_selectable_is_reading", _wrap_pn_selectable_is_reading, -1);
+  rb_define_module_function(mCproton, "pn_selectable_set_reading", _wrap_pn_selectable_set_reading, -1);
+  rb_define_module_function(mCproton, "pn_selectable_is_writing", _wrap_pn_selectable_is_writing, -1);
+  rb_define_module_function(mCproton, "pn_selectable_set_writing", _wrap_pn_selectable_set_writing, -1);
+  rb_define_module_function(mCproton, "pn_selectable_get_deadline", _wrap_pn_selectable_get_deadline, -1);
+  rb_define_module_function(mCproton, "pn_selectable_set_deadline", _wrap_pn_selectable_set_deadline, -1);
   rb_define_module_function(mCproton, "pn_selectable_readable", _wrap_pn_selectable_readable, -1);
   rb_define_module_function(mCproton, "pn_selectable_writable", _wrap_pn_selectable_writable, -1);
+  rb_define_module_function(mCproton, "pn_selectable_error", _wrap_pn_selectable_error, -1);
   rb_define_module_function(mCproton, "pn_selectable_expired", _wrap_pn_selectable_expired, -1);
   rb_define_module_function(mCproton, "pn_selectable_is_registered", _wrap_pn_selectable_is_registered, -1);
   rb_define_module_function(mCproton, "pn_selectable_set_registered", _wrap_pn_selectable_set_registered, -1);
   rb_define_module_function(mCproton, "pn_selectable_is_terminal", _wrap_pn_selectable_is_terminal, -1);
+  rb_define_module_function(mCproton, "pn_selectable_terminate", _wrap_pn_selectable_terminate, -1);
+  rb_define_module_function(mCproton, "pn_selectable_release", _wrap_pn_selectable_release, -1);
   rb_define_module_function(mCproton, "pn_selectable_free", _wrap_pn_selectable_free, -1);
+  rb_define_module_function(mCproton, "pn_selectable_collect", _wrap_pn_selectable_collect, -1);
   rb_define_const(mCproton, "PROTON_SSL_H", SWIG_From_int((int)(1)));
   rb_define_const(mCproton, "PN_SSL_MODE_CLIENT", SWIG_From_int((int)(PN_SSL_MODE_CLIENT)));
   rb_define_const(mCproton, "PN_SSL_MODE_SERVER", SWIG_From_int((int)(PN_SSL_MODE_SERVER)));
   rb_define_const(mCproton, "PN_SSL_RESUME_UNKNOWN", SWIG_From_int((int)(PN_SSL_RESUME_UNKNOWN)));
   rb_define_const(mCproton, "PN_SSL_RESUME_NEW", SWIG_From_int((int)(PN_SSL_RESUME_NEW)));
   rb_define_const(mCproton, "PN_SSL_RESUME_REUSED", SWIG_From_int((int)(PN_SSL_RESUME_REUSED)));
+  rb_define_module_function(mCproton, "pn_ssl_present", _wrap_pn_ssl_present, -1);
   rb_define_module_function(mCproton, "pn_ssl_domain", _wrap_pn_ssl_domain, -1);
   rb_define_module_function(mCproton, "pn_ssl_domain_free", _wrap_pn_ssl_domain_free, -1);
   rb_define_module_function(mCproton, "pn_ssl_domain_set_credentials", _wrap_pn_ssl_domain_set_credentials, -1);
@@ -22612,9 +25012,10 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_ssl_domain_allow_unsecured_client", _wrap_pn_ssl_domain_allow_unsecured_client, -1);
   rb_define_module_function(mCproton, "pn_ssl", _wrap_pn_ssl, -1);
   rb_define_module_function(mCproton, "pn_ssl_init", _wrap_pn_ssl_init, -1);
+  rb_define_module_function(mCproton, "pn_ssl_get_ssf", _wrap_pn_ssl_get_ssf, -1);
   rb_define_module_function(mCproton, "pn_ssl_resume_status", _wrap_pn_ssl_resume_status, -1);
   rb_define_module_function(mCproton, "pn_ssl_set_peer_hostname", _wrap_pn_ssl_set_peer_hostname, -1);
-  rb_define_module_function(mCproton, "pn_ssl_get_peer_hostname", _wrap_pn_ssl_get_peer_hostname, -1);
+  rb_define_module_function(mCproton, "pn_ssl_get_remote_subject", _wrap_pn_ssl_get_remote_subject, -1);
   rb_define_const(mCproton, "PROTON_CODEC_H", SWIG_From_int((int)(1)));
   rb_define_const(mCproton, "PN_NULL", SWIG_From_int((int)(PN_NULL)));
   rb_define_const(mCproton, "PN_BOOL", SWIG_From_int((int)(PN_BOOL)));
@@ -22660,6 +25061,7 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_data_print", _wrap_pn_data_print, -1);
   rb_define_module_function(mCproton, "pn_data_format", _wrap_pn_data_format, -1);
   rb_define_module_function(mCproton, "pn_data_encode", _wrap_pn_data_encode, -1);
+  rb_define_module_function(mCproton, "pn_data_encoded_size", _wrap_pn_data_encoded_size, -1);
   rb_define_module_function(mCproton, "pn_data_decode", _wrap_pn_data_decode, -1);
   rb_define_module_function(mCproton, "pn_data_put_list", _wrap_pn_data_put_list, -1);
   rb_define_module_function(mCproton, "pn_data_put_map", _wrap_pn_data_put_map, -1);
@@ -22727,6 +25129,9 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_cast_pn_link", _wrap_pn_cast_pn_link, -1);
   rb_define_module_function(mCproton, "pn_cast_pn_delivery", _wrap_pn_cast_pn_delivery, -1);
   rb_define_module_function(mCproton, "pn_cast_pn_transport", _wrap_pn_cast_pn_transport, -1);
+  rb_define_module_function(mCproton, "pn_cast_pn_reactor", _wrap_pn_cast_pn_reactor, -1);
+  rb_define_module_function(mCproton, "pn_cast_pn_task", _wrap_pn_cast_pn_task, -1);
+  rb_define_module_function(mCproton, "pn_cast_pn_selectable", _wrap_pn_cast_pn_selectable, -1);
   rb_define_module_function(mCproton, "pn_url", _wrap_pn_url, -1);
   rb_define_module_function(mCproton, "pn_url_parse", _wrap_pn_url_parse, -1);
   rb_define_module_function(mCproton, "pn_url_free", _wrap_pn_url_free, -1);
@@ -22744,5 +25149,57 @@ SWIGEXPORT void Init_cproton(void) {
   rb_define_module_function(mCproton, "pn_url_set_host", _wrap_pn_url_set_host, -1);
   rb_define_module_function(mCproton, "pn_url_set_port", _wrap_pn_url_set_port, -1);
   rb_define_module_function(mCproton, "pn_url_set_path", _wrap_pn_url_set_path, -1);
+  rb_define_const(mCproton, "PROTON_REACTOR_H", SWIG_From_int((int)(1)));
+  rb_define_module_function(mCproton, "pn_handler", _wrap_pn_handler, -1);
+  rb_define_module_function(mCproton, "pn_handler_new", _wrap_pn_handler_new, -1);
+  rb_define_module_function(mCproton, "pn_handler_free", _wrap_pn_handler_free, -1);
+  rb_define_module_function(mCproton, "pn_handler_mem", _wrap_pn_handler_mem, -1);
+  rb_define_module_function(mCproton, "pn_handler_add", _wrap_pn_handler_add, -1);
+  rb_define_module_function(mCproton, "pn_handler_clear", _wrap_pn_handler_clear, -1);
+  rb_define_module_function(mCproton, "pn_handler_dispatch", _wrap_pn_handler_dispatch, -1);
+  rb_define_module_function(mCproton, "pn_reactor", _wrap_pn_reactor, -1);
+  rb_define_module_function(mCproton, "pn_reactor_attachments", _wrap_pn_reactor_attachments, -1);
+  rb_define_module_function(mCproton, "pn_reactor_get_timeout", _wrap_pn_reactor_get_timeout, -1);
+  rb_define_module_function(mCproton, "pn_reactor_set_timeout", _wrap_pn_reactor_set_timeout, -1);
+  rb_define_module_function(mCproton, "pn_reactor_mark", _wrap_pn_reactor_mark, -1);
+  rb_define_module_function(mCproton, "pn_reactor_now", _wrap_pn_reactor_now, -1);
+  rb_define_module_function(mCproton, "pn_reactor_yield", _wrap_pn_reactor_yield, -1);
+  rb_define_module_function(mCproton, "pn_reactor_free", _wrap_pn_reactor_free, -1);
+  rb_define_module_function(mCproton, "pn_reactor_collector", _wrap_pn_reactor_collector, -1);
+  rb_define_module_function(mCproton, "pn_reactor_get_global_handler", _wrap_pn_reactor_get_global_handler, -1);
+  rb_define_module_function(mCproton, "pn_reactor_set_global_handler", _wrap_pn_reactor_set_global_handler, -1);
+  rb_define_module_function(mCproton, "pn_reactor_get_handler", _wrap_pn_reactor_get_handler, -1);
+  rb_define_module_function(mCproton, "pn_reactor_set_handler", _wrap_pn_reactor_set_handler, -1);
+  rb_define_module_function(mCproton, "pn_reactor_io", _wrap_pn_reactor_io, -1);
+  rb_define_module_function(mCproton, "pn_reactor_children", _wrap_pn_reactor_children, -1);
+  rb_define_module_function(mCproton, "pn_reactor_selectable", _wrap_pn_reactor_selectable, -1);
+  rb_define_module_function(mCproton, "pn_reactor_update", _wrap_pn_reactor_update, -1);
+  rb_define_module_function(mCproton, "pn_reactor_acceptor", _wrap_pn_reactor_acceptor, -1);
+  rb_define_module_function(mCproton, "pn_reactor_connection", _wrap_pn_reactor_connection, -1);
+  rb_define_module_function(mCproton, "pn_reactor_wakeup", _wrap_pn_reactor_wakeup, -1);
+  rb_define_module_function(mCproton, "pn_reactor_start", _wrap_pn_reactor_start, -1);
+  rb_define_module_function(mCproton, "pn_reactor_quiesced", _wrap_pn_reactor_quiesced, -1);
+  rb_define_module_function(mCproton, "pn_reactor_process", _wrap_pn_reactor_process, -1);
+  rb_define_module_function(mCproton, "pn_reactor_stop", _wrap_pn_reactor_stop, -1);
+  rb_define_module_function(mCproton, "pn_reactor_run", _wrap_pn_reactor_run, -1);
+  rb_define_module_function(mCproton, "pn_reactor_schedule", _wrap_pn_reactor_schedule, -1);
+  rb_define_module_function(mCproton, "pn_acceptor_set_ssl_domain", _wrap_pn_acceptor_set_ssl_domain, -1);
+  rb_define_module_function(mCproton, "pn_acceptor_close", _wrap_pn_acceptor_close, -1);
+  rb_define_module_function(mCproton, "pn_timer", _wrap_pn_timer, -1);
+  rb_define_module_function(mCproton, "pn_timer_deadline", _wrap_pn_timer_deadline, -1);
+  rb_define_module_function(mCproton, "pn_timer_tick", _wrap_pn_timer_tick, -1);
+  rb_define_module_function(mCproton, "pn_timer_schedule", _wrap_pn_timer_schedule, -1);
+  rb_define_module_function(mCproton, "pn_timer_tasks", _wrap_pn_timer_tasks, -1);
+  rb_define_module_function(mCproton, "pn_task_attachments", _wrap_pn_task_attachments, -1);
+  rb_define_module_function(mCproton, "pn_task_cancel", _wrap_pn_task_cancel, -1);
+  rb_define_module_function(mCproton, "pn_class_reactor", _wrap_pn_class_reactor, -1);
+  rb_define_module_function(mCproton, "pn_object_reactor", _wrap_pn_object_reactor, -1);
+  rb_define_module_function(mCproton, "pn_event_reactor", _wrap_pn_event_reactor, -1);
+  rb_define_module_function(mCproton, "pn_record_get_handler", _wrap_pn_record_get_handler, -1);
+  rb_define_module_function(mCproton, "pn_record_set_handler", _wrap_pn_record_set_handler, -1);
+  rb_define_const(mCproton, "PROTON_HANDLERS_H", SWIG_From_int((int)(1)));
+  rb_define_module_function(mCproton, "pn_handshaker", _wrap_pn_handshaker, -1);
+  rb_define_module_function(mCproton, "pn_iohandler", _wrap_pn_iohandler, -1);
+  rb_define_module_function(mCproton, "pn_flowcontroller", _wrap_pn_flowcontroller, -1);
 }
 

@@ -1,20 +1,21 @@
-# @(#) MQMBID sn=mqkoa-L141209.14 su=_mOo3sH-nEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/lib/mqlight/blocking_client.rb
+# @(#) MQMBID sn=mqkoa-L160208.09 su=_Zdh2gM49EeWAYJom138ZUQ pn=appmsging/ruby/mqlight/lib/mqlight/blocking_client.rb
 #
 # <copyright
 # notice="lm-source-program"
 # pids="5725-P60"
-# years="2013,2014"
+# years="2014,2016"
 # crc="3568777996" >
 # Licensed Materials - Property of IBM
 #
 # 5725-P60
 #
-# (C) Copyright IBM Corp. 2014
+# (C) Copyright IBM Corp. 2014, 2016
 #
 # US Government Users Restricted Rights - Use, duplication or
 # disclosure restricted by GSA ADP Schedule Contract with
 # IBM Corp.
 # </copyright>
+#
 
 require 'thread'
 require 'securerandom'
@@ -23,24 +24,19 @@ require 'timeout'
 
 module Mqlight
   #
-  # The MQ Light Client.  This can be used to exchange messages between with
-  # the MQ Light server.  This version of the client blocks the calling thread
-  # while carrying out messaging operations.
+  # The MQ Light client.  This can be used to exchange messages between 
+  # the MQ AMQP Channel or MQ Light server.  This version of the client 
+  # blocks the calling thread while carrying out messaging operations.
   #
   # @note this class uses timeouts in milliseconds with zero meaning: "don't
   #       wait at all" and nil meaning "wait forever - don't time out".
   class BlockingClient
-    include Qpid::Proton::ExceptionHandling
+    include Qpid::Proton::Util::ErrorHandler
+    include Mqlight::Logging
 
     # @return [String] the client id, which can either be explicitly specified
     #         when the client is created or automatically generated.
     attr_reader :id
-
-    # @return [Symbol] the current state of the client.  This will be one of:
-    #         :starting, :started, :stopping, :stopped, :retrying, or :restarted
-    # @note not all states are implemented (currently the client will never
-    #       transition into :stopping and :restarted states).
-    attr_reader :state
 
     # Creates a new instance of the client.  The client will be created in
     # starting state. The constructor will make a connection attempt to the
@@ -71,19 +67,40 @@ module Mqlight
     #   Alternatively, the user name may be embedded in the URL passed via the
     #   service property. If you choose to specify a user name via this
     #   property and also embed a user name in the URL passed via the surface
-    #   argument then all the user names must match otherwise an ArgumentError
+    #   argument, all the user names must match otherwise an ArgumentError
     #   exception will be thrown. User names and passwords must be specified
     #   together (or not at all). If you specify just the user property but no
     #   password property an ArgumentError exception will be thrown.
     # @option options [String] :password password for authentication.
     #   Alternatively, user name may be embedded in the URL passed via the
     #   service property.
-    # @option options [String] :ssl_trust_certificate SSL trust certificate
-    #   to use when authentication is required for the MQ Light server. Only
-    #   used when service specifies the amqps scheme.
+    # @option options [String] :ssl_trust_certificate 
+    #   Name of the file containing the trust certificate (in PEM format) to
+    #   validate the identity of the server. The connection must be secured
+    #   with SSL/TLS. This option and the :ssl_keystore option are mutually 
+    #   exclusive. 
+    # @option options [String] :ssl_client_certificate
+    #   Name of the file containing the client key (in PEM format) to supply the
+    #   identity of the client. The connection must be secured with SSL/TLS.
+    #   Option is mutually exclusive with :ssl_keystore 
+    # @option options [String] :ssl_client_key
+    #   Name of the file containing the private key (in PEM format) for
+    #   encrypting the specified client certificate. The connection must be
+    #   secured with SSL/TLS. This option and the :ssl_keystore option are 
+    #   mutually exclusive. 
+    # @option options [String] :ssl_client_key_passphrase
+    #   The passphrase for the ssl_client_key file
+    # @option options [String] :ssl_keystore
+    #   Name of the file containing the keystore (in PKCS#12 format) to supply
+    #   the client certificate, private key and trust certificates. The 
+    #   connection must be secured with This option and the following group of 
+    #   options are mutually exclusive :ssl_client_key, :ssl_client_certificate
+    #   and :ssl_trust_certifcate options.
+    # @option options [String] :ssl_keystore_passphrase
+    #    The passphrase for the :ssl_keystore file.
     # @option options [Boolean] :ssl_verify_name whether or not to additionally
-    #   check the MQ Light server's common name in the certificate matches the
-    #   actual server's DNS name. Only used when the sslTrustCertificate
+    #   check that the MQ Light server's common name in the certificate matches
+    #   the actual server's DNS name. Used only when the ssl_trust_certificate
     #   option is specified.  The default is true.
     #
     # @yield an optional block of code that is called into each time a
@@ -100,19 +117,20 @@ module Mqlight
     #             methods.
     #
     # @return [BlockingClient] the newly created instance of the client.
-    # 
+    #
     # @raise [ArgumentError] if one of the arguments supplied to the method
     #   is not valid.
     # @raise [SecurityError] if, during the construction process of the
     #   client, the MQ Light server rejects the client's connection attempt
     #   for a security related reason.
     #
-    # @note the :id option does not, currently, implement the behaviour
-    #       described when two clients connect using the same value for
-    #       this option.
-    # @note currently SSL is not supported - thus the :ssl_trust_certificate
-    #       and :ssl_verify_name options are not implemented.
     def initialize(service, options = {}, &state_callback)
+      logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
+      parms = Hash[method(__method__).parameters.map do |parm|
+        [parm[1], eval(parm[1].to_s)]
+      end]
+      logger.parms(@id, parms) { self.class.to_s + '#' + __method__.to_s }
+
       @id = options.fetch(:id, nil)
       @user = options.fetch(:user, nil)
       @password = options.fetch(:password, nil)
@@ -123,12 +141,15 @@ module Mqlight
 
       set_defaults
 
+      # Create the variables to share between the threads.
+      @thread_vars = Mqlight::ThreadVars.new(@id)
+
       # Validate id some more
       fail ArgumentError, "Client identifier '#{@id}' is longer than the "\
-        'maximum ID length of 48.' if @id.length > 48
+        'maximum ID length of 256.' if @id.length > 256
 
       # currently client ids are restricted, reject any invalid ones
-      invalid_client_id_pattern = /[^A-Za-z0-9%\/\._]+/
+      invalid_client_id_pattern = %r{[^A-Za-z0-9%\/\._]+}
       invalid_client_id_pattern.match(@id) do |m|
         fail ArgumentError, "Client Identifier '#{@id}' contains invalid "\
           "char: #{m[0]}"
@@ -145,44 +166,42 @@ module Mqlight
       end
 
       # Validate service
-      @service_list = []
-      if service.is_a?(Array)
-        @service_list = service
-      elsif service.is_a?(String)
-        begin
-          @service_list << service if URI(service).scheme.eql?('amqp') ||
-                                      URI(service).scheme.eql?('amqps')
-          @service_lookup_uri = service if URI(service).scheme.eql?('http') ||
-                                           URI(service).scheme.eql?('https')
-        rescue
-          @service_list = []
-          @service_lookup_uri = nil
-        end
+      @service_list, using_ssl = Util.generate_services(service)
+      fail ArgumentError, 'A valid service must be specified.' if
+        @service_list.length == 0
+
+      # Create SSL object 
+      if using_ssl
+        ssl = SecureSocket.new(options)
+        ssl.context(nil)    # Validate the arguments only
       end
 
-      fail ArgumentError, 'A valid service must be specified.' if
-        @service_list.length == 0 && @service_lookup_uri.nil?
-
-      @state_callback = state_callback
+      @thread_vars.state_callback = state_callback
 
       # Setup queue for sharing with proton thread
       @proton_queue = Queue.new
       @proton_queue_mutex = Mutex.new
       @proton_queue_resource = ConditionVariable.new
 
-      # Setup queue for running any user callbacks in
-      @callback_queue = Queue.new
+      args = {
+        id: @id,
+        user: @user,
+        password: @password,
+        service_list: @service_list,
+        thread_vars: @thread_vars,
+        ssl: ssl,
+      }
+      @command = Mqlight::Command.new(args)
+      @connection = Mqlight::Connection.new(args)
 
-      # Setup queue for returning messages from proton thread
-      @message_queue = Queue.new
-
-      start
-    end
-
-    def self.finalize!(impl) # :nodoc:
-      proc do
-        Cproton.pn_messenger_free(impl)
+      logger.data(@id, 'Client created. Starting...') do
+        self.class.to_s + '#' + __method__.to_s
       end
+      start
+      logger.exit(@id) { self.class.to_s + '#' + __method__.to_s }
+    rescue StandardError => e
+      logger.throw(@id, e) { self.class.to_s + '#' + __method__.to_s }
+      raise e
     end
 
     # Requests that the client transition into started state.  This method will
@@ -196,123 +215,72 @@ module Mqlight
     #   milliseconds) to wait for the client to attain started state. If the
     #   client does not attain started state in this period of time a
     #   TimeoutError exception will be thrown by this method and the client
-    #   will continue to transition in state, as defined by its underlying 
+    #   will continue to transition in state, as defined by its underlying
     #   state machine. A value of zero is interpreted as time out immediately
     #   if the client is not already in started state. A value of nil (the
-    #   default) is interpreted as never timeout.
+    #   default) is interpreted as never time out.
     #
     # @return [BlockingClient] the instance of the client that the send method
     #   was invoked upon.  This allows for method chaining.
     #
-    # @raise [RangeError] if the value specified via the timeout option is 
+    # @raise [RangeError] if the value specified via the timeout option is
     #   outside of the range of valid values.
     # @raise [StoppedError] if the client transitions into stopped state before
     #   attaining started state.
     # @raise [TimeoutError] if a timeout value is specified and the client does
     #   not transition into started state within this period of time.
-    #
-    # @note if the client cannot connect to the server, it will throw
-    #   NetworkError, not implement the described retry behaviour.
-    # @note the :timeout option is not, currently, implemented.
-    def start(options = {})
-      return unless stopped?
-      change_state(:starting)
+    def start(_options = {})
+      logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
+      parms = Hash[method(__method__).parameters.map do |parm|
+        [parm[1], eval(parm[1].to_s)]
+      end]
+      logger.parms(@id, parms) { self.class.to_s + '#' + __method__.to_s }
+      logger.exit(@id) { self.class.to_s + '#' + __method__.to_s } \
+        unless stopped?
 
-      generate_service_list
+      return unless stopped?  # TODO: missing exit trace
+      @thread_vars.change_state(:starting)
+
       validate_service_list
 
-      # Sort out authentication information
-      if @user && @password
-        auth = "#{URI.encode_www_form_component(@user)}:"\
-               "#{URI.encode_www_form_component(@password)}"
-      else
-        auth = nil
-      end
-
       # Try each service in turn
-      @service_list.each do |service|
-
-        service_url = URI(service)
-
-        # Add default port for scheme unless one is specified already
-        unless service_url.port
-          service_url.port = (service_url.scheme == 'amqps') ? 5671 : 5672
-        end
-
-        if service_url.userinfo
-          address = service_url
-          pattern = service_url.clone
-          pattern.userinfo = ''
-        else
-          pattern = service_url
-        end
-
-        unless address
-          address = service_url.clone
-          address.userinfo = auth
-        end
-
-        begin
-          # Setup the proton messenger
-          @messenger_impl = Cproton.pn_messenger(@id)
-          ObjectSpace.define_finalizer(self,
-                                       self.class.finalize!(@messenger_impl))
-          Cproton.pn_messenger_set_flags(@messenger_impl,
-                                         Cproton::PN_FLAGS_CHECK_ROUTES)
-          Cproton.pn_messenger_set_incoming_window(@messenger_impl,
-                                                   1024)
-          Cproton.pn_messenger_set_outgoing_window(@messenger_impl,
-                                                   1024)
-          Cproton.pn_messenger_route(@messenger_impl,
-                                     (pattern.to_s + '/*'),
-                                     (address.to_s + '/$1'))
-          # Try to start the messenger
-          check_for_error(Cproton.pn_messenger_start(@messenger_impl))
-          # Assign the service if we start successfully (without auth info)
-          @service = "#{service_url.scheme}://#{service_url.host}:"\
-            "#{service_url.port}"
-          change_state(:started)
-        rescue Qpid::Proton::ProtonError => e
-          msg = e.to_s
-          if /sasl /.match(msg) || /SSL /.match(msg)
-            raise Mqlight::SecurityError, msg
-          else
-            raise Mqlight::NetworkError, msg
-          end
-        end
-
-        break if started?
-        change_state(:retrying)
+      logger.data(@id, 'Trying each service in turn') do
+        self.class.to_s + '#' + __method__.to_s
       end
 
-      fail Mqlight::NetworkError, 'Unable to connect to MQ Light' unless
-        started?
+      # New connection; increment count
+      @thread_vars.reconnected
 
-      @proton_thread = Thread.new do
-        Thread.current['name'] = 'proton_loop'
-        proton_loop while started?
+      # Start the command thread
+      @command.start_thread
 
-        # drain remaining proton_queue requests before Thread completes
-        proton_loop until @proton_queue.empty?
-      end
+      # Proton handle thread.
+      @connection.start_thread
 
       @callback_thread = Thread.new do
         Thread.current['name'] = 'callback_thread'
-        callback_loop while started?
+        callback_loop until stopped? && @thread_vars.callback_queue.empty?
       end
 
+      logger.data(@id, 'Waiting for state change') do
+        self.class.to_s + '#' + __method__.to_s
+      end
+
+      # Block until the state changes
+      sleep(0.1) until retrying? || started? || stopped?
+
+      fail @thread_vars.last_state_error if stopped?
+
+      logger.exit(@id, self) { self.class.to_s + '#' + __method__.to_s }
       self
+
+    rescue StandardError => e
+      logger.throw(@id, e) { self.class.to_s + '#' + __method__.to_s }
+      raise e
     end
 
     # Requests that the client transition into stopped state. This method will
     # block the calling thread until the client has attained stopped state.
-    #
-    # @option options [nil, Numeric] :timeout the amount of time (in
-    #         milliseconds) to wait to flush any outstanding messages to the
-    #         network. A value of zero indicates the client should stop
-    #         immediately without attempting to flush messages. A value of nil
-    #         (the default) indicates the method will block until all messages
-    #         are flushed.
     #
     # @raise [RangeError] if the value specified via the timeout option is
     #        outside of the range of valid values.
@@ -320,29 +288,43 @@ module Mqlight
     #        not flush any buffered messages within the timeout period. The
     #        client will, however, still transition to stopped state even if
     #        this exception is thrown.
-    # @note the timeout option is not, currently, implemented.
     def stop(options = {})
-      return unless started?
-      @proton_queue_mutex.synchronize do
-        change_state(:stopped)
-        @proton_queue_resource.broadcast
+      logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
+      parms = Hash[method(__method__).parameters.map do |parm|
+        [parm[1], eval(parm[1].to_s)]
+      end]
+      logger.parms(@id, parms) { self.class.to_s + '#' + __method__.to_s }
+
+      unless stopped?
+        if started?
+           @thread_vars.change_state(:stopping)
+           @thread_vars.proton.stop
+        end
+        @thread_vars.change_state(:stopped)
+        @thread_vars.subscriptions_clear
+        @connection.wakeup
+        @connection.stop_thread
+        @command.join
       end
-      @proton_thread.join
-      check_for_error(Cproton.pn_messenger_stop(@messenger_impl))
+
+      logger.exit(@id) { self.class.to_s + '#' + __method__.to_s }
+    rescue StandardError => e
+      logger.throw(@id, e) { self.class.to_s + '#' + __method__.to_s }
+      raise e
     end
 
     # Sends a message to the specified topic, blocking the calling thread while
     # the send operation takes place (or until the timeout value, as specified
     # via the timeout option is exceeded).
-    # * For "at most once" quality of service messages (qos option set to 0)
-    #   messages the calling thread will block until the client is both
+    # * For "at most once" quality of service messages (qos option set to 0),
+    #   the calling thread will block until the client is both
     #   successfully network connected and the message has been buffered
     #   by the client.  This method may or may not block until the data has
     #   been flushed to the underlying network, at the discretion of the
-    #   client implementation which balances throughput against buffering
+    #   client implementation, which balances throughput against buffering
     #   large amounts of data.
-    # * For "at least once" quality of service messages (qos option set to 1)
-    #   messages the calling thread will block until the client is both
+    # * For "at least once" quality of service messages (qos option set to 1),
+    #   the calling thread will block until the client is both
     #   successfully network connected and has received confirmation
     #   from the server that the server has received a copy of the message.
     #
@@ -380,13 +362,14 @@ module Mqlight
     # @raise [StoppedError] if the method is called while the client is in
     #   stopped state, or has transitioned into stopped state while the send
     #   operation was taking place.
-    # @raise [UnsupportedError] if either ttl or QoS 1 is specified.
-    #
-    # @note the qos option is not currently implemented.  The client behaves as
-    #   if this option is set to zero (at most once).
-    # @note the ttl option is not currently implemented.
     def send(topic, data, options = {})
-      fail Mqlight::StoppedError, 'Not started.' unless started?
+      logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
+      parms = Hash[method(__method__).parameters.map do |parm|
+        [parm[1], eval(parm[1].to_s)]
+      end]
+      logger.parms(@id, parms) { self.class.to_s + '#' + __method__.to_s }
+
+      fail Mqlight::StoppedError, 'Not started.' if stopped?
       fail ArgumentError, 'topic must be a String' unless topic.is_a? String
       fail Mqlight::UnsupportedError, "#{data.class.name.split('::').last} "\
         'is not yet supported as a message data type' unless data.is_a? String
@@ -395,24 +378,19 @@ module Mqlight
         qos = options.fetch(:qos, nil)
         ttl = options.fetch(:ttl, nil)
         timeout = options.fetch(:timeout, nil)
-        
-        fail Mqlight::UnsupportedError,
-                      "ttl is not yet supported by this client" unless ttl.nil?
       else
         fail ArgumentError, 'options must be a Hash.' unless options.nil?
       end
       qos ||= QOS_AT_MOST_ONCE
 
-      if qos == QOS_AT_LEAST_ONCE
-        fail Mqlight::UnsupportedError,
-             "qos=#{QOS_AT_LEAST_ONCE} is not yet supported by this client"
-        # check_for_error(Cproton.pn_messenger_set_snd_settle_mode(
-        #   @messenger_impl,
-        #   Cproton::PN_SND_UNSETTLED))
-      else
-        check_for_error(Cproton.pn_messenger_set_snd_settle_mode(
-                        @messenger_impl,
-                        Cproton::PN_SND_SETTLED))
+      @thread_vars.proton.settle_mode = qos
+
+      unless ttl.nil?
+        fail ArgumentError,
+             "options:ttl value '" + ttl.to_s +
+               "' is invalid, must be an unsigned non-zero integer number" \
+               unless ttl.is_a?(Integer) && ttl > 0
+        ttl = 4_294_967_295 if ttl > 4_294_967_295
       end
 
       if timeout
@@ -426,29 +404,40 @@ module Mqlight
 
       # URI escape anything apart from path separators (/) and all known
       # unreserved characters
-      msg.address = "#{@service}/"\
-        "#{URI.encode(topic, Regexp.new("[^/#{URI::PATTERN::UNRESERVED}]"))}"
+      msg.address = @thread_vars.service.address + '/' + topic
       msg.ttl = ttl if ttl
-      msg.body = data
-      msg.content_type = 'text/plain'
 
-      # Send the message
-      begin
-        Timeout.timeout(timeout, Mqlight::TimeoutError) do
-          msg.pre_encode
-          @proton_queue_mutex.synchronize do
-            @proton_queue.push(type: 'send', params: msg.impl)
-            @proton_queue_resource.signal
-            until @proton_queue.empty?
-              @proton_queue_resource.wait(@proton_queue_mutex, timeout)
-            end
-            @proton_queue_resource.signal
-          end
+      msg.body = data
+      if data.encoding == Encoding::BINARY
+        msg.content_type = 'application/octet-stream'
+      else
+        begin
+          JSON.parse(data)
+          msg.content_type = 'application/json'
+        rescue JSON::ParserError
+          msg.content_type = 'text/plain'
         end
-      rescue StandardError => error
-        raise error
       end
-      self
+      msg.pre_encode
+
+      # Clear the return queue
+      @thread_vars.reply_queue.clear
+
+      begin
+        @command.push_request(action: 'send', params: msg.impl,
+                              qos: qos, timeout: timeout)
+
+        # Collect the reply
+        reply = @thread_vars.reply_queue.pop
+        fail reply unless reply.nil?
+
+        logger.exit(@id, self) { self.class.to_s + '#' + __method__.to_s }
+        self
+
+      rescue StandardError => e
+        logger.throw(@id, e) { self.class.to_s + '#' + __method__.to_s }
+        raise e
+      end
     end
 
     # Subscribes to receive messages from a destination, identified by the
@@ -471,7 +460,7 @@ module Mqlight
     # @option options [Numeric] :qos the quality of service to use for
     #         delivering messages to the subscription. Valid values are: 0 to
     #         denote at most once (the default), and 1 for at least once. A
-    #         RangeError will be thrown for other value.
+    #         RangeError will be thrown for other values.
     # @option options [Numeric] :ttl a time-to-live value, in milliseconds, that
     #         is applied to the destination that the client is subscribed to.
     #         This value will replace any previous value, if the destination
@@ -485,37 +474,39 @@ module Mqlight
     #         deleted as soon as there are no clients subscribed to it.
     # @option options [String] :share the name for creating or joining a shared
     #         destination for which messages are anycast between connected
-    #         subscribers. If omitted defaults to a private destination (e.g.
+    #         subscribers. If omitted, defaults to a private destination (e.g.
     #         messages can only be received by a specific instance of the
     #         client).
     # @raise [StoppedError] if the method is called while the client is in the
     #        stopped state.
     # @raise [SubscribedError] if the client is already subscribed to the
     #        destination.
-    #
-    # @note autoConfirm is not currently implemented.
-    # @note the qos option is not currently implemented.  The client behaves as
-    #       if this option is set to zero (at most once message delivery).
-    # @note the ttl option is not currently implemented.
     def subscribe(topic_pattern, options = {})
+      logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
+      parms = Hash[method(__method__).parameters.map do |parm|
+        [parm[1], eval(parm[1].to_s)]
+      end]
+      logger.parms(@id, parms) { self.class.to_s + '#' + __method__.to_s }
+
       fail Mqlight::StoppedError, 'Not started.' if stopped?
-      destination = Mqlight::Destination.new(@service,
+      destination = Mqlight::Destination.new(@thread_vars.service,
                                              topic_pattern,
                                              options)
 
-      check_for_error(Cproton.pn_messenger_set_rcv_settle_mode(
-                      @messenger_impl,
-                      Cproton::PN_RCV_FIRST))
+      @thread_vars.proton.settle_mode = destination.qos
 
-      @proton_queue_mutex.synchronize do
-        @proton_queue.push(type: 'subscription', params: destination)
-        @proton_queue_resource.signal
-        until @proton_queue.empty?
-          @proton_queue_resource.wait(@proton_queue_mutex)
-          @proton_queue_resource.signal
-        end
-      end
+      timeout = options.nil? ? nil : options.fetch(:timeout, nil)
+      @command.push_request(action: 'subscribe', params: destination,
+                            timeout: timeout)
+
+      # Collect status and throw exception is present
+      reply = @thread_vars.reply_queue.pop
+      fail reply unless reply.nil?
+      logger.exit(@id, self) { self.class.to_s + '#' + __method__.to_s }
       self
+    rescue StandardError => e
+      logger.throw(@id, e) { self.class.to_s + '#' + __method__.to_s }
+      raise e
     end
 
     # Receive a message from a destination, as identified by the topic pattern
@@ -529,10 +520,11 @@ module Mqlight
     # @option options [nil, Numeric] :timeout the period of time
     #         (in milliseconds) to wait for a message to be received from at
     #         least one of the destinations. If no messages are received from
-    #         any of the destinations within this time period, then an empty
-    #         array is returned. A value of zero is interpreted as time out
-    #         immediately.  A value of nil (the default) is intepreted as
-    #         never timeout.
+    #         any of the destinations within this time period, then nil is
+    #         returned.
+    #         A value of < 10 is interpreted as minimum time out of
+    #         10 milliseconds.
+    #         A value of nil (the default) is intepreted as never timeout.
     # @return (Delivery, nil) either a delivery object - representing the
     #         message received or nil if no message was received (e.g. because
     #         the operation timed out).
@@ -543,9 +535,15 @@ module Mqlight
     #        a destination that the client not currently subscribed to.
     #        This can also occur because another thread calls the unsubscribe
     #        method while a thread is blocked inside this receive method.
-
     def receive(topic_pattern, options = {})
-      fail Mqlight::StoppedError, 'Not started.' unless started?
+      logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
+      parms = Hash[method(__method__).parameters.map do |parm|
+        [parm[1], eval(parm[1].to_s)]
+      end]
+      logger.parms(@id, parms) { self.class.to_s + '#' + __method__.to_s }
+
+      fail Mqlight::StoppedError, 'Not started.' if stopped?
+
       # Validate topic_pattern
       fail ArgumentError, 'topic_pattern must be a String.' unless
         topic_pattern.is_a? String
@@ -556,29 +554,63 @@ module Mqlight
 
       timeout = options.fetch(:timeout, nil) if options.is_a? Hash
       unless timeout.nil?
-        fail ArgumentError, 'timeout must be nil or an unsigned Integer' if
-          !timeout.is_a? Integer
+        fail ArgumentError, 'timeout must be nil or an unsigned Integer' unless
+          timeout.is_a? Integer
         fail RangeError, 'timeout must be an unsigned Integer' if
           timeout < 0
+        timeout /= 1000.0
+        # minimum timeout is 10 milliseconds. This is a mimimum practical.
+        timeout = 0.010 if timeout == 0
       end
 
-      destination = @destinations.find do |dest|
-        dest.topic_pattern.eql? topic_pattern
+      share = options.fetch(:share, nil)
+      fail ArgumentError, 'share must be a String or nil.' unless
+        share.is_a?(String) || share.nil?
+      if share.is_a? String
+        fail ArgumentError,
+             'share is invalid because it contains a colon (:) character' if
+               share.include? ':'
       end
-      fail Mqlight::UnsubscribedError, 'You must be subscribed to a '\
-        'destination to receive messages from it.' if destination.nil?
 
-      @proton_queue_mutex.synchronize do
-        @proton_queue.push(type: 'receive',
-                           timeout: timeout,
-                           destination: destination)
-        @proton_queue_resource.signal
-        until @proton_queue.empty?
-          @proton_queue_resource.wait(@proton_queue_mutex, timeout)
+      logger.data(@id, 'Checking for a matching destination') do
+        self.class.to_s + '#' + __method__.to_s
+      end
+      destination = @thread_vars.destinations.find do |dest|
+        dest.match?(topic_pattern, share)
+      end
+      # Has a matching destination has been found?
+      if destination.nil?
+        fail Mqlight::UnsubscribedError, 'You must be subscribed with '\
+          "topic_pattern #{topic_pattern} to receive messages from it." \
+          if share.nil?
+        fail Mqlight::UnsubscribedError, 'You must be subscribed with '\
+          "topic_pattern #{topic_pattern} and share #{share} to receive"\
+          'messages from it.'
+      end
+
+      @command.push_request(action: 'receive',
+                            timeout: timeout,
+                            destination: destination)
+
+      # Get the message or nil for timeout to return
+      message = @thread_vars.reply_queue.pop
+
+      # If the reply is an exception and that exception is
+      # exception = timeout set message to nil to indicate timeout no message
+      # otherwise raise the exception
+      if message.is_a? Mqlight::ExceptionContainer
+        if message.exception.is_a? Mqlight::TimeoutError
+          message = nil
+        else
+          fail message.exception
         end
-        @proton_queue_resource.signal
       end
-      @message_queue.pop
+
+      logger.exit(@id) { self.class.to_s + '#' + __method__.to_s }
+      message
+    rescue StandardError => e
+      logger.throw(@id, e) { self.class.to_s + '#' + __method__.to_s }
+      raise e
     end
 
     # Unsubscribes from a destination.  The client will no longer be able to
@@ -601,113 +633,117 @@ module Mqlight
     #        destination (e.g. there has been no matching call to the subscribe
     #        method).
     #
-    # @note the ttl option is, currently, not supported.
-    def unsubscribe(topic_pattern, options={})
+    def unsubscribe(topic_pattern, options = {})
+      logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
+      parms = Hash[method(__method__).parameters.map do |parm|
+        [parm[1], eval(parm[1].to_s)]
+      end]
+      logger.parms(@id, parms) { self.class.to_s + '#' + __method__.to_s }
+
       fail Mqlight::StoppedError, 'Not started' unless started?
       fail ArgumentError,
            'topic_pattern must be a String' unless topic_pattern.is_a? String
       @topic_pattern = topic_pattern
 
-      destination = @destinations.find do |dest|
-        dest.topic_pattern.eql? topic_pattern
+      share = options[:share]
+      fail ArgumentError, 'share must be a String or nil.' unless
+        share.is_a?(String) || share.nil?
+      if share.is_a? String
+        fail ArgumentError,
+             'share is invalid because it contains a colon (:) character' if
+               share.include? ':'
       end
+
+      ttl = options[:ttl]
+      fail ArgumentError, 'ttl value can only be 0' unless ttl.nil? || ttl == 0
+
+      logger.data(@id, 'Checking for a matching destination') do
+        self.class.to_s + '#' + __method__.to_s
+      end
+      destination = @thread_vars.destinations.find do |dest|
+        dest.match? topic_pattern, share
+      end
+      fail Mqlight::UnsubscribedError,
+           'client is not subscribed to this address and share' if
+        destination.nil? && !share.nil?
       fail Mqlight::UnsubscribedError,
            'client is not subscribed to this address' if destination.nil?
 
-      # find and close the link
-      link = Cproton.pn_messenger_get_link(@messenger_impl,
-                                           destination.address,
-                                           false)
-      expiry_policy =
-        Cproton.pn_terminus_get_expiry_policy(Cproton.pn_link_target(link))
-      timeout = Cproton.pn_terminus_get_timeout(Cproton.pn_link_target(link))
+      @command.push_request(action: 'unsubscribe', params: destination,
+                            ttl: ttl)
 
-      # if we're not expiring the link, we won't get an ACK from the server
-      # so all we can do is wait until our request has gone over the network
-      if timeout > 0 || expiry_policy == Cproton::PN_EXPIRE_NEVER
-        Cproton.pn_link_detach(link)
-        session = Cproton.pn_link_session(link)
-        connection = Cproton.pn_session_connection(session)
-        transport = Cproton.pn_connection_transport(connection)
-        until Cproton.pn_transport_quiesced(transport)
-          Cproton.pn_messenger_work(@messenger_impl, 0)
-        end
-      else
-        # otherwise we can wait for server-side confirmation of the close
-        Cproton.pn_link_close(link)
-        while (Cproton.pn_link_state(link) & Cproton::PN_REMOTE_CLOSED) == 0
-          Cproton.pn_messenger_work(@messenger_impl, 0)
-        end
-      end
+      @thread_vars.destinations.delete(destination)
+      logger.exit(@id, self) { self.class.to_s + '#' + __method__.to_s }
+      self
+    rescue StandardError => e
+      logger.throw(@id, e) { self.class.to_s + '#' + __method__.to_s }
+      raise e
     end
 
     # @return [nil, String] either the URL of the service that the client is
     #         currently connect to, or nil if the client is not currently
     #         connected to a service.
     def service
-      if started?
-        @service
-      else
-        nil
-      end
+      @thread_vars.service.service if started?
     end
 
-    #
-    def started?
-      @state == :started
+    # @return [Symbol] the current state of the client.  This will be one of:
+    #         :starting, :started, :stopping, :stopped, :retrying, or :restarted
+    def state
+      @thread_vars.state
     end
 
-    #
-    def stopped?
-      @state == :stopped
-    end
-
-    #
-    def retrying?
-      @state == :retrying
-    end
-
-    #
-    def error
-      Cproton.pn_error_text(Cproton.pn_messenger_error(@messenger_impl))
-    end
-
-    #
+    # @return [String] client Id
     def to_s
       "#{@id}"
     end
 
-    private
+    # @return [Boolean] true indicating if the client is in the started status
+    def started?
+      @thread_vars.state == :started
+    end
 
-    #
+    # @return [Boolean] true indicating if the client is in the stopped status
+    def stopped?
+      @thread_vars.state == :stopped
+    end
+
+    # @return [Boolean] true indicating if the client is in the retrying status
+    def retrying?
+      @thread_vars.state == :retrying
+    end
+
+    # @return [Boolean] true indicating if the client is in the starting status
+    def starting?
+      @thread_vars.state == :starting
+    end
+
+    # @private
     def set_defaults
+      logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
+
       # Generate id if none supplied
       @id ||= 'AUTO_' + SecureRandom.hex[0..6]
+
       # Empty service list to be populated
       @service_list = []
-      # Initialise as stopped
-      @state = :stopped
-      # Start with no destinations
-      @destinations = []
+
+      logger.exit(@id) { self.class.to_s + '#' + __method__.to_s }
+    rescue StandardError => e
+      logger.throw(@id, e) { self.class.to_s + '#' + __method__.to_s }
+      raise e
     end
 
-    #
-    def change_state(new_state, reason = nil)
-      return if @state == new_state
-      @state = new_state
-      @callback_queue.push([@state_callback, @state, reason]) if @state_callback
-    end
-
-    #
-    def generate_service_list
-      return unless @service_lookup_uri
-
-      # TODO: Retry logic
-      @service_list = Mqlight::Util.get_service_urls(@service_lookup_uri)
-    end
-
-    #
+    # @private
     def validate_service_list
+      logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
+      parms = Hash[method(__method__).parameters.map do |parm|
+        [parm[1], eval(parm[1].to_s)]
+      end]
+      Logging.logger.parms(@id, parms) do
+        self.class.to_s + '#' + __method__.to_s
+      end
+
       property_auth = nil
       if @user && @password
         property_auth = "#{URI.encode_www_form_component(@user)}:"\
@@ -715,150 +751,56 @@ module Mqlight
       end
 
       @service_list.each do |service|
-        service_auth = URI(service).userinfo
-        if service_auth
+        if service.userinfo
           fail ArgumentError,
-            "URLs supplied via the 'service' property must specify both a "\
-            'user name and a password value, or omit both values' unless
-          service_auth.split(':').size == 2
+               "URLs supplied via the 'service' property must specify both a "\
+               'user name and a password value, or omit both values' unless
+          service.userinfo.split(':').size == 2
           fail ArgumentError,
-            "User name supplied as an argument (#{property_auth}) does not "\
-            "match user name supplied via a service url (#{service_auth})" if
-            property_auth && !(property_auth.eql? service_auth)
+               "User name supplied as an argument (#{property_auth}) does not"\
+               ' match user name supplied via a service url'\
+               "(#{service.userinfo})" if
+            property_auth && !(property_auth.eql? service.userinfo)
         end
 
-        next if URI(service).scheme.eql?('amqp')
-        # TODO: remove comment once amqps:// is supported
-        # next if URI(service).scheme.eql?('amqps')
+        fail ArgumentError,
+             "One of the supplied services (#{service}) #{service.path} " \
+             'is not a valid URL' \
+             unless service.path.nil? || service.path.length == 0 \
+               || service.path == '/'
+
+        next if service.scheme.eql?('amqp')
+        next if service.scheme.eql?('amqps')
 
         fail ArgumentError,
              "One of the supplied services (#{service}) is not a "\
              'URL scheme that is supported by this client'
       end
+      logger.exit(@id) { self.class.to_s + '#' + __method__.to_s }
+    rescue StandardError => e
+      logger.throw(@id, e) { self.class.to_s + '#' + __method__.to_s }
+      raise e
     end
 
-    #
+    # @private
     def callback_loop
-      argv = @callback_queue.pop
+      logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
+
+      argv = @thread_vars.callback_queue.pop
       callback = argv.shift
-      callback.call(argv)
-    end
-
-    #
-    def remote_timeout
-      Cproton.pn_messenger_get_remote_idle_timeout(@messenger_impl,
-                                                   @service.to_s)
-    end
-
-    #
-    def proton_loop
-      @proton_queue_mutex.synchronize do
-        unless @proton_queue.empty?
-          begin
-            op = @proton_queue.pop(true)
-            case op[:type]
-            when 'send'
-              process_queued_send op[:params]
-            when 'subscription'
-              process_queued_subscription op[:params]
-            when 'receive'
-              check_for_messages(op[:destination], op[:timeout])
-            end
-          rescue ThreadError
-            # thrown by queue.pop if queue is empty (should never happen)
-            break
-          end
-        end
-        @proton_queue_resource.signal
-        unless stopped?
-          @proton_queue_resource.wait(@proton_queue_mutex,
-                                      remote_timeout / 1000)
-          Cproton.pn_messenger_work(@messenger_impl, 0)
-          @proton_queue_resource.signal
-        end
-      end
-    end
-
-    #
-    def process_queued_send(msg)
-      check_for_error(Cproton.pn_messenger_put(@messenger_impl, msg))
-      check_for_error(Cproton.pn_messenger_send(@messenger_impl, 1))
-    rescue Qpid::Proton::ProtonError => error
-      # FIXME: rather than raise exceptions, we need to pass them back
-      #        to the client
-      raise "ERROR: #{error.message}"
-    end
-
-    #
-    def process_queued_subscription(destination)
-      Cproton.pn_messenger_subscribe_ttl(@messenger_impl,
-                                         destination.address,
-                                         destination.ttl)
-      link = Cproton.pn_messenger_get_link(@messenger_impl,
-                                           destination.address,
-                                           false)
-      # block until link is active
-      while (Cproton.pn_link_state(link) & Cproton::PN_REMOTE_ACTIVE) == 0
-        Cproton.pn_messenger_work(@messenger_impl, 0)
-      end
-
-      # FIXME: shouldn't call link flow unless using manual credit (we're using
-      #        explicit credit on our recv call)
-      # Cproton.pn_link_flow(link, destination.credit) if destination.credit > 0
-
-      # Store record of subscription
-      @destinations.push(destination)
-    rescue Qpid::Proton::ProtonError => error
-      # FIXME: rather than raise exceptions, we need to pass them back
-      #        to the client
-      raise "ERROR: #{error.message}"
-    end
-
-    #
-    def check_for_messages(destination, timeout = nil)
-      link = Cproton.pn_messenger_get_link(@messenger_impl,
-                                           destination.address, false)
-      Cproton.pn_link_flow(link, 1) if Cproton.pn_link_credit(link) == 0
-      loop do
-        begin
-          break unless started?
-          if timeout.nil? || timeout == 0
-            loop_timeout = (remote_timeout > 0) ? remote_timeout / 2 : -1
-          else
-            loop_timeout = [timeout, remote_timeout].min
-          end
-          Cproton.pn_messenger_set_timeout(@messenger_impl, loop_timeout)
-          check_for_error(Cproton.pn_messenger_recv(@messenger_impl, -2))
-          break
-        rescue Qpid::Proton::TimeoutError
-          Cproton.pn_messenger_work(@messenger_impl, loop_timeout)
-          next if timeout.nil?
-          timeout -= loop_timeout
-          break if timeout <= 0
-        end
-      end
-      Cproton.pn_messenger_set_timeout(@messenger_impl, -1)
-
-      incoming_count = Cproton.pn_messenger_incoming(@messenger_impl)
-      if incoming_count == 0
-        @message_queue.push(nil)
-        return
-      end
-
-      msg = Qpid::Proton::Message.new
+      # Catch any user generated errors from call back
       begin
-        check_for_error(Cproton.pn_messenger_get(@messenger_impl, msg.impl))
-        msg.post_decode unless msg.nil?
-      rescue Qpid::Proton::Error => error
-        raise "ERROR: #{error.message}"
+        callback.call(argv)
+      rescue StandardError => e
+        logger.throw(@id, e) { self.class.to_s + '#' + __method__.to_s }
+        $stderr.puts "*** Error: Call back generated error \'#{e}\'"
+        $stderr.puts e.backtrace
       end
-      message = Mqlight::Delivery.new(msg, destination)
-
-      # TODO: drain if Cproton.pn_link_credit(link).nonzero?
-      @message_queue.push(message)
-
-      fail "unexpectedly received #{incoming_count} messages when only 1 was "\
-           'expected' if incoming_count > 1
+      logger.exit(@id) { self.class.to_s + '#' + __method__.to_s }
+    rescue StandardError => e
+      logger.ffdc(self.class.to_s + '#' + __method__.to_s,
+                  'ffdc001', self, 'Uncaught exception', e)
     end
+    # End of class
   end
 end

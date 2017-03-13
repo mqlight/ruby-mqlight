@@ -23,7 +23,6 @@
  */
 
 #include <proton/import_export.h>
-#include <sys/types.h>
 #include <proton/type_compat.h>
 #include <proton/types.h>
 
@@ -90,6 +89,12 @@ typedef enum {
   PN_SSL_RESUME_REUSED          /**< Session resumed from previous session. */
 } pn_ssl_resume_status_t;
 
+/** Tests for SSL implementation present
+ *
+ *  @return true if we support SSL, false if not
+ */
+PN_EXTERN bool pn_ssl_present( void );
+
 /** Create an SSL configuration domain
  *
  * This method allocates an SSL domain object.  This object is used to hold the SSL
@@ -121,17 +126,20 @@ PN_EXTERN void pn_ssl_domain_free( pn_ssl_domain_t *domain );
  * previous setting.
  *
  * @param[in] domain the ssl domain that will use this certificate.
- * @param[in] certificate_file path to file/database containing the identifying
- * certificate.
- * @param[in] private_key_file path to file/database containing the private key used to
- * sign the certificate
+ * @param[in] credential_1 specifier for the file/database containing the identifying
+ * certificate. For Openssl users, this is a PEM file. For Windows SChannel users, this is
+ * the PKCS#12 file or system store.
+ * @param[in] credential_2 an optional key to access the identifying certificate. For
+ * Openssl users, this is an optional PEM file containing the private key used to sign the
+ * certificate. For Windows SChannel users, this is the friendly name of the
+ * self-identifying certificate if there are multiple certificates in the store.
  * @param[in] password the password used to sign the key, else NULL if key is not
  * protected.
  * @return 0 on success
  */
 PN_EXTERN int pn_ssl_domain_set_credentials( pn_ssl_domain_t *domain,
-                                             const char *certificate_file,
-                                             const char *private_key_file,
+                                             const char *credential_1,
+                                             const char *credential_2,
                                              const char *password);
 
 /** Configure the set of trusted CA certificates used by this domain to verify peers.
@@ -249,6 +257,13 @@ PN_EXTERN int pn_ssl_init( pn_ssl_t *ssl,
  */
 PN_EXTERN bool pn_ssl_get_cipher_name(pn_ssl_t *ssl, char *buffer, size_t size);
 
+/** Get the SSF (security strength factor) of the Cipher that is currently in use.
+ *
+ * @param[in] ssl the ssl client/server to query.
+ * @return the ssf, note that 0 means no security.
+ */
+PN_EXTERN int pn_ssl_get_ssf(pn_ssl_t *ssl);
+
 /** Get the name of the SSL protocol that is currently in use.
  *
  * Gets a text description of the SSL protocol that is currently active, or returns FALSE if SSL
@@ -277,6 +292,10 @@ PN_EXTERN bool pn_ssl_get_protocol_name(pn_ssl_t *ssl, char *buffer, size_t size
 PN_EXTERN pn_ssl_resume_status_t pn_ssl_resume_status( pn_ssl_t *ssl );
 
 /** Set the expected identity of the remote peer.
+ *
+ * By default, SSL will use the hostname associated with the connection that
+ * the transport is bound to (see ::pn_connection_set_hostname).  This method
+ * allows the caller to override that default.
  *
  * The hostname is used for two purposes: 1) when set on an SSL client, it is sent to the
  * server during the handshake (if Server Name Indication is supported), and 2) it is used
@@ -309,6 +328,14 @@ PN_EXTERN int pn_ssl_set_peer_hostname( pn_ssl_t *ssl, const char *hostname);
  * @return 0 on success.
  */
 PN_EXTERN int pn_ssl_get_peer_hostname( pn_ssl_t *ssl, char *hostname, size_t *bufsize );
+
+/** Get the subject from the peers certificate.
+ *
+ * @param[in] ssl the ssl client/server to query.
+ * @return A null terminated string representing the full subject,
+ * which is valid until the ssl object is destroyed.
+ */
+PN_EXTERN const char* pn_ssl_get_remote_subject(pn_ssl_t *ssl);
 
 /** @} */
 

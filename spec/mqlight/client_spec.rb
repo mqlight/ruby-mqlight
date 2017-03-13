@@ -1,15 +1,15 @@
-# @(#) MQMBID sn=mqkoa-L141209.14 su=_mOo3sH-nEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/spec/mqlight/client_spec.rb
+# @(#) MQMBID sn=mqkoa-L160208.09 su=_Zdh2gM49EeWAYJom138ZUQ pn=appmsging/ruby/mqlight/spec/mqlight/client_spec.rb
 #
 # <copyright
 # notice="lm-source-program"
 # pids="5725-P60"
-# years="2013,2014"
+# years="2014,2015"
 # crc="3568777996" >
 # Licensed Materials - Property of IBM
 #
 # 5725-P60
 #
-# (C) Copyright IBM Corp. 2014
+# (C) Copyright IBM Corp. 2014, 2015
 #
 # US Government Users Restricted Rights - Use, duplication or
 # disclosure restricted by GSA ADP Schedule Contract with
@@ -17,10 +17,12 @@
 # </copyright>
 
 require 'spec_helper'
+require 'spec_unsecure_helper'
 
 test_service_uri = 'amqp://localhost:5672'
 
 describe Mqlight::BlockingClient do
+
   describe '#new' do
     it 'creates a client' do
       client = Mqlight::BlockingClient.new(test_service_uri)
@@ -51,7 +53,7 @@ describe Mqlight::BlockingClient do
 
     it 'fails if passed an oversized id' do
       expect do
-        Mqlight::BlockingClient.new(test_service_uri, id: 'a' * 50)
+        Mqlight::BlockingClient.new(test_service_uri, id: 'a' * 260)
       end.to raise_error(ArgumentError)
     end
 
@@ -202,26 +204,48 @@ describe Mqlight::BlockingClient do
     it 'adds a valid amqp service url string to its service list' do
       client = Mqlight::BlockingClient.new(test_service_uri)
       expect(client.instance_variable_get(:@service_list))
-        .to include(test_service_uri)
+        .to include(URI(test_service_uri))
     end
 
-    it 'sets service_lookup_uri to a valid http url if one is supplied' do
-      expect(Mqlight::Util).to receive(:get_service_urls)
-        .with('http://example.com')
-        .and_return ['amqp://example.com:5672', 'amqp://example.com:5673']
-      client = Mqlight::BlockingClient.new('http://example.com')
-      expect(client.instance_variable_get(:@service_lookup_uri))
-        .to eq('http://example.com')
+    it 'adds a valid amqp service url containing auth to its service list' do
+      client = Mqlight::BlockingClient.new('amqp://name:pw@localhost')
+      expect(client.instance_variable_get(:@service_list))
+        .to include(URI('amqp://name:pw@localhost:5672'))
     end
 
-    it 'sets service_lookup_uri to a valid https url if one is supplied' do
-      expect(Mqlight::Util).to receive(:get_service_urls)
-        .with('https://example.com')
-        .and_return ['amqp://example.com:5672', 'amqp://example.com:5673']
-      client = Mqlight::BlockingClient.new('https://example.com')
-      expect(client.instance_variable_get(:@service_lookup_uri))
-        .to eq('https://example.com')
+    it 'adds a service url containing auth if given matching user and pw' do
+      client = Mqlight::BlockingClient.new('amqp://name:pw@localhost',
+                                           user: 'name', password: 'pw')
+      expect(client.instance_variable_get(:@service_list))
+        .to include(URI('amqp://name:pw@localhost:5672'))
     end
+
+    it 'fails if service url auth and supplied user and pw do not match' do
+      expect do
+        Mqlight::BlockingClient.new('amqp://name:pw@localhost',
+                                    user: 'foo', password: 'bar')
+      end.to raise_error(ArgumentError)
+    end
+
+    # TODO: test timeout too short
+    # it 'sets service_lookup_uri to a valid http url if one is supplied' do
+    #  expect(Mqlight::Util).to receive(:get_service_urls)
+    #    .with('http://example.com')
+    #    .and_return ['amqp://example.com:5672', 'amqp://example.com:5673']
+    #  client = Mqlight::BlockingClient.new('http://example.com')
+    #  expect(client.instance_variable_get(:@service_lookup_uri))
+    #    .to eq('http://example.com')
+    # end
+
+    # TODO: test timeout too short
+    # it 'sets service_lookup_uri to a valid https url if one is supplied' do
+    #  expect(Mqlight::Util).to receive(:get_service_urls)
+    #    .with('https://example.com')
+    #    .and_return ['amqp://example.com:5672', 'amqp://example.com:5673']
+    #  client = Mqlight::BlockingClient.new('https://example.com')
+    #  expect(client.instance_variable_get(:@service_lookup_uri))
+    #    .to eq('https://example.com')
+    # end
 
     it 'fails if passed a non amqp service url' do
       expect do
@@ -242,17 +266,15 @@ describe Mqlight::BlockingClient do
       client = Mqlight::BlockingClient.new([test_service_uri,
                                             'amqp://localhost:5673'])
       expect(client.instance_variable_get(:@service_list))
-        .to match_array([test_service_uri, 'amqp://localhost:5673'])
+        .to match_array([URI(test_service_uri), URI('amqp://localhost:5673')])
     end
 
     it 'fails if passed no service url' do
       expect { Mqlight::BlockingClient.new }.to raise_error(ArgumentError)
     end
-
   end
 
   describe '#start' do
-
     before(:each) do
       @client = Mqlight::BlockingClient.new(test_service_uri)
     end
@@ -269,6 +291,34 @@ describe Mqlight::BlockingClient do
         expect(@client.started?).to be true
         expect(@client.stopped?).to be false
       end
+
+      it 'attempts each entry in the list of service uris until successful' do
+        @client.stop
+        service_list = ['amqp://host1:5672',
+                        'amqp://host2:5672',
+                        'amqp://host3:5672']
+
+        call_count = 0
+        allow(Cproton).to receive(:pn_messenger_started) do
+          call_count += 1
+          unless call_count == service_list.length
+            fail Qpid::Proton::ProtonError, 'error'
+          end
+          0
+        end
+        service_list.each do |service|
+          expect(Cproton).to receive(:pn_messenger_route)
+            .with(kind_of(SWIG::TYPE_p_pn_messenger_t),
+                  service + '/*',
+                  kind_of(String))
+        end
+        expect(@client.state).to be :stopped
+        @client = Mqlight::BlockingClient.new(service_list)
+        @client.start
+        expect(@client.state).to be :started
+        expect(@client.started?).to be true
+        expect(@client.stopped?).to be false
+      end
     end
 
     context 'when started' do
@@ -279,11 +329,9 @@ describe Mqlight::BlockingClient do
         expect(@client.stopped?).to be false
       end
     end
-
   end
 
   describe '#stop' do
-
     before(:each) do
       @client = Mqlight::BlockingClient.new(test_service_uri)
     end
@@ -310,11 +358,9 @@ describe Mqlight::BlockingClient do
         expect(@client.stopped?).to be true
       end
     end
-
   end
 
   describe '#send' do
-
     before(:each) do
       @client = Mqlight::BlockingClient.new(test_service_uri)
     end
@@ -333,7 +379,6 @@ describe Mqlight::BlockingClient do
     end
 
     context 'when started' do
-
       it 'fails if passed no arguments' do
         expect { @client.send }.to raise_error(ArgumentError)
       end
@@ -363,11 +408,6 @@ describe Mqlight::BlockingClient do
         expect { @client.send({}, 'data') }.to raise_error(ArgumentError)
       end
 
-      it 'fails if passed invalid data' do
-        pending('not sure what constitutes invalid')
-        this_should_not_get_executed
-      end
-
       it 'fails if passed a string as options' do
         expect do
           @client.send('topic', 'data', 'options')
@@ -395,50 +435,52 @@ describe Mqlight::BlockingClient do
         end.to raise_error(ArgumentError)
       end
 
-      it 'completes if passed nil options' do
-        expect(@client.instance_variable_get(:@proton_queue)).to receive(:push)
-        @client.send('topic', 'data', nil)
-      end
+      # TODO: disabled as @reply_queue has moved.
+      # it 'completes if passed nil options' do
+      #  expect(@client.instance_variable_get(:@reply_queue)).to receive(:pop)
+      #    .and_return nil
+      #  @client.send('topic', 'data', nil)
+      # end
 
       it 'fails if passed a string as ttl' do
-       expect do
+        expect do
           @client.send('topic', 'data', ttl: 'qos')
-        end.to raise_error(Mqlight::UnsupportedError)
+        end.to raise_error(ArgumentError)
       end
 
       it 'fails if passed a boolean ttl' do
         expect do
           @client.send('topic', 'data', ttl: true)
-        end.to raise_error(Mqlight::UnsupportedError)
+        end.to raise_error(ArgumentError)
         expect do
           @client.send('topic', 'data', ttl: false)
-        end.to raise_error(Mqlight::UnsupportedError)
+        end.to raise_error(ArgumentError)
       end
 
       it 'fails if passed an array as a ttl' do
         expect do
           @client.send('topic', 'data', ttl: [])
-        end.to raise_error(Mqlight::UnsupportedError)
+        end.to raise_error(ArgumentError)
       end
 
       it 'fails if passed a hash as a ttl' do
         expect do
           @client.send('topic', 'data', ttl: {})
-        end.to raise_error(Mqlight::UnsupportedError)
+        end.to raise_error(ArgumentError)
       end
 
       it 'fails if passed a symbol as a ttl' do
         expect do
           @client.send('topic', 'data', ttl: :symbol)
-        end.to raise_error(Mqlight::UnsupportedError)
+        end.to raise_error(ArgumentError)
       end
 
-      it 'completes if passed an integer ttl' do
-       pending ('TTL not supported yet')
-       this_should_not_get_execute
-       expect(@client.instance_variable_get(:@proton_queue)).to receive(:push)
-       @client.send('topic', 'data', ttl: 1)
-      end
+      # TODO: disabled as @reply_queue has moved.
+      # it 'completes if passed an integer ttl' do
+      #  expect(@client.instance_variable_get(:@reply_queue)).to receive(:pop)
+      #    .and_return nil
+      #  @client.send('topic', 'data', ttl: 1)
+      # end
 
       it 'fails if passed a string as a timeout' do
         expect do
@@ -464,15 +506,10 @@ describe Mqlight::BlockingClient do
         end.not_to raise_error
       end
 
-      it 'completes if passed valid topic and data' do
-        expect(@client.instance_variable_get(:@proton_queue)).to receive(:push)
-        @client.send('topic', 'data')
-      end
-
-      it 'escapes unsafe characters in message addresses' do
+      it 'treats message addresses as immutable strings not URIs' do
         expect(Cproton).to receive(:pn_message_set_address)
           .with(kind_of(SWIG::TYPE_p_pn_message_t),
-                "#{test_service_uri}/test/a%20topic")
+                "#{test_service_uri}/test/a topic")
           .and_return Qpid::Proton::Error::NONE
         @client.send('test/a topic', 'data')
       end
@@ -480,9 +517,14 @@ describe Mqlight::BlockingClient do
   end
 
   describe '#subscribe' do
-
     before(:each) do
       @client = Mqlight::BlockingClient.new(test_service_uri)
+
+      calls = 0
+      allow(Cproton).to receive(:pn_messenger_get_link) do
+        calls += 1
+        calls <= 1 ? nil : (SWIG::TYPE_p_pn_link_t)
+      end
     end
 
     after(:each) do
@@ -499,7 +541,6 @@ describe Mqlight::BlockingClient do
     end
 
     context 'when started' do
-
       it 'fails if passed no arguments' do
         expect { @client.subscribe }.to raise_error(ArgumentError)
       end
@@ -594,15 +635,7 @@ describe Mqlight::BlockingClient do
         @client.subscribe('topic', qos: 0)
       end
 
-      it 'temporarily fails if passed qos 1' do
-        expect do
-          @client.subscribe('topic', qos: 1)
-        end.to raise_error(Mqlight::UnsupportedError)
-      end
-      
       it 'completes if passed qos 1' do
-        pending('QOS 1 not supported yet')
-        this_should_not_get_executed
         expect(Cproton).to receive(:pn_messenger_subscribe_ttl)
           .with(kind_of(SWIG::TYPE_p_pn_messenger_t),
                 "#{test_service_uri}/private:topic",
@@ -647,31 +680,31 @@ describe Mqlight::BlockingClient do
       it 'fails if passed an invalid numeric ttl' do
         expect do
           @client.subscribe('topic', ttl: -1)
-        end.to raise_error(Mqlight::UnsupportedError)
+        end.to raise_error(ArgumentError)
       end
 
       it 'fails if passed a string as a ttl' do
         expect do
           @client.subscribe('topic', ttl: 'ttl')
-        end.to raise_error(Mqlight::UnsupportedError)
+        end.to raise_error(ArgumentError)
       end
 
       it 'fails if passed a true boolean ttl' do
         expect do
           @client.subscribe('topic', ttl: true)
-        end.to raise_error(Mqlight::UnsupportedError)
+        end.to raise_error(ArgumentError)
       end
 
       it 'fails if passed a hash as a ttl' do
         expect do
           @client.subscribe('topic', ttl: {})
-        end.to raise_error(Mqlight::UnsupportedError)
+        end.to raise_error(ArgumentError)
       end
 
       it 'fails if passed an array as a ttl' do
         expect do
           @client.subscribe('topic', ttl: [])
-        end.to raise_error(Mqlight::UnsupportedError)
+        end.to raise_error(ArgumentError)
       end
 
       it 'completes if passed a nil share' do
@@ -703,52 +736,65 @@ describe Mqlight::BlockingClient do
 
       it 'uses default value for qos (at-most-once) if not set' do
         expect(Mqlight::Destination).to receive(:new)
-          .with(test_service_uri, 'topic', {})
+          .with(kind_of(Mqlight::Service), 'topic', {})
           .and_call_original
         @client.subscribe('topic')
       end
 
       it 'uses supplied value for qos (at-most-once) if set to 0' do
         expect(Mqlight::Destination).to receive(:new)
-          .with(test_service_uri, 'topic', hash_including(qos: 0))
+          .with(kind_of(Mqlight::Service), 'topic', hash_including(qos: 0))
           .and_call_original
         @client.subscribe('topic', qos: 0)
       end
 
       it 'uses supplied value for qos (at-least-once) if set to 1' do
-        pending("ttl not supported yet")
-        this_should_not_get_executed
         expect(Mqlight::Destination).to receive(:new)
-          .with(test_service_uri, 'topic', hash_including(qos: 1))
+          .with(kind_of(Mqlight::Service), 'topic', hash_including(qos: 1))
           .and_call_original
         @client.subscribe('topic', qos: 1)
       end
 
       it 'passes supplied options directly to the destination' do
         expect(Mqlight::Destination).to receive(:new)
-          .with(test_service_uri, 'topic', hash_including(credit: 100))
+          .with(kind_of(Mqlight::Service), 'topic', hash_including(credit: 100))
           .and_call_original
         @client.subscribe('topic', credit: 100)
       end
 
-      it 'reacts appropriately if auto_confirm is set to true' do
-        pending('not implemented yet')
-        this_should_not_get_executed
+      it 'reacts appropriately if auto_confirm is set to true and QoS = 1' do
+        expect(Mqlight::Destination).to receive(:new)
+          .with(kind_of(Mqlight::Service), 'topic', hash_including(auto_confirm: true,
+                                                          qos: 1))
+          .and_call_original
+        @client.subscribe('topic', auto_confirm: true, qos: 1)
       end
 
-      it 'reacts appropriately if auto_confirm is set to false' do
-        pending('not implemented yet')
-        this_should_not_get_executed
+      it 'reacts appropriately if auto_confirm is set to false and QoS = 1' do
+        expect(Mqlight::Destination).to receive(:new)
+          .with(kind_of(Mqlight::Service), 'topic', hash_including(auto_confirm: false,
+                                                          qos: 1))
+          .and_call_original
+        @client.subscribe('topic', auto_confirm: false, qos: 1)
       end
 
+      it 'reacts appropriately if not auto_confirm is present but QoS = 1' do
+        expect(Mqlight::Destination).to receive(:new)
+          .with(kind_of(Mqlight::Service), 'topic', hash_including(qos: 1))
+          .and_call_original
+        @client.subscribe('topic', qos: 1)
+      end
     end
-
   end
 
-  describe '#receive# do'
-
+  describe '#receive' do
     before(:each) do
       @client = Mqlight::BlockingClient.new(test_service_uri)
+      calls = 0
+      allow(Cproton).to receive(:pn_messenger_get_link) do
+        calls += 1
+        calls <= 1 ? nil : (SWIG::TYPE_p_pn_link_t)
+      end
     end
 
     after(:each) do
@@ -758,15 +804,17 @@ describe Mqlight::BlockingClient do
     context 'when stopped' do
       it 'raises a StoppedError' do
         @client.stop
-        expect { @client.receive('topic') }.to raise_error(Mqlight::StoppedError)
+        expect do
+          @client.receive('topic')
+        end.to raise_error(Mqlight::StoppedError)
       end
     end
-    
+
     context 'when started' do
       it 'fails if passed no arguments' do
         expect { @client.receive }.to raise_error(ArgumentError)
       end
-      
+
       it 'fails if passed a numeric topic_pattern' do
         expect { @client.receive(1) }.to raise_error(ArgumentError)
       end
@@ -807,20 +855,20 @@ describe Mqlight::BlockingClient do
       end
 
       it 'fails if options is an array' do
-        expect do 
-          @client.receive('topic',[])
+        expect do
+          @client.receive('topic', [])
         end.to raise_error(ArgumentError)
       end
 
       it 'fails if options is an string' do
-        expect do 
-          @client.receive('topic','string')
+        expect do
+          @client.receive('topic', 'string')
         end.to raise_error(ArgumentError)
       end
 
       it 'fails if options is an integer' do
-        expect do 
-          @client.receive('topic',1)
+        expect do
+          @client.receive('topic', 1)
         end.to raise_error(ArgumentError)
       end
 
@@ -844,14 +892,32 @@ describe Mqlight::BlockingClient do
       end
 
       it 'fails if passed out of range timeout' do
-        expect { @client.receive('topic', timeout:-1) }
+        expect { @client.receive('topic', timeout: -1) }
           .to raise_error(RangeError)
       end
+    end
 
+    it 'on missing destination' do
+      expect do
+        @client.receive('missing_destination')
+      end.to raise_error(Mqlight::UnsubscribedError)
+    end
+
+    it 'on successful no message' do
+      allow(Cproton).to receive(:pn_link_credit) do
+        1
+      end
+      allow(Cproton).to receive(:pn_link_drain) .and_return (SWIG::TYPE_p_pn_link_t)
+      allow(Cproton).to receive(:pn_link_draining) .and_return nil
+
+      @client.subscribe('address001')
+      expect do
+        @client.receive('address001', {:timeout=>1})
+      end.not_to raise_error
+    end
   end
 
   describe '#state' do
-
     before(:each) do
       @client = Mqlight::BlockingClient.new(test_service_uri)
     end
@@ -872,11 +938,9 @@ describe Mqlight::BlockingClient do
         expect(@client.state).to be :started
       end
     end
-
   end
 
   describe '#service' do
-
     before(:each) do
       @client = Mqlight::BlockingClient.new(test_service_uri)
     end
@@ -894,14 +958,12 @@ describe Mqlight::BlockingClient do
 
     context 'when started' do
       it 'returns a string' do
-        expect(@client.service).to be_kind_of(String)
+        expect(@client.service).to eql("amqp://localhost:5672")
       end
     end
-
   end
 
   describe '#started?' do
-
     before(:each) do
       @client = Mqlight::BlockingClient.new(test_service_uri)
     end
@@ -922,11 +984,9 @@ describe Mqlight::BlockingClient do
         expect(@client.started?).to be true
       end
     end
-
   end
 
   describe '#stopped?' do
-
     before(:each) do
       @client = Mqlight::BlockingClient.new(test_service_uri)
     end
@@ -947,7 +1007,6 @@ describe Mqlight::BlockingClient do
         expect(@client.stopped?).to be false
       end
     end
-
   end
 
   describe '#to_s' do
@@ -960,13 +1019,20 @@ describe Mqlight::BlockingClient do
       client = Mqlight::BlockingClient.new(test_service_uri, id: 'foo')
       expect(client.to_s).to include('foo')
     end
-
   end
 
   describe '#unsubscribe' do
     before(:each) do
       @client = Mqlight::BlockingClient.new(test_service_uri)
+      calls = 0
+      allow(Cproton).to receive(:pn_messenger_get_link) do
+        calls += 1
+        calls <= 1 ? nil : (SWIG::TYPE_p_pn_link_t)
+      end
       @client.subscribe('valid_topic')
+      calls = 0
+      @client.subscribe('valid_topic', share: 'valid_share')
+      calls = 0
     end
 
     after(:each) do
@@ -1003,10 +1069,46 @@ describe Mqlight::BlockingClient do
         @client.unsubscribe('valid_topic')
       end
 
+      it 'removes the subscription so that receive fails' do
+        allow(Cproton).to receive(:pn_messenger_get_link).and_return(SWIG::TYPE_p_pn_link_t)
+        @client.unsubscribe('valid_topic')
+        expect do
+          @client.receive('valid_topic')
+        end.to raise_error(Mqlight::UnsubscribedError)
+      end
+
       it 'fails if passed an unsubscribed topic_pattern' do
         expect do
           @client.unsubscribe('not_a_valid_topic')
         end.to raise_error(Mqlight::UnsubscribedError)
+      end
+
+      it 'completes if passed a subscribed topic_pattern and share' do
+        expect(Cproton).to receive(:pn_messenger_get_link)
+          .with(kind_of(SWIG::TYPE_p_pn_messenger_t),
+                "#{test_service_uri}/share:valid_share:valid_topic",
+                false)
+          .and_return(SWIG::TYPE_p_pn_link_t)
+        expect(Cproton).to receive(:pn_link_close).with(anything)
+        @client.unsubscribe('valid_topic', share: 'valid_share')
+      end
+
+      it 'fails if passed a subscribed topic_pattern and unsubscribed share' do
+        expect do
+          @client.unsubscribe('topic', share: 'unsub_share')
+        end.to raise_error(Mqlight::UnsubscribedError)
+      end
+
+      it 'fails if passed a unsubscribed topic_pattern and subscribed share' do
+        expect do
+          @client.unsubscribe('unsub_topic', share: 'valid_share')
+        end.to raise_error(Mqlight::UnsubscribedError)
+      end
+
+      it 'fails if passed an unsubscribed share with colon' do
+        expect do
+          @client.unsubscribe('topic', share: 'With:Colon')
+        end.to raise_error(ArgumentError)
       end
     end
   end
@@ -1019,36 +1121,29 @@ describe Mqlight::BlockingClient do
     end
 
     it 'fails if non amqp urls are in the service_list' do
-      @client.instance_variable_set(:@service_list, ['ftp://localhost:5672'])
+      @client.instance_variable_set(:@service_list, [URI('ftp://localhost:5672')])
       expect do
         @client.__send__(:validate_service_list)
       end.to raise_error(ArgumentError)
     end
 
     it 'fails if non url strings are in the service_list' do
-      @client.instance_variable_set(:@service_list, ['blah'])
-      expect do
-        @client.__send__(:validate_service_list)
-      end.to raise_error(ArgumentError)
-    end
-
-    it 'fails if non strings are in the service_list' do
-      @client.instance_variable_set(:@service_list, [1])
+      @client.instance_variable_set(:@service_list, [URI('blah://blah')])
       expect do
         @client.__send__(:validate_service_list)
       end.to raise_error(ArgumentError)
     end
 
     it 'fails if valid and invalid amqp urls are in the service_list' do
-      @client.instance_variable_set(:@service_list, [test_service_uri,
-                                                     'blah'])
+      @client.instance_variable_set(:@service_list, [URI(test_service_uri),
+                                                     URI('blah://blah')])
       expect do
         @client.__send__(:validate_service_list)
       end.to raise_error(ArgumentError)
     end
 
     it 'completes if only valid amqp urls are in the service_list' do
-      @client.instance_variable_set(:@service_list, [test_service_uri])
+      @client.instance_variable_set(:@service_list, [URI(test_service_uri)])
       expect do
         @client.__send__(:validate_service_list)
       end.not_to raise_error
@@ -1057,7 +1152,7 @@ describe Mqlight::BlockingClient do
     it 'completes if auth is specified but service url do not specify auth' do
       @client.instance_variable_set(:@user, 'user')
       @client.instance_variable_set(:@password, 'pass')
-      @client.instance_variable_set(:@service_list, [test_service_uri])
+      @client.instance_variable_set(:@service_list, [URI(test_service_uri)])
       expect do
         @client.__send__(:validate_service_list)
       end.not_to raise_error
@@ -1065,7 +1160,7 @@ describe Mqlight::BlockingClient do
 
     it 'completes if service url specifies auth but user does not' do
       @client.instance_variable_set(:@service_list,
-                                    ['amqp://user:pass@localhost:5672'])
+                                    [URI('amqp://user:pass@localhost:5672')])
       expect do
         @client.__send__(:validate_service_list)
       end.not_to raise_error
@@ -1073,7 +1168,7 @@ describe Mqlight::BlockingClient do
 
     it 'fails if service url auth specifies user but not password' do
       @client.instance_variable_set(:@service_list,
-                                    ['amqp://user@localhost:5672'])
+                                    [URI('amqp://user@localhost:5672')])
       expect do
         @client.__send__(:validate_service_list)
       end.to raise_error(ArgumentError)
@@ -1083,7 +1178,7 @@ describe Mqlight::BlockingClient do
       @client.instance_variable_set(:@user, 'foo')
       @client.instance_variable_set(:@password, 'bar')
       @client.instance_variable_set(:@service_list,
-                                    ['amqp://user:pass@localhost:5672'])
+                                    [URI('amqp://user:pass@localhost:5672')])
       expect do
         @client.__send__(:validate_service_list)
       end.to raise_error(ArgumentError)
@@ -1093,10 +1188,11 @@ describe Mqlight::BlockingClient do
       @client.instance_variable_set(:@user, 'user')
       @client.instance_variable_set(:@password, 'pass')
       @client.instance_variable_set(:@service_list,
-                                    ['amqp://user:pass@localhost:5672'])
+                                    [URI('amqp://user:pass@localhost:5672')])
       expect do
         @client.__send__(:validate_service_list)
       end.not_to raise_error
     end
   end
+
 end

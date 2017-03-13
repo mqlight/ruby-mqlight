@@ -1,4 +1,4 @@
-# @(#) MQMBID sn=mqkoa-L141209.14 su=_mOo3sH-nEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/lib/mqlight.rb
+# @(#) MQMBID sn=mqkoa-L160208.09 su=_Zdh2gM49EeWAYJom138ZUQ pn=appmsging/ruby/mqlight/lib/mqlight.rb
 #
 # <copyright
 # notice="lm-source-program"
@@ -19,20 +19,26 @@
 require 'date'
 require_relative 'cproton'
 
-require_relative 'qpid_proton/described'
-require_relative 'qpid_proton/strings'
-require_relative 'qpid_proton/mapping'
-require_relative 'qpid_proton/data'
-require_relative 'qpid_proton/message'
-require_relative 'qpid_proton/exceptions'
-require_relative 'qpid_proton/exception_handling'
+require_relative 'core/exceptions'
+require_relative 'core/message'
+require_relative 'types/described'
+require_relative 'types/hash'
+require_relative 'types/strings'
+require_relative 'util/error_handler'
+require_relative 'codec/data'
+require_relative 'codec/mapping'
 
 require_relative 'mqlight/version'
+require_relative 'mqlight/logging'
 require_relative 'mqlight/blocking_client'
 require_relative 'mqlight/exceptions'
 require_relative 'mqlight/destination'
 require_relative 'mqlight/delivery'
 require_relative 'mqlight/util'
+require_relative 'mqlight/thread_vars'
+require_relative 'mqlight/command'
+require_relative 'mqlight/connection'
+require_relative 'mqlight/proton_container'
 
 #
 module Mqlight

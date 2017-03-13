@@ -30,6 +30,7 @@ typedef enum {
   CID_pn_list,
   CID_pn_map,
   CID_pn_hash,
+  CID_pn_record,
 
   CID_pn_collector,
   CID_pn_event,
@@ -45,6 +46,11 @@ typedef enum {
   CID_pn_transport,
 
   CID_pn_message,
+
+  CID_pn_reactor,
+  CID_pn_handler,
+  CID_pn_timer,
+  CID_pn_task,
 
   CID_pn_io,
   CID_pn_selector,

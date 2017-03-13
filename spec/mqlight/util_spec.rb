@@ -1,4 +1,4 @@
-# @(#) MQMBID sn=mqkoa-L141209.14 su=_mOo3sH-nEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/spec/mqlight/util_spec.rb
+# @(#) MQMBID sn=mqkoa-L160208.09 su=_Zdh2gM49EeWAYJom138ZUQ pn=appmsging/ruby/mqlight/spec/mqlight/util_spec.rb
 #
 # <copyright
 # notice="lm-source-program"
@@ -19,9 +19,7 @@
 require 'spec_helper'
 
 describe Mqlight::Util do
-
   describe '.get_service_urls' do
-
     it 'fails if passed a non uri string' do
       expect do
         Mqlight::Util.get_service_urls('not a uri')
@@ -84,6 +82,318 @@ describe Mqlight::Util do
       end.to raise_error(JSON::ParserError)
       expect(stub).to have_been_requested
     end
+  end
 
+  # Validate and combination the new SSL arguments.
+  describe '.SecureSocket' do
+    before(:each) do
+      allow(File).to receive(:exist?) do |filePath|
+        fail ArgumentError, "INTERNAL-ERROR: missing or null exist? argument" if filePath.nil?
+        filePath.include? 'ispresent'
+      end
+      allow(File).to receive(:file?) do |filePath|
+        fail ArgumentError, "INTERNAL-ERROR: missing or null file? argument" if filePath.nil?
+        filePath.include? 'isfile'
+      end
+      allow(File).to receive(:binread) do |filePath|
+        fail ArgumentError, "INTERNAL-ERROR: missing or null exist? argument" if filePath.nil?
+         fail IOError, '<Errno::ENOENT: No such file or directory @ rb_sysopen - ' +filePath +'>' unless filePath.include? 'ispresent'
+        "PKCS12TextAsString"
+      end
+      allow(OpenSSL::PKCS12).to receive(:new) do |data, passphrase|
+        "PKCS12Object"
+      end
+    end
+
+    describe '.option_type' do
+      context '.ssl_client_certificate' do
+        it 'success if type is String' do
+          expect do
+            Mqlight::SecureSocket.new({
+              ssl_client_certificate: '/ispresent/isfile',
+              ssl_client_key: '/ispresent/isfile',
+              ssl_client_key_passphrase: 'passphrase'})
+          end.not_to raise_error
+        end
+        it 'failed if type is integer' do
+          expect do
+            Mqlight::SecureSocket.new({ssl_client_certificate: 12})
+          end.to raise_error ArgumentError
+        end
+      end
+      context '.ssl_trust_certificate' do
+        it 'success if type is String' do
+          expect do
+            Mqlight::SecureSocket.new({
+              ssl_trust_certificate:  '/ispresent/isfile'})
+          end.not_to raise_error
+        end
+        it 'failed if type is integer' do
+          expect do
+            Mqlight::SecureSocket.new({ssl_trust_certificate: 12})
+          end.to raise_error ArgumentError
+        end
+      end
+      context '.ssl_client_key' do
+        it 'success if type is String' do
+          expect do
+            Mqlight::SecureSocket.new({
+              ssl_client_certificate: '/ispresent/isfile',
+              ssl_client_key: '/ispresent/isfile',
+              ssl_client_key_passphrase: 'passphrase'})
+          end.not_to raise_error
+        end
+        it 'failed if type is integer' do
+          expect do
+            ssl_client_certificate   Mqlight::SecureSocket.new(ssl_client_key: 12)
+          end.to raise_error ArgumentError
+        end
+      end
+      context '.ssl_client_key_passphrase' do
+        it 'success if type is String' do
+          expect do
+            Mqlight::SecureSocket.new({
+              ssl_client_certificate: '/ispresent/isfile',
+              ssl_client_key: '/ispresent/isfile',
+              ssl_client_key_passphrase: 'passphrase'})
+          end.not_to raise_error
+        end
+        it 'failed if type is integer' do
+          expect do
+            Mqlight::SecureSocket.new({
+              ssl_client_key: '/ispresent/isfile',
+              ssl_client_key_passphrase: 12})
+          end.to raise_error ArgumentError
+        end
+      end
+      
+      context '.ssl_keystore' do
+        it 'success if type is String' do
+          expect do
+            Mqlight::SecureSocket.new({
+              ssl_keystore: '/ispresent/isfile',
+              ssl_keystore_passphrase: 'passphrase'
+            })
+          end.not_to raise_error
+        end
+        it 'failed if type is integer' do
+          expect do
+            Mqlight::SecureSocket.new({
+              ssl_keystore: 23,
+              ssl_keystore_passphrase: 'passphrase'
+            })
+          end.to raise_error ArgumentError
+        end
+      end
+      context '.ssl_keystore_passphrase' do
+        it 'success if type is String' do
+          expect do
+            Mqlight::SecureSocket.new({
+              ssl_keystore: '/ispresent/isfile',
+              ssl_keystore_passphrase: 'passphrase'})
+          end.not_to raise_error
+        end
+        it 'failed if type is integer' do
+          expect do
+            Mqlight::SecureSocket.new({
+              ssl_keystore: '/ispresent/isfile',
+              ssl_keystore_passphrase: 12})
+          end.to raise_error ArgumentError
+        end
+      end
+    end
+    context '.combination' do
+      it '.ssl_keystore with ssl_client_certificate' do
+        expect do
+          Mqlight::SecureSocket.new({
+            ssl_keystore: '/ispresent/isfile',
+            ssl_client_certificate: '/ispresent/isfile'})
+        end.to raise_error ArgumentError
+      end
+      it '.ssl_keystore with ssl_trust_certificate' do
+        expect do
+          Mqlight::SecureSocket.new({
+            ssl_keystore: '/ispresent/isfile',
+            ssl_trust_certificate: '/ispresent/isfile'})
+        end.to raise_error ArgumentError
+      end
+      it '.ssl_keystore with ssl_client_key' do
+        expect do
+          Mqlight::SecureSocket.new({
+            ssl_keystore: '/ispresent/isfile',
+            ssl_client_key: '/ispresent/isfile'})
+        end.to raise_error ArgumentError
+      end
+      it '.ssl_keystore with ssl_client_key_passphrase' do
+        expect do
+          Mqlight::SecureSocket.new({
+            ssl_keystore: '/ispresent/isfile',
+            ssl_client_key_passphrase: 'passphrase'})
+        end.to raise_error ArgumentError
+      end
+    end
+    it '.ssl_keystore with ssl_client_certificate' do
+      expect do
+        Mqlight::SecureSocket.new({
+          ssl_keystore_passphrase: 'passphrase',
+          ssl_client_certificate: '/ispresent/isfile'})
+      end.to raise_error ArgumentError
+    end
+    it '.ssl_keystore with ssl_trust_certificate' do
+      expect do
+        Mqlight::SecureSocket.new({
+          ssl_keystore_passphrase: 'passphrase',
+          ssl_trust_certificate: '/ispresent/isfile'})
+      end.to raise_error ArgumentError
+    end
+    it '.ssl_keystore with ssl_client_key' do
+      expect do
+        Mqlight::SecureSocket.new({
+          ssl_keystore_passphrase: 'passphrase',
+          ssl_client_key: '/ispresent/isfile'})
+      end.to raise_error ArgumentError
+    end
+    it '.ssl_keystore with ssl_client_key_passphrase' do
+      expect do
+        Mqlight::SecureSocket.new({
+          ssl_keystore_passphrase: 'passphrase',
+          ssl_client_key_passphrase: 'passphrase'})
+      end.to raise_error ArgumentError
+    end
+    context '.missing file' do
+      it '.ssl_client_certificate' do
+        expect do
+          Mqlight::SecureSocket.new({ssl_client_certificate: '/missing/isfile'})
+        end.to raise_error ArgumentError
+      end
+      it '.ssl_trust_certificate' do
+        expect do
+          Mqlight::SecureSocket.new({ssl_trust_certificate: '/missing/isfile'})
+        end.to raise_error ArgumentError
+      end
+      it '.ssl_client_key' do
+        expect do
+          Mqlight::SecureSocket.new({ssl_client_key: '/missing/isfile'})
+        end.to raise_error ArgumentError
+      end
+      it '.ssl_keystore' do
+        expect do
+          Mqlight::SecureSocket.new({ssl_keystore: '/missing/isfile'})
+        end.to raise_error ArgumentError
+      end
+    end
+    context '.invalid file' do
+      it '.ssl_client_certificate' do
+        expect do
+          Mqlight::SecureSocket.new({ssl_client_certificate: '/ispresent/isNotfile'})
+        end.to raise_error ArgumentError
+      end
+      it '.ssl_trust_certificate' do
+        expect do
+          Mqlight::SecureSocket.new({ssl_trust_certificate: '/ispresent/isNotfile'})
+        end.to raise_error ArgumentError
+      end
+      it '.ssl_client_key' do
+        expect do
+          Mqlight::SecureSocket.new({ssl_client_key: '/ispresent/isNotfile'})
+        end.to raise_error ArgumentError
+      end
+      it '.ssl_keystore' do
+        expect do
+          Mqlight::SecureSocket.new({ssl_keystore: '/ispresent/isNotfile'})
+        end.to raise_error ArgumentError
+      end
+    end
+    context '.ssl_combinations' do
+      it 'fail - ssk_keystore with ssl_client_certificate' do
+        expect do
+          Mqlight::SecureSocket.new({
+            ssl_keystore: '/ispresent/isfile',
+            ssl_keystore_passphrase: 'passphrase',
+            ssl_client_certificate: '/ispresent/isfile'
+          })
+        end.to raise_error ArgumentError
+      end
+      it 'fail - ssl_keystore with ssl_trust_certificate' do
+        expect do
+          Mqlight::SecureSocket.new({
+            ssl_keystore: '/ispresent/isfile',
+            ssl_keystore_passphrase: 'passphrase',
+            ssl_trust_certificate: '/ispresent/isfile'
+          })
+        end.to raise_error ArgumentError
+      end
+      it 'fail - ssl_keystore with ssl_client_key' do
+        expect do
+          Mqlight::SecureSocket.new({
+            ssl_keystore: '/ispresent/isfile',
+            ssl_keystore_passphrase: 'passphrase',
+            ssl_client_key: '/ispresent/isfile'
+          })
+        end.to raise_error ArgumentError
+      end
+      # No check for not_keystore with only ssl_keystore_passphrase
+      # as it will be ignore as 
+      it 'fail - ssl_not_keystore with ssl_keystore' do
+        expect do
+          Mqlight::SecureSocket.new({
+            ssl_client_certificate: '/ispresent/isfile',
+            ssl_trust_certificate: '/ispresent/isfile',
+            ssl_client_key: '/ispresent/isfile',
+            ssl_client_key_pass_phrase: 'passphrase',
+            ssl_keystore: '/ispresent/isfile',
+          })
+        end.to raise_error ArgumentError
+      end
+      it 'fail - ssl_not_keystore with ssl_keystore_passphrase' do
+        expect do
+          Mqlight::SecureSocket.new({
+            ssl_client_certificate: '/ispresent/isfile',
+            ssl_trust_certificate: '/ispresent/isfile',
+            ssl_client_key: '/ispresent/isfile',
+            ssl_client_key_pass_phrase: 'passphrase',
+            ssl_keystore_passphrase: 'passphrase',
+          })
+        end.to raise_error ArgumentError
+      end
+      it 'success - ssl_not_keystore only' do
+        expect do
+          Mqlight::SecureSocket.new({
+            ssl_client_certificate: '/ispresent/isfile',
+            ssl_trust_certificate: '/ispresent/isfile',
+            ssl_client_key: '/ispresent/isfile',
+            ssl_client_key_passphrase: 'passphrase'
+          })
+        end.not_to raise_error
+      end
+      it 'success - ssk_keystore only' do
+        expect do
+          Mqlight::SecureSocket.new({
+            ssl_client_certificate: '/ispresent/isfile',
+            ssl_trust_certificate: '/ispresent/isfile',
+            ssl_client_key: '/ispresent/isfile',
+            ssl_client_key_passphrase: 'passphrase'
+          })
+        end.not_to raise_error
+      end
+    end
+    context 'ssl_verify_name' do
+      it 'success - valid option' do
+        expect do
+          Mqlight::SecureSocket.new({
+            ssl_trust_certificate: '/ispresent/isfile',
+            ssl_verify_name: true
+          })
+        end.not_to raise_error
+      end
+      it 'fail -- invalid type' do
+        expect do
+          Mqlight::SecureSocket.new({
+            ssl_trust_certificate: '/ispresent/isfile',
+            ssl_verify_name: 12
+          })
+        end.to raise_error ArgumentError
+      end
+    end
   end
 end

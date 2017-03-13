@@ -24,8 +24,8 @@
 
 #include <proton/import_export.h>
 #include <proton/type_compat.h>
+#include <proton/object.h>
 #include <stddef.h>
-#include <sys/types.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -85,6 +85,27 @@ typedef enum {
    * ever be generated.
    */
   PN_EVENT_NONE = 0,
+
+  /**
+   * A reactor has been started. Events of this type point to the reactor.
+   */
+  PN_REACTOR_INIT,
+
+  /**
+   * A reactor has no more events to process. Events of this type
+   * point to the reactor.
+   */
+  PN_REACTOR_QUIESCED,
+
+  /**
+   * A reactor has been stopped. Events of this type point to the reactor.
+   */
+  PN_REACTOR_FINAL,
+
+  /**
+   * A timer event has occurred.
+   */
+  PN_TIMER_TASK,
 
   /**
    * The connection has been created. This is the first event that
@@ -241,6 +262,14 @@ typedef enum {
   PN_TRANSPORT,
 
   /**
+   * The transport has authenticated, if this is received by a server
+   * the associated transport has authenticated an incoming connection
+   * and pn_transport_get_user() can be used to obtain the authenticated
+   * user.
+   */
+  PN_TRANSPORT_AUTHENTICATED,
+
+  /**
    * Indicates that a transport error has occurred. Use
    * ::pn_transport_condition() to access the details of the error
    * from the associated transport.
@@ -265,7 +294,15 @@ typedef enum {
    * Indicates that the both the head and tail of the transport are
    * closed. Events of this type point to the relevant transport.
    */
-  PN_TRANSPORT_CLOSED
+  PN_TRANSPORT_CLOSED,
+
+  PN_SELECTABLE_INIT,
+  PN_SELECTABLE_UPDATED,
+  PN_SELECTABLE_READABLE,
+  PN_SELECTABLE_WRITABLE,
+  PN_SELECTABLE_ERROR,
+  PN_SELECTABLE_EXPIRED,
+  PN_SELECTABLE_FINAL
 
 } pn_event_type_t;
 
@@ -293,6 +330,16 @@ PN_EXTERN pn_collector_t *pn_collector(void);
  * @param[in] collector a collector to free, or NULL
  */
 PN_EXTERN void pn_collector_free(pn_collector_t *collector);
+
+/**
+ * Release a collector. Once in a released state a collector will
+ * drain any internally queued events (thereby releasing any pointers
+ * they may hold), shrink it's memory footprint to a minimum, and
+ * discard any newly created events.
+ *
+ * @param[in] collector a collector object
+ */
+PN_EXTERN void pn_collector_release(pn_collector_t *collector);
 
 /**
  * Place a new event on a collector.
@@ -334,6 +381,16 @@ PN_EXTERN pn_event_t *pn_collector_peek(pn_collector_t *collector);
  * @return true if the event was popped, false if the collector is empty
  */
 PN_EXTERN bool pn_collector_pop(pn_collector_t *collector);
+
+/**
+ * Check if there are more events after the current event. If this
+ * returns true, then pn_collector_peek() will return an event even
+ * after pn_collector_pop() is called.
+ *
+ * @param[in] collector a collector object
+ * @return true if the collector has more than the current event
+ */
+PN_EXTERN  bool pn_collector_more(pn_collector_t *collector);
 
 /**
  * Get the type of an event.
@@ -395,6 +452,14 @@ PN_EXTERN pn_delivery_t *pn_event_delivery(pn_event_t *event);
  * @return the transport associated with the event (or NULL)
  */
 PN_EXTERN pn_transport_t *pn_event_transport(pn_event_t *event);
+
+/**
+ * Get any attachments associated with an event.
+ *
+ * @param[in] event an event object
+ * @return the record holding the attachments
+ */
+PN_EXTERN pn_record_t *pn_event_attachments(pn_event_t *event);
 
 #ifdef __cplusplus
 }

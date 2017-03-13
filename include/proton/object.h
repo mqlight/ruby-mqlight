@@ -43,6 +43,7 @@ typedef struct pn_map_t pn_map_t;
 typedef struct pn_hash_t pn_hash_t;
 typedef void *(*pn_iterator_next_t)(void *state);
 typedef struct pn_iterator_t pn_iterator_t;
+typedef struct pn_record_t pn_record_t;
 
 struct pn_class_t {
   const char *name;
@@ -63,6 +64,66 @@ struct pn_class_t {
 PN_EXTERN extern const pn_class_t *PN_OBJECT;
 PN_EXTERN extern const pn_class_t *PN_VOID;
 PN_EXTERN extern const pn_class_t *PN_WEAKREF;
+
+#define PN_CLASSDEF(PREFIX)                                               \
+static void PREFIX ## _initialize_cast(void *object) {                    \
+  PREFIX ## _initialize((PREFIX ## _t *) object);                         \
+}                                                                         \
+                                                                          \
+static void PREFIX ## _finalize_cast(void *object) {                      \
+  PREFIX ## _finalize((PREFIX ## _t *) object);                           \
+}                                                                         \
+                                                                          \
+static uintptr_t PREFIX ## _hashcode_cast(void *object) {                 \
+  uintptr_t (*fp)(PREFIX ## _t *) = PREFIX ## _hashcode;                  \
+  if (fp) {                                                               \
+    return fp((PREFIX ## _t *) object);                                   \
+  } else {                                                                \
+    return (uintptr_t) object;                                            \
+  }                                                                       \
+}                                                                         \
+                                                                          \
+static intptr_t PREFIX ## _compare_cast(void *a, void *b) {               \
+  intptr_t (*fp)(PREFIX ## _t *, PREFIX ## _t *) = PREFIX ## _compare;    \
+  if (fp) {                                                               \
+    return fp((PREFIX ## _t *) a, (PREFIX ## _t *) b);                    \
+  } else {                                                                \
+    return (intptr_t) a - (intptr_t) b;                                   \
+  }                                                                       \
+}                                                                         \
+                                                                          \
+static int PREFIX ## _inspect_cast(void *object, pn_string_t *str) {      \
+  int (*fp)(PREFIX ## _t *, pn_string_t *) = PREFIX ## _inspect;          \
+  if (fp) {                                                               \
+    return fp((PREFIX ## _t *) object, str);                              \
+  } else {                                                                \
+    return pn_string_addf(str, "%s<%p>", #PREFIX, object);                \
+  }                                                                       \
+}                                                                         \
+                                                                          \
+const pn_class_t *PREFIX ## __class(void) {                               \
+  static const pn_class_t clazz = {                                       \
+    #PREFIX,                                                              \
+    CID_ ## PREFIX,                                                       \
+    pn_object_new,                                                        \
+    PREFIX ## _initialize_cast,                                           \
+    pn_object_incref,                                                     \
+    pn_object_decref,                                                     \
+    pn_object_refcount,                                                   \
+    PREFIX ## _finalize_cast,                                             \
+    pn_object_free,                                                       \
+    pn_object_reify,                                                      \
+    PREFIX ## _hashcode_cast,                                             \
+    PREFIX ## _compare_cast,                                              \
+    PREFIX ## _inspect_cast                                               \
+  };                                                                      \
+  return &clazz;                                                          \
+}                                                                         \
+                                                                          \
+PREFIX ## _t *PREFIX ## _new(void) {                                      \
+  return (PREFIX ## _t *) pn_class_new(PREFIX ## __class(),               \
+                                       sizeof(PREFIX ## _t));             \
+}
 
 #define PN_CLASS(PREFIX) {                      \
     #PREFIX,                                    \
@@ -137,11 +198,14 @@ PN_EXTERN size_t pn_list_size(pn_list_t *list);
 PN_EXTERN void *pn_list_get(pn_list_t *list, int index);
 PN_EXTERN void pn_list_set(pn_list_t *list, int index, void *value);
 PN_EXTERN int pn_list_add(pn_list_t *list, void *value);
+PN_EXTERN void *pn_list_pop(pn_list_t *list);
 PN_EXTERN ssize_t pn_list_index(pn_list_t *list, void *value);
 PN_EXTERN bool pn_list_remove(pn_list_t *list, void *value);
 PN_EXTERN void pn_list_del(pn_list_t *list, int index, int n);
 PN_EXTERN void pn_list_clear(pn_list_t *list);
 PN_EXTERN void pn_list_iterator(pn_list_t *list, pn_iterator_t *iter);
+PN_EXTERN void pn_list_minpush(pn_list_t *list, void *value);
+PN_EXTERN void *pn_list_minpop(pn_list_t *list);
 
 #define PN_REFCOUNT_KEY (0x2)
 #define PN_REFCOUNT_VALUE (0x4)
@@ -197,6 +261,19 @@ PN_EXTERN pn_iterator_t *pn_iterator(void);
 PN_EXTERN void *pn_iterator_start(pn_iterator_t *iterator,
                                   pn_iterator_next_t next, size_t size);
 PN_EXTERN void *pn_iterator_next(pn_iterator_t *iterator);
+
+#define PN_LEGCTX ((pn_handle_t) 0)
+
+#define PN_HANDLE(name) \
+  static char *_PN_HANDLE_ ## name = 0; \
+  static pn_handle_t name = ((pn_handle_t) &_PN_HANDLE_ ## name);
+
+PN_EXTERN pn_record_t *pn_record(void);
+PN_EXTERN void pn_record_def(pn_record_t *record, pn_handle_t key, const pn_class_t *clazz);
+PN_EXTERN bool pn_record_has(pn_record_t *record, pn_handle_t key);
+PN_EXTERN void *pn_record_get(pn_record_t *record, pn_handle_t key);
+PN_EXTERN void pn_record_set(pn_record_t *record, pn_handle_t key, void *value);
+PN_EXTERN void pn_record_clear(pn_record_t *record);
 
 typedef void (*pn_fnc_tracer_t)(const char* name, const char *message);
 PN_EXTERN void pn_set_fnc_entry_tracer(pn_fnc_tracer_t tracer);

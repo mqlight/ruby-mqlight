@@ -1,4 +1,4 @@
-# @(#) MQMBID sn=mqkoa-L141209.14 su=_mOo3sH-nEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/mqlight.gemspec
+# @(#) MQMBID sn=mqkoa-L160208.09 su=_Zdh2gM49EeWAYJom138ZUQ pn=appmsging/ruby/mqlight/mqlight.gemspec
 #
 # <copyright
 # notice="lm-source-program"
@@ -31,7 +31,7 @@ Gem::Specification.new do |spec|
                        'Light API.'
 
   spec.authors       = ['IBM MQ Light team']
-  spec.email         = ' '
+  spec.email         = 'mqlight@uk.ibm.com'
   spec.homepage      = 'https://developer.ibm.com/messaging/mq-light/'
   spec.licenses      = ['Proprietary', 'Apache-2.0']
 
@@ -48,9 +48,10 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler', '~> 1.0'
   spec.add_development_dependency 'rake', '~> 10.0'
-  spec.add_development_dependency 'rake-compiler', '~> 0.9.0'
+  spec.add_development_dependency 'rake-compiler', '~> 0'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rubocop', '~> 0'
   spec.add_development_dependency 'ruby-prof', '~> 0'
+  spec.add_development_dependency 'simplecov', '~> 0'
   spec.add_development_dependency 'webmock', '~> 1.0'
 end

@@ -1,15 +1,15 @@
-# @(#) MQMBID sn=mqkoa-L141209.14 su=_mOo3sH-nEeSyB8hgsFbOhg pn=appmsging/ruby/mqlight/spec/spec_helper.rb
+# @(#) MQMBID sn=mqkoa-L160208.09 su=_Zdh2gM49EeWAYJom138ZUQ pn=appmsging/ruby/mqlight/spec/spec_helper.rb
 #
 # <copyright
 # notice="lm-source-program"
 # pids="5725-P60"
-# years="2013,2014"
+# years="2013,2015"
 # crc="3568777996" >
 # Licensed Materials - Property of IBM
 #
 # 5725-P60
 #
-# (C) Copyright IBM Corp. 2014
+# (C) Copyright IBM Corp. 2013, 2015
 #
 # US Government Users Restricted Rights - Use, duplication or
 # disclosure restricted by GSA ADP Schedule Contract with
@@ -18,15 +18,32 @@
 
 require 'bundler/setup'
 Bundler.setup
-
-require 'mqlight'
 require 'webmock/rspec'
 require 'timeout'
 
+require 'simplecov'
+SimpleCov.minimum_coverage 70
+SimpleCov.start do
+  add_filter '/qpid_proton/'
+  add_filter '/spec/'
+  add_filter '/types/' 
+  add_filter '/codec/'
+  add_filter '/core/'
+  add_filter '/util/'
+end
+
+require 'mqlight'
+
+class TransportStub
+  def stop_threads
+  end
+end
+transport_stub = TransportStub.new
+
 RSpec.configure do |config|
-  # add a default 2s timeout around every spec (just incase)
+  # add a default 10s timeout around every spec (just incase)
   config.around(:each) do |spec|
-    Timeout.timeout(2) do
+    Timeout.timeout(10) do
       spec.run
     end
   end
@@ -55,6 +72,8 @@ RSpec.configure do |config|
      end
     allow(Cproton).to receive(:pn_messenger_get_link)
       .and_return(SWIG::TYPE_p_pn_link_t) # TODO: Proper return type
+    allow(Cproton).to receive(:pn_link_close)
+      .with(anything)
     allow(Cproton).to receive(:pn_link_flow)
       .with(anything, anything)
     allow(Cproton).to receive(:pn_link_state)
@@ -72,6 +91,15 @@ RSpec.configure do |config|
       .and_return Qpid::Proton::Error::NONE
     allow(Cproton).to receive(:pn_messenger_incoming)
       .with(kind_of(SWIG::TYPE_p_pn_messenger_t)).and_return 0
+    allow(Cproton).to receive(:pn_messenger_work)
+      .with(kind_of(SWIG::TYPE_p_pn_messenger_t), kind_of(Integer))
+    allow(Cproton).to receive(:pn_messenger_incoming_tracker)
+      .with(kind_of(SWIG::TYPE_p_pn_messenger_t))
+    allow(Cproton).to receive(:pn_messenger_subscribe_ttl)
+      .with(kind_of(SWIG::TYPE_p_pn_messenger_t),
+        kind_of(String), kind_of(Integer))
+      .and_return 0
+    allow(Cproton).to receive(:pn_messenger_started).and_return true
   end
 
   # verify any doubled classes names actually exist

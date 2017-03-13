@@ -30,6 +30,15 @@ The following are the currently supported platform architectures:
 
 You will receive an error if you attempt to use any other combination.
 
+## Limitations
+
+This Ruby gem is subject to the follow limitations:
+
+* Requires an 1.0.2 release of the MQ Light server
+* No TLS/SSL support for secure encrypted connections for platform Mac
+  (Mac OpenSSL 0.9.8 does not support TLS 1.2)
+
+
 ### Usage
 
 Install using gem:
@@ -64,10 +73,21 @@ If you think you've found a bug, please leave us
 
 ## Release notes
 
-### 1.0.2014120914.beta
+### 1.0.2016020809
+
+* Support for sending and receiving 
+* Support for 'at-most-once' and 'at-least-once' messaging.
+* Support for wildcard subscriptions.
+* Support for shared subscriptions.
+* Support for multiple services
+* Support for round-tripping binary or JSON messages
+* Support for dealing with malformed messages
+* Support for SASL
+* Support for SSL on Linux 
+
+### 1.0.2015020300.beta
 
 * Initial beta release.
 * Support for sending and receiving 'at-most-once' messages.
 * Support for wildcard subscriptions.
 * Support for shared subscriptions.
-

@@ -50,7 +50,6 @@ REQUIRED_HEADERS = [
   'proton/engine.h',
   'proton/message.h',
   'proton/sasl.h',
-  'proton/driver.h',
   'proton/messenger.h'
 ]
 
