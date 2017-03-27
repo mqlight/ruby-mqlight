@@ -113,24 +113,6 @@ module Mqlight
     end
 
     #
-    # Will update the connection state and notify those
-    # interest in the change.
-    #
-    def messenger_impl=(messenger_impl)
-      @thread_vars_mutex.synchronize do
-        @messenger_impl = messenger_impl
-      end
-    end
-    #
-    # Return the current connection state.
-    #
-    def messenger_impl
-      @thread_vars_mutex.synchronize do
-        @messenger_impl
-      end
-    end
-
-    #
     # Return the current connection state.
     #
     def destinations

@@ -51,10 +51,7 @@ module Mqlight
       logger.parms(@id, parms) { self.class.to_s + '#' + __method__.to_s }
 
       @container.synchronize do
-        free_messenger
         @messenger_impl = Cproton.pn_messenger(@id)
-        ObjectSpace.define_finalizer(self,
-                                     self.class.finalize!(@messenger_impl))
         Cproton.pn_messenger_set_flags(@messenger_impl,
                                        Cproton::PN_FLAGS_CHECK_ROUTES |
                                        Cproton::PN_FLAGS_EXTERNAL_SOCKET)
@@ -98,16 +95,21 @@ module Mqlight
           sleep(0.1)
         end
       end
+      raise Mqlight::NetworkError,
+            'Connection remotely terminated' unless sockets_open?
+
       logger.exit(@id) { self.class.to_s + '#' + __method__.to_s }
       # Success - return
     rescue Timeout::Error
       logger.data(@id, 'Timeout exception waiting for ' + service.to_s) do
         self.class.to_s + '#' + __method__.to_s
       end
+      free_messenger
       raise Mqlight::NetworkError,
             'Mqlight server did not respond within timeout'
 
     rescue Qpid::Proton::ProtonError => e
+      free_messenger
       error_msg = e.to_s
       logger.data(@id, 'Exception for ' + service.to_s + ' of ' + error_msg) do
         self.class.to_s + '#' + __method__.to_s
@@ -179,9 +181,13 @@ module Mqlight
     #
     def free_messenger
       logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
-      unless @messenger_impl.nil?
-        Cproton.pn_messenger_free(@messenger_impl)
-        @messenger_impl = nil
+      @container.synchronize do
+        unless @messenger_impl.nil?
+          # XXX: this segfaults
+          #Cproton.pn_messenger_work(@messenger_impl, 1000)
+          #Cproton.pn_messenger_free(@messenger_impl)
+          @messenger_impl = nil
+        end
       end
       logger.exit(@id) { self.class.to_s + '#' + __method__.to_s }
     end
@@ -207,7 +213,7 @@ module Mqlight
             # TODO: Let low level process I/O
             @container_resource.wait(@container, 1)
             # Perform work
-            Cproton.pn_messenger_work(@messenger_impl, 0)
+            Cproton.pn_messenger_work(@messenger_impl, 1000)
             # Check for errors from last work action
             unless Cproton.pn_messenger_errno(@messenger_impl) == 0
               # Stop on 1st failed to reinstate a subscription
@@ -231,7 +237,7 @@ module Mqlight
 
       @container.synchronize do
         break if @messenger_impl.nil?
-        Cproton.pn_messenger_work(@messenger_impl, 0)
+        Cproton.pn_messenger_work(@messenger_impl, 1000)
         interpret_message if Cproton.pn_messenger_errno(@messenger_impl) != 0 && started?
 
         unless sockets_open?
@@ -253,7 +259,7 @@ module Mqlight
     # No synchronize as dead lock can occur
     def self.finalize!(impl)
       proc do
-        Cproton.pn_messenger_free(impl) unless @messenger_impl.nil?
+        # Cproton.pn_messenger_free(impl) unless @messenger_impl.nil?
       end
     end
 
@@ -373,7 +379,7 @@ module Mqlight
 
       rc = true
       @container.synchronize do
-        Cproton.pn_messenger_work(@messenger_impl, 0)
+        Cproton.pn_messenger_work(@messenger_impl, 1000)
         if ((Cproton.pn_link_state(link) & Cproton::PN_REMOTE_ACTIVE) == 0)
           # Still down, was there an error?
           fail Mqlight::SubscribedError,
@@ -427,7 +433,7 @@ module Mqlight
         if timeout > 0 || expiry_policy == Cproton::PN_EXPIRE_NEVER
           Cproton.pn_link_detach(link)
           until Cproton.pn_link_remote_detached(link)
-            Cproton.pn_messenger_work(@messenger_impl, 0)
+            Cproton.pn_messenger_work(@messenger_impl, 1000)
             # TODO: long wait here .. could lower level signal to release earlier?
             @container_resource.wait(@container, 1)
           end
@@ -438,7 +444,7 @@ module Mqlight
           #
           Cproton.pn_link_close(link)
           while (Cproton.pn_link_state(link) & Cproton::PN_REMOTE_CLOSED) == 0
-            Cproton.pn_messenger_work(@messenger_impl, 0)
+            Cproton.pn_messenger_work(@messenger_impl, 1000)
             @container_resource.wait(@container, 1)
           end
         end
@@ -512,7 +518,7 @@ module Mqlight
           logger.data(@id, 'Waiting for drain to complete') do
             self.class.to_s + '#' + __method__.to_s
           end
-          Cproton.pn_messenger_work(@messenger_impl, 0)
+          Cproton.pn_messenger_work(@messenger_impl, 1000)
           @container_resource.wait(@container, 1)
         end
         rc = Cproton.pn_messenger_incoming(@messenger_impl) > 0
@@ -635,7 +641,7 @@ module Mqlight
             @container_resource.wait(@container, 0.1)
           end
         end
-        Cproton.pn_messenger_free(@messenger_impl)
+        #Cproton.pn_messenger_free(@messenger_impl)
         @messenger_impl = nil
       end
 
@@ -797,12 +803,15 @@ module Mqlight
         end]
         logger.parms(@id, parms) { self.class.to_s + '#' + __method__.to_s }
         @container = container
-        @pn_connection = Cproton.pn_messenger_resolve(messenger_impl,
-                                                      service.address)
+        @container.synchronize do
+          @pn_connection = Cproton.pn_messenger_resolve(messenger_impl,
+                                                        service.address)
+          @pn_transport = Cproton.pn_connection_transport(@pn_connection) \
+              unless @pn_connection.nil?
+        end
         fail(Mqlight::InternalError,
              "Could not resolve #{service} to a connection") \
               if @pn_connection.nil?
-        @pn_transport = Cproton.pn_connection_transport(@pn_connection)
         fail(Mqlight::InternalError,
              "Could not resolve connection of #{service} to a transport") \
               if @pn_transport.nil?
@@ -842,8 +851,10 @@ module Mqlight
       # Triggers a wake-up with proton
       #
       def empty_pop
-        Cproton.pn_connection_pop(@pn_connection, 0) \
-          unless (Cproton.pn_connection_state(@pn_connection) & IS_CLOSED) != 0
+        @container.synchronize do
+          Cproton.pn_connection_pop(@pn_connection, 0) \
+            unless (Cproton.pn_connection_state(@pn_connection) & IS_CLOSED) != 0
+        end
       end
     end
   end

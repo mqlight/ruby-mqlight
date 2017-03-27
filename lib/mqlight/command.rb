@@ -38,6 +38,7 @@ module Mqlight
       @request_queue = Queue.new
       @request_queue_mutex = Mutex.new
       @request_queue_resource = ConditionVariable.new
+      @shutdown = false
     end
 
     def started?
@@ -349,7 +350,8 @@ module Mqlight
     def command_loop
       logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
 
-      until stopped?
+      shutting_down = false
+      until shutting_down
         @request_queue_mutex.synchronize do
           # Wait for a command request
           while @request_queue.empty?
@@ -367,6 +369,11 @@ module Mqlight
 
           # Signal client command completed.
           @request_queue_resource.signal
+
+          if stopped? then
+            shutting_down = true
+            @shutdown = true
+          end
         end
       end
 
@@ -388,6 +395,10 @@ module Mqlight
       logger.parms(@id, parms) { self.class.to_s + '#' + __method__.to_s }
 
       @request_queue_mutex.synchronize do
+        if @shutdown then
+          fail Mqlight::StoppedError, 'Client in stopped state'
+        end
+
         @request_queue.push(hash)
         @request_queue_resource.signal
         # Wait for the command to be taken.

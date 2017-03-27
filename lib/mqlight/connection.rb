@@ -143,9 +143,6 @@ module Mqlight
           @thread_vars.change_state(:stopped, sub)
         ensure
           if stopped?
-            # Disabling free messenger as the lower proton layer is SIGSEV in this phase
-            # of connection 
-            # @thread_vars.proton.free_messenger
             close_end_point unless @end_point.nil?
           end
         end
@@ -396,7 +393,8 @@ module Mqlight
           logger.data(@id, 'Connection remotely terminated') do
             self.class.to_s + '#' + __method__.to_s
           end
-          
+          @proton.sockets_open = false
+
           unless stopped? || stopping?
             # A race condition can occur here as this error
             # could be processed before the preceeding CLOSE
@@ -434,7 +432,7 @@ module Mqlight
     def outgoing_thread
       logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
       deliver = @thread_vars.proton.create_delivery_message(@service)
-      until stopped?
+      until stopped? or not @proton.sockets_open?
         begin
           logger.often(@id, 'Waiting for outgoing message') do
             self.class.to_s + '#' + __method__.to_s
@@ -550,10 +548,15 @@ module Mqlight
     #
     def stop_threads
       logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
+      begin
+        @tcp_transport.shutdown(:WR)
+      rescue => e
+        logger.data(@id, 'Ignored: shutdown error ' + e.to_s) do
+          self.class.to_s + '#' + __method__.to_s
+        end
+      end
       @incoming.kill
-      @transport.sysclose
-      @incoming.join
-      @outgoing.join
+      @outgoing.kill
       logger.exit(@id) { self.class.to_s + '#' + __method__.to_s }
     end
   end
