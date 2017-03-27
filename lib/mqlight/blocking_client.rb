@@ -165,16 +165,8 @@ module Mqlight
           (@user.is_a? String) && (@password.is_a? String)
       end
 
-      # Validate service
-      @service_list, using_ssl = Util.generate_services(service)
-      fail ArgumentError, 'A valid service must be specified.' if
-        @service_list.length == 0
-
-      # Create SSL object 
-      if using_ssl
-        ssl = SecureSocket.new(options)
-        ssl.context(nil)    # Validate the arguments only
-      end
+      # pre-validate service param is a well-formed URI
+      Util.validate_services(service, @user, @password)
 
       @thread_vars.state_callback = state_callback
 
@@ -184,12 +176,12 @@ module Mqlight
       @proton_queue_resource = ConditionVariable.new
 
       args = {
+        options: options,
         id: @id,
         user: @user,
         password: @password,
-        service_list: @service_list,
+        service: service,
         thread_vars: @thread_vars,
-        ssl: ssl,
       }
       @command = Mqlight::Command.new(args)
       @connection = Mqlight::Connection.new(args)
@@ -240,8 +232,6 @@ module Mqlight
 
       return unless stopped?  # TODO: missing exit trace
       @thread_vars.change_state(:starting)
-
-      validate_service_list
 
       # Try each service in turn
       logger.data(@id, 'Trying each service in turn') do
@@ -725,57 +715,6 @@ module Mqlight
       # Generate id if none supplied
       @id ||= 'AUTO_' + SecureRandom.hex[0..6]
 
-      # Empty service list to be populated
-      @service_list = []
-
-      logger.exit(@id) { self.class.to_s + '#' + __method__.to_s }
-    rescue StandardError => e
-      logger.throw(@id, e) { self.class.to_s + '#' + __method__.to_s }
-      raise e
-    end
-
-    # @private
-    def validate_service_list
-      logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
-      parms = Hash[method(__method__).parameters.map do |parm|
-        [parm[1], eval(parm[1].to_s)]
-      end]
-      Logging.logger.parms(@id, parms) do
-        self.class.to_s + '#' + __method__.to_s
-      end
-
-      property_auth = nil
-      if @user && @password
-        property_auth = "#{URI.encode_www_form_component(@user)}:"\
-                        "#{URI.encode_www_form_component(@password)}"
-      end
-
-      @service_list.each do |service|
-        if service.userinfo
-          fail ArgumentError,
-               "URLs supplied via the 'service' property must specify both a "\
-               'user name and a password value, or omit both values' unless
-          service.userinfo.split(':').size == 2
-          fail ArgumentError,
-               "User name supplied as an argument (#{property_auth}) does not"\
-               ' match user name supplied via a service url'\
-               "(#{service.userinfo})" if
-            property_auth && !(property_auth.eql? service.userinfo)
-        end
-
-        fail ArgumentError,
-             "One of the supplied services (#{service}) #{service.path} " \
-             'is not a valid URL' \
-             unless service.path.nil? || service.path.length == 0 \
-               || service.path == '/'
-
-        next if service.scheme.eql?('amqp')
-        next if service.scheme.eql?('amqps')
-
-        fail ArgumentError,
-             "One of the supplied services (#{service}) is not a "\
-             'URL scheme that is supported by this client'
-      end
       logger.exit(@id) { self.class.to_s + '#' + __method__.to_s }
     rescue StandardError => e
       logger.throw(@id, e) { self.class.to_s + '#' + __method__.to_s }

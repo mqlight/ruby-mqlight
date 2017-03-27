@@ -28,7 +28,7 @@ module Mqlight
   class Util
     include Mqlight::Logging
 
-    def self.generate_services(service)
+    def self.validate_services(service, property_user, property_pass)
       Logging.logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
       parms = Hash[method(__method__).parameters.map do |parm|
         [parm[1], eval(parm[1].to_s)]
@@ -37,23 +37,13 @@ module Mqlight
         self.class.to_s + '#' + __method__.to_s
       end
 
-      using_ssl = false
-      service_uris = []
-      service_strings = []
-
-      # Blue mix mapping
-      # If in a blue mix environment and http(s) scheme have been supplied
-      # then send HTTP get to translate to final amqp location.
-      if ENV['VCAP_APPLICATION'] && service.is_a?(String)
-        begin
-          uri = URI(service)
-          if uri.scheme.eql?('http') || uri.scheme.eql?('https')
-            service = get_service_urls(uri)
-          end
-        rescue
-          raise ArgumentError, "#{service} is not a valid service"
-        end
+      property_auth = nil
+      if property_user && property_pass
+        property_auth = "#{URI.encode_www_form_component(property_user)}:"\
+                        "#{URI.encode_www_form_component(property_pass)}"
       end
+
+      service_strings = []
 
       # Convert argument into an array
       if service.is_a?(Array)
@@ -62,6 +52,7 @@ module Mqlight
         service_strings << service
       end
 
+      service_uris = []
       # For each entry convert to URI and validate.
       service_strings.each do |s|
         begin
@@ -70,15 +61,57 @@ module Mqlight
           raise ArgumentError, "#{s} is not a valid service"
         end
         fail ArgumentError, "#{s} is not a valid service" if uri.host.nil?
+        next if uri.scheme.eql?('http') || uri.scheme.eql?('https')
+
         fail ArgumentError, "#{s} is not a supported scheme" \
           unless uri.scheme.eql?('amqp') || uri.scheme.eql?('amqps')
+
+        if uri.userinfo
+          fail ArgumentError,
+               "URLs supplied via the 'service' property must specify both a "\
+               'user name and a password value, or omit both values' unless
+          uri.userinfo.split(':').size == 2
+          fail ArgumentError,
+               "User name supplied as an argument (#{property_auth}) does not"\
+               ' match user name supplied via a service url'\
+               "(#{uri.userinfo})" if
+            property_auth && !(property_auth.eql? uri.userinfo)
+        end
+
+        fail ArgumentError,
+             "One of the supplied services (#{uri}) #{uri.path} " \
+             'is not a valid URL' \
+             unless uri.path.nil? || uri.path.length == 0 \
+               || uri.path == '/'
+
         service_uris << uri
-        using_ssl |= uri.scheme.eql?('amqps')
+      end
+      Logging.logger.exit(@id, [service_uris]) \
+          { self.class.to_s + '#' + __method__.to_s }
+      return service_uris
+    end
+
+    def self.generate_services(service, property_user, property_pass)
+      Logging.logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
+      parms = Hash[method(__method__).parameters.map do |parm|
+        [parm[1], eval(parm[1].to_s)]
+      end]
+      Logging.logger.parms(@id, parms) do
+        self.class.to_s + '#' + __method__.to_s
       end
 
-      Logging.logger.exit(@id, [service_uris, using_ssl]) \
+      # if 'service' param is an http(s) URI then fetch the service list from it
+      if service.is_a?(String)
+        uri = URI(service)
+        if uri.scheme.eql?('http') || uri.scheme.eql?('https')
+          service = get_service_urls(uri)
+        end
+      end
+      service_uris = validate_services(service, property_user, property_pass)
+
+      Logging.logger.exit(@id, [service_uris]) \
           { self.class.to_s + '#' + __method__.to_s }
-      return service_uris, using_ssl
+      return service_uris
     end
 
     #

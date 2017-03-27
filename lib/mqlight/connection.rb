@@ -42,7 +42,7 @@ module Mqlight
 
       @args = args
       @thread_vars = args[:thread_vars]
-      @service_list = args[:service_list]
+      @service = args[:service]
       @user = args[:user]
       @password = args[:password]
 
@@ -62,9 +62,26 @@ module Mqlight
     def connect_to_a_server
       logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
 
+      @service_list = []
+      begin
+        @service_list = Util.generate_services(@service, @user, @password)
+      rescue Mqlight::NetworkError => ne
+        logger.data(@id, 'Failed connection to ' + @service.to_s +
+                          ' because ' + ne.to_s) do
+          self.class.to_s + '#' + __method__.to_s
+        end
+        @thread_vars.change_state(:retrying, ne)
+      rescue StandardError => se
+        logger.data(@id, 'Failed to generate service list from ' +
+                @service.to_s + ' because ' + se.to_s) do
+          self.class.to_s + '#' + __method__.to_s
+        end
+        @thread_vars.change_state(:stopped, se)
+      end
+
       items_left_in_service_list = @service_list.length
       @thread_vars.change_state(:starting) if items_left_in_service_list> 0
-      
+
       @service_list.each do |service|
         @thread_vars.service = Service.new(service, @user, @password)
         begin
@@ -500,7 +517,7 @@ module Mqlight
       super(args)
 
       # SSL details
-      ssl = args[:ssl]
+      ssl = SecureSocket.new(args[:options])
       context = ssl.context(@thread_vars.service.host)
 
       begin
