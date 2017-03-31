@@ -140,6 +140,7 @@ module Mqlight
     # 
     def check_started
       logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
+      Cproton.pn_messenger_work(@messenger_impl, 1000)
       rc  = Cproton::pn_messenger_started(@messenger_impl)
       if (Cproton.pn_messenger_errno(@messenger_impl) != 0)
         text = Cproton.pn_error_text(

@@ -303,6 +303,7 @@ module Mqlight
 
       begin
         @tcp_transport = TCPSocket.open(hostname, port)
+        @proton.sockets_open = true
       rescue => e
         logger.throw(@id, e) { self.class.to_s + '#' + __method__.to_s }
         raise Mqlight::NetworkError, e.to_s
@@ -353,9 +354,8 @@ module Mqlight
     #
     def incoming_thread
       logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
-      @proton.sockets_open = true
 
-      until stopped?
+      until stopped? or not @proton.sockets_open?
         begin
           logger.often(@id, 'Waiting for incoming message') do
             self.class.to_s + '#' + __method__.to_s
@@ -432,6 +432,7 @@ module Mqlight
     def outgoing_thread
       logger.entry(@id) { self.class.to_s + '#' + __method__.to_s }
       deliver = @thread_vars.proton.create_delivery_message(@service)
+
       until stopped? or not @proton.sockets_open?
         begin
           logger.often(@id, 'Waiting for outgoing message') do
@@ -454,6 +455,7 @@ module Mqlight
           logger.data(@id, 'Connection remotely terminated') do
             self.class.to_s + '#' + __method__.to_s
           end
+          @proton.sockets_open = false
           # A race condition can occur here as this error
           # could be processed before the preceeding CLOSE
           # message is read. This then results in a Retry
@@ -523,6 +525,7 @@ module Mqlight
         ssl_transport.connect
         fail Mqlight::SecurityError, 'certificate verify failed' \
           if ssl.verify_server_host_name_failed?
+        @proton.sockets_open = true
       rescue => e
         logger.throw(@id, e) { self.class.to_s + '#' + __method__.to_s }
         msg = e.to_s
