@@ -7,12 +7,12 @@ var path = require('path');
 var request = require('request');
 var yaml = require('js-yaml');
 
-var GITHUB_API = "https://github.ibm.com/api/v3";
+var GITHUB_API = "https://github.com/api/v3";
 var TOKEN = process.env.GITHUB_TOKEN;
 
 // var remote_path_parts = package_json.binary.remote_path
 //   .replace(/^\/|\/$/, '').split('/');
-var OWNER = 'PRESTONA';
+var OWNER = 'mqlight';
 var REPO = 'ruby-mqlight';
 var TAG = yaml.safeLoad(fs.readFileSync('version.yaml', 'utf8'));
 

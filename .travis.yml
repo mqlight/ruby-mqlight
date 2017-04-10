@@ -14,3 +14,4 @@ install:
 script:
   - rake build
   - GITHUB_TOKEN=$CI_USER_TOKEN node publish.js
+secure: "JarCEsEC4B29FttqeezwTrWsSQTyrK5YvUjSuN2BeWj+YPG2GAsEs8+MsyGilLOEIXuDkgViWySNX9Av9arq8l65jfWMI4zyHSKWEdbbqjxKUIgvVk/zW63tXUwnGruzeCAVj28tqzdXvJvokb5f5pCCZJh0v31/9oZehhp39Ik="

@@ -9,9 +9,8 @@ else
   sudo apt-get install -qqy nodejs cmake g++-4.8 libssl-dev libsasl2-dev sasl2-bin
 fi
 
-echo -e "machine github.ibm.com\n  login ${CI_USER_TOKEN}" >> ~/.netrc
 git clone --depth=1 \
-  https://github.ibm.com/mqlight/qpid-proton.git ~/.local/src/qpid-proton
+  https://github.com/mqlight/qpid-proton.git ~/.local/src/qpid-proton
 cd ~/.local/src/qpid-proton \
   && mkdir -p build \
   && cd build \
