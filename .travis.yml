@@ -1,27 +1,28 @@
 language: ruby
 rvm:
-- 2.2
+  - 2.2
 matrix:
-include:
-  - os: linux
-  - os: osx
-  - os: osx
-    osx_image: xcode8.3
+  include:
+    - os: linux
+    - os: osx
+    - os: osx
+      osx_image: xcode8.3
 cache:
-- apt
+  - apt
 env:
   global:
     secure: czDC2p9IxiWioyVqnFhupNYEAdNz/by2u0L7YC/yE9cmAFtVqXIf7nECaJSHusJH38/4ToA726PnlbPSA0FbcvepJz/sf8smEJbgjFJhm7SIMGP5nP4mqOf95oXvuz6pAkee1QR56THQq7y5UXFcl1JuXSAx6K7b8SMPE0q2r9Q=
 before_install:
-- "./.travis_before_install.sh"
+  - "./.travis_before_install.sh"
 install:
-- rvm 2.2
-- rvm gemset create fresh
-- rvm 2.2@fresh
-- gem install bundler
-- cd ${TRAVIS_BUILD_DIR} && bundle install --jobs=3 --retry=3
+  - rvm 2.2
+  - rvm gemset create fresh
+  - rvm 2.2@fresh
+  - gem install bundler
+  - cd ${TRAVIS_BUILD_DIR} && bundle install --jobs=3 --retry=3
 script:
-- rvm 2.2
-- rvm 2.2@fresh
-- bundle exec rake build
-- GITHUB_TOKEN=$CI_USER_TOKEN node publish.js
+  - rvm 2.2
+  - rvm 2.2@fresh
+  - bundle exec rake build
+after_success:
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && GITHUB_TOKEN=$CI_USER_TOKEN node publish.js
