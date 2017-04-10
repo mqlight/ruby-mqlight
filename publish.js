@@ -35,7 +35,8 @@ var api = function(options, not_json) {
     options = merge({
       url: GITHUB_API + '/repos/' + OWNER + '/' + REPO + '/releases',
       headers: {
-        Authorization: 'token ' + TOKEN
+        Authorization: 'token ' + TOKEN,
+        'User-Agent': 'publish.js'
       }
     }, options);
     request(options, function(error, response, body) {
