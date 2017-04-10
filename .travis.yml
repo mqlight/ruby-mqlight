@@ -15,5 +15,5 @@ before_install:
 install:
 - cd ${TRAVIS_BUILD_DIR} && bundle install --jobs=3 --retry=3
 script:
-- rake build
+- bundle exec rake build
 - GITHUB_TOKEN=$CI_USER_TOKEN node publish.js
