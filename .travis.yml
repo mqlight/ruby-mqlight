@@ -1,17 +1,18 @@
 language: ruby
 rvm:
-  - 2.2
+- 2.2
 os:
-  - linux
-  - osx
+- linux
+- osx
 cache:
-  - apt
-  - bundler
+- apt
+- bundler
 before_install:
-  - ./.travis_before_install.sh
+- "./.travis_before_install.sh"
 install:
-  - cd ${TRAVIS_BUILD_DIR} && bundle install --jobs=3 --retry=3
+- cd ${TRAVIS_BUILD_DIR} && bundle install --jobs=3 --retry=3
 script:
-  - rake build
-  - GITHUB_TOKEN=$CI_USER_TOKEN node publish.js
-secure: "JarCEsEC4B29FttqeezwTrWsSQTyrK5YvUjSuN2BeWj+YPG2GAsEs8+MsyGilLOEIXuDkgViWySNX9Av9arq8l65jfWMI4zyHSKWEdbbqjxKUIgvVk/zW63tXUwnGruzeCAVj28tqzdXvJvokb5f5pCCZJh0v31/9oZehhp39Ik="
+- rake build
+- GITHUB_TOKEN=$CI_USER_TOKEN node publish.js
+CI_USER_TOKEN:
+  secure: lLsghc79CLcD9RAMuLUAtL/2DfpJ92XDxfPRT3uojzV1XCWTksgEy0AobzC8P8KwGuPUKEgvxAAQBg1UpOT8JnywcPy1ahErJN8M3sF2zqzmXvDobUKKnIxAAn8tXPGwVOPfeWSDykKolK3Kc4cxAUVH6UBWsV6MuZljLFqqqys=
