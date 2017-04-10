@@ -22,6 +22,7 @@ cd ~/.local/src/qpid-proton \
   && cd build \
   && cmake -DNOBUILD_JAVA=TRUE -DSASL_IMPL=none -DSSL_IMPL=none \
            -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+           -DCMAKE_MACOSX_RPATH=1 \
            -DCMAKE_INSTALL_PREFIX=${HOME}/.local .. \
   && cmake --build . --target install
 for F in $(${FIND} ~/.local/${LIBDIR} -maxdepth 1 -type l); do
