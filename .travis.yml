@@ -1,9 +1,12 @@
 language: ruby
 rvm:
 - 2.2
-os:
-- linux
-- osx
+matrix:
+include:
+  - os: linux
+  - os: osx
+  - os: osx
+    osx_image: xcode8.3
 cache:
 - apt
 env:
