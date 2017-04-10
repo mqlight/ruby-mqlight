@@ -7,7 +7,7 @@ var path = require('path');
 var request = require('request');
 var yaml = require('js-yaml');
 
-var GITHUB_API = "https://github.com/api/v3";
+var GITHUB_API = "https://api.github.com";
 var TOKEN = process.env.GITHUB_TOKEN;
 
 // var remote_path_parts = package_json.binary.remote_path
