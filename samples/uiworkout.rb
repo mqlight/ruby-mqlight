@@ -299,22 +299,34 @@ class UIWorkout
     result = false
     if !ENV['VCAP_SERVICES'].nil?
       print "VCAP_SERVICES variable present in environment\n" if verbose
-      services = JSON.parse(ENV[VCAP_SERVICES])
-      if !services.mqlight.nil?
-        mqlight_services = services[:mqlight]
+      services = JSON.parse(ENV['VCAP_SERVICES'])
+      if !services["mqlight"].nil?
+        mqlight_services = services["mqlight"]
         mqlight = mqlight_services[0]
-        credentials = mqlight[:credentials]
-        @opts[:user] = credentials[:username]
-        @opts[:password] = credentials[:password]
-        @service = credentials[:connectionLookupURI]
+        credentials = mqlight["credentials"]
+        @ssl_opts[:user] = credentials["username"]
+        @ssl_opts[:password] = credentials["password"]
+        @service = credentials["connectionLookupURI"]
         if verbose
-          print "Username: #{@opts[:user]}\n"
+          print "Username: #{@ssl_opts[:user]}\n"
+          print "Password: ****\n"
+          print "LookupURI: #{@service}\n"
+        end
+      elsif !services["messagehub"].nil?
+        messagehub_services = services["messagehub"]
+        messagehub = messagehub_services[0]
+        credentials = messagehub["credentials"]
+        @ssl_opts[:user] = credentials["user"]
+        @ssl_opts[:password] = credentials["password"]
+        @service = credentials["mqlight_lookup_url"]
+        if verbose
+          print "Username: #{@ssl_opts[:user]}\n"
           print "Password: ****\n"
           print "LookupURI: #{@service}\n"
         end
       else
         fail StandardError, 'Running in IBM Bluemix but not bound to an '\
-                          "instance of the 'mqlight' service."
+                          "instance of the 'messagehub' or 'mqlight' service."
       end
       result = true
     else
