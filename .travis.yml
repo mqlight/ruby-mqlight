@@ -12,10 +12,13 @@ env:
 before_install:
 - "./.travis_before_install.sh"
 install:
+- rvm 2.2
 - rvm gemset create fresh
 - rvm 2.2@fresh
+- gem install bundler
 - cd ${TRAVIS_BUILD_DIR} && bundle install --jobs=3 --retry=3
 script:
+- rvm 2.2
 - rvm 2.2@fresh
 - bundle exec rake build
 - GITHUB_TOKEN=$CI_USER_TOKEN node publish.js

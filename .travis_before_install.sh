@@ -18,9 +18,11 @@ cd ~/.local/src/qpid-proton \
            -DCMAKE_BUILD_TYPE=RelWithDebInfo \
            -DCMAKE_INSTALL_PREFIX=${HOME}/.local .. \
   && cmake --build . --target install
-for F in $(find ~/.local/lib -maxdepth 1 -type l); do
+for F in $(find ~/.local/lib* -maxdepth 1 -type l); do
   cp --remove-destination ~/.local/lib/$(readlink $F) $F
 done
+cp -R ~/.local/include ${TRAVIS_BUILD_DIR}/include
+cp -R ~/.local/lib*/* ${TRAVIS_BUILD_DIR}/lib/ 
 cd ${TRAVIS_BUILD_DIR} \
   && mkdir -p node_modules \
   && npm install core-js request js-yaml
