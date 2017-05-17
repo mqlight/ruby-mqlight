@@ -642,7 +642,7 @@ module Mqlight
             @container_resource.wait(@container, 0.1)
           end
         end
-        #Cproton.pn_messenger_free(@messenger_impl)
+        Cproton.pn_messenger_free(@messenger_impl)
         @messenger_impl = nil
       end
 
