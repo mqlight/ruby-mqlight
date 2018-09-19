@@ -24,6 +24,6 @@ install:
 script:
   - rvm use 2.4.2
   - rvm 2.4.2@fresh
-  - bundle exec rake build
+  - bundle exec rake build test
 after_success:
   - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && GITHUB_TOKEN=$CI_USER_TOKEN node publish.js
