@@ -57,7 +57,7 @@ https://rubygems.org/gems/mqlight, or locally by running the YARD tooling.
 
 ## Samples
 
-To run the samples, install the module via gem and navigate to the 
+To run the samples, install the module via gem and navigate to the
 `<install path>/samples` folder, where the `<install path>` can be determined
 from the output of `gem list --details mqlight`.
 
@@ -73,9 +73,17 @@ If you think you've found a bug, please leave us
 
 ## Release notes
 
+### 1.0.2018091900
+
+* Experimental support for Ruby 2.4
+
+### 1.0.2017051700
+
+* Bugfix for file handle leak on client stop
+
 ### 1.0.2016020809
 
-* Support for sending and receiving 
+* Support for sending and receiving
 * Support for 'at-most-once' and 'at-least-once' messaging.
 * Support for wildcard subscriptions.
 * Support for shared subscriptions.
@@ -83,7 +91,7 @@ If you think you've found a bug, please leave us
 * Support for round-tripping binary or JSON messages
 * Support for dealing with malformed messages
 * Support for SASL
-* Support for SSL on Linux 
+* Support for SSL on Linux
 
 ### 1.0.2015020300.beta
 

@@ -96,7 +96,11 @@ module Qpid::Proton::Codec
   INT        = Mapping.new(Cproton::PN_INT, "int")
   CHAR       = Mapping.new(Cproton::PN_CHAR, "char")
   ULONG      = Mapping.new(Cproton::PN_ULONG, "ulong")
-  LONG       = Mapping.new(Cproton::PN_LONG, "long", [Integer])
+  if Integer == Fixnum
+    LONG     = Mapping.new(Cproton::PN_LONG, "long", [Integer])
+  else
+    LONG     = Mapping.new(Cproton::PN_LONG, "long", [Fixnum, Bignum])
+  end
   TIMESTAMP  = Mapping.new(Cproton::PN_TIMESTAMP, "timestamp", [Date, Time])
   FLOAT      = Mapping.new(Cproton::PN_FLOAT, "float")
   DOUBLE     = Mapping.new(Cproton::PN_DOUBLE, "double", [Float])
