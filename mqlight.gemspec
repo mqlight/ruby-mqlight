@@ -46,7 +46,7 @@ Gem::Specification.new do |spec|
   # this gem is only supported with ruby 1.9.x or newer
   spec.required_ruby_version = '>= 1.9.1'
 
-  spec.add_development_dependency 'bundler', '~> 1.0'
+  spec.add_development_dependency 'bundler', '~> 2.0'
   spec.add_development_dependency 'rake', '~> 12.0'
   spec.add_development_dependency 'rake-compiler', '~> 0'
   spec.add_development_dependency 'rspec', '~> 3.0'
