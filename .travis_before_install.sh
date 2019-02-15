@@ -24,10 +24,21 @@ git clone --depth=1 \
 cd ~/.local/src/qpid-proton \
   && mkdir -p build \
   && cd build \
-  && cmake -DNOBUILD_JAVA=TRUE -DSASL_IMPL=none -DSSL_IMPL=none \
+  && cmake -DSASL_IMPL=none \
+           -DSSL_IMPL=none \
+           -DBUILD_JAVA=0 \
+           -DBUILD_PERL=0 \
+           -DBUILD_PHP=0 \
+           -DBUILD_PYTHON=0 \
+           -DNOBUILD_JAVA=TRUE \
+           -DNOBUILD_PERL=TRUE \
+           -DNOBUILD_PHP=TRUE \
+           -DNOBUILD_PYTHON=TRUE \
            -DCMAKE_BUILD_TYPE=RelWithDebInfo \
            -DCMAKE_MACOSX_RPATH=1 \
-           -DCMAKE_INSTALL_PREFIX=${HOME}/.local .. \
+           -DCMAKE_OSX_SYSROOT="${SYSROOT:-}" \
+           -DCMAKE_OSX_DEPLOYMENT_TARGET="${MACOSX_DEPLOYMENT_TARGET:-}" \
+           -DCMAKE_INSTALL_PREFIX="${HOME}/.local" .. \
   && cmake --build . --target install
 for F in $(${FIND} ~/.local/${LIBDIR} -maxdepth 1 -type l); do
   ${CP} --remove-destination ~/.local/${LIBDIR}/$(readlink $F) $F
