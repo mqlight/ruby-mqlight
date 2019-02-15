@@ -22,3 +22,10 @@ tmp
 mkmf.log
 .jazzignore
 Makefile.mq
+include/
+lib/cmake/
+lib/libqpid-proton.3.0.0.dylib
+lib/libqpid-proton.3.dylib
+lib/libqpid-proton.dylib
+lib/pkgconfig/
+node_modules/
