@@ -4,7 +4,7 @@ set -eu
 
 if [ "${TRAVIS_OS_NAME:-}" = "osx" ]; then
   brew update
-  brew install node cmake coreutils findutils
+  brew install node cmake coreutils findutils || true
   CP=gcp
   FIND=gfind
   LIBDIR=lib64
